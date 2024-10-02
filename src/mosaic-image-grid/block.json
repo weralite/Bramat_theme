@@ -9,6 +9,7 @@
         "html": false
     },
     "attributes": {
+        
         "url": {
             "type": "string"
         },
