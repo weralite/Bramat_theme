@@ -27,37 +27,54 @@ function Edit({
 }) {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)();
   const {
-    images
+    url,
+    id,
+    alt
   } = attributes;
-  const onSelectImages = newImages => {
+  const removeImage = () => {
     setAttributes({
-      images: newImages.map(image => image.url)
+      url: '',
+      id: '',
+      alt: ''
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     ...blockProps,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
-        onSelect: onSelectImages,
-        allowedTypes: ['image'],
-        multiple: true,
-        gallery: true,
-        value: images,
-        render: ({
-          open
-        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-          onClick: open,
-          isPrimary: true,
-          children: "Select Images"
-        })
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.BlockControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToolbarGroup, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
+          onSelect: media => setAttributes({
+            url: media.url,
+            id: media.id,
+            alt: media.alt || 'Our beautiful image'
+          }),
+          allowedTypes: ['image'],
+          render: ({
+            open
+          }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToolbarButton, {
+            icon: "edit",
+            label: "Edit Image",
+            onClick: open
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToolbarButton, {
+          icon: "trash",
+          label: "Remove Image",
+          onClick: removeImage
+        })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4",
-      children: images.map((url, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-        src: url,
-        alt: "",
-        className: "w-full h-auto object-cover"
-      }, index))
+    }), url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+      src: url,
+      alt: alt
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaPlaceholder, {
+      onSelect: media => setAttributes({
+        url: media.url,
+        id: media.id,
+        alt: media.alt || 'Our beautiful image'
+      }),
+      allowedTypes: ['image'],
+      labels: {
+        title: 'Select Image'
+      }
     })]
   });
 }
@@ -110,7 +127,7 @@ module.exports = window["wp"]["components"];
   \******************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"yourtheme/mosaic-image-grid","title":"Mosaic Image Grid","category":"custom-layout-category","icon":"images-alt2","description":"A custom block to display images in a mosaic grid.","supports":{"html":false},"attributes":{"images":{"type":"array","default":[]}},"editorScript":"file:./index.js","render":"file:./render.php"}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"yourtheme/mosaic-image-grid","title":"Mosaic Image Grid","category":"custom-layout-category","icon":"images-alt2","description":"A custom block to display images in a mosaic grid.","supports":{"html":false},"attributes":{"url":{"type":"string"},"alt":{"type":"string"},"id":{"type":"number"}},"editorScript":"file:./index.js","render":"file:./render.php"}');
 
 /***/ })
 

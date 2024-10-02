@@ -9,9 +9,14 @@
     "html": false
   },
   "attributes": {
-    "images": {
-      "type": "array",
-      "default": []
+    "url": {
+      "type": "string"
+    },
+    "alt": {
+      "type": "string"
+    },
+    "id": {
+      "type": "number"
     }
   },
   "editorScript": "file:./index.js",
