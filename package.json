@@ -12,7 +12,7 @@
 	"text_domain": "tailpress",
 	"license": "MIT",
 	"scripts": {
-		"start": "wp-scripts start",
+		"start": "wp-scripts start", 
 		"build": "wp-scripts build",
 		"plugin-zip": "wp-scripts plugin-zip",
 		"preview": "npm-run-all --parallel sync start",

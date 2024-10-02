@@ -3,6 +3,13 @@
 [![GitHub release](https://img.shields.io/github/release/jeffreyvr/tailpress?include_prereleases=&sort=semver)](https://github.com/jeffreyvr/tailpress/releases/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 
+npm run dev // Applies changes to theme
+
+npm run start // Rebuilds custom blocks
+
+npm run sync // Updates localhost instantly
+
+
 # Introduction
 
 TailPress is a minimal boilerplate theme for WordPress using [Tailwind CSS](https://tailwindcss.com/).
