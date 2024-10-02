@@ -1,0 +1,19 @@
+{
+  "apiVersion": 2,
+  "name": "yourtheme/mosaic-image-grid",
+  "title": "Mosaic Image Grid",
+  "category": "custom-layout-category",
+  "icon": "images-alt2",
+  "description": "A custom block to display images in a mosaic grid.",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "images": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php"
+}

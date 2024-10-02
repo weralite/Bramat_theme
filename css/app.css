@@ -582,6 +582,9 @@ video {
 .flex{
     display: flex
 }
+.grid{
+    display: grid
+}
 .hidden{
     display: none
 }
@@ -590,6 +593,9 @@ video {
 }
 .h-6{
     height: 1.5rem
+}
+.h-auto{
+    height: auto
 }
 .min-h-screen{
     min-height: 100vh
@@ -621,6 +627,9 @@ video {
 .list-disc{
     list-style-type: disc
 }
+.grid-cols-1{
+    grid-template-columns: repeat(1, minmax(0, 1fr))
+}
 .flex-col{
     flex-direction: column
 }
@@ -632,6 +641,9 @@ video {
 }
 .justify-between{
     justify-content: space-between
+}
+.gap-4{
+    gap: 1rem
 }
 .rounded{
     border-radius: 0.25rem
@@ -658,6 +670,10 @@ video {
 .bg-primary{
     --tw-bg-opacity: 1;
     background-color: rgb(14 165 233 / var(--tw-bg-opacity))
+}
+.object-cover{
+    -o-object-fit: cover;
+       object-fit: cover
 }
 .p-4{
     padding: 1rem
@@ -864,6 +880,12 @@ article > *:not(.entry-content),
     width: 100%; /* Full width on hover */
     left: 0; /* Move to the left */
 }
+@media (min-width: 600px){
+
+    .sm\:grid-cols-2{
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+}
 @media (min-width: 782px){
 
     .md\:my-6{
@@ -877,6 +899,10 @@ article > *:not(.entry-content),
 
     .md\:w-1\/2{
         width: 50%
+    }
+
+    .md\:grid-cols-3{
+        grid-template-columns: repeat(3, minmax(0, 1fr))
     }
 
     .md\:text-3xl{
