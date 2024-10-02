@@ -49,6 +49,7 @@ function Edit({
             alt: media.alt || 'Our beautiful image'
           }),
           allowedTypes: ['image'],
+          value: id,
           render: ({
             open
           }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToolbarButton, {

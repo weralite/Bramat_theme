@@ -1,4 +1,4 @@
-import { useBlockProps, MediaUpload, MediaUploadCheck, MediaPlaceholder, BlockControls } from '@wordpress/block-editor';
+import { useBlockProps, MediaUpload, MediaPlaceholder, BlockControls } from '@wordpress/block-editor';
 import { Button, ToolbarGroup, ToolbarButton } from '@wordpress/components';
 
 export default function Edit({ attributes, setAttributes }) {
@@ -17,13 +17,14 @@ export default function Edit({ attributes, setAttributes }) {
         <div {...blockProps}>
             <BlockControls>
                 <ToolbarGroup>
-                <MediaUpload
+                    <MediaUpload
                         onSelect={(media) => setAttributes({
                             url: media.url,
                             id: media.id,
                             alt: media.alt || 'Our beautiful image',
                         })}
                         allowedTypes={['image']}
+                        value={id}
                         render={({ open }) => (
                             <ToolbarButton
                                 icon="edit"
