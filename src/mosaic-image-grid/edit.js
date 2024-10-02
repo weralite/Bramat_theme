@@ -42,6 +42,15 @@ export default function Edit({ attributes, setAttributes }) {
             </BlockControls>
             <InspectorControls>
                 <PanelBody title="Image Settings" initialOpen={true}>
+                    {url && (
+                        <PanelRow>
+                            <img
+                                src={url}
+                                alt={alt}
+                                style={{ width: '100%', height: 'auto', objectFit: 'cover', marginBottom: '10px' }}
+                            />
+                        </PanelRow>
+                    )}
                     <PanelRow>
                         <MediaUpload
                             onSelect={(media) => setAttributes({
@@ -60,17 +69,18 @@ export default function Edit({ attributes, setAttributes }) {
                                 </Button>
                             )}
                         />
-                    </PanelRow>
-                    {url && (
-                        <PanelRow>
+                        {url && (
+
                             <Button
                                 isDestructive
                                 onClick={removeImage}
                             >
                                 Remove Image
                             </Button>
-                        </PanelRow>
-                    )}
+
+                        )}
+                    </PanelRow>
+
                 </PanelBody>
             </InspectorControls>
             {url ? (
