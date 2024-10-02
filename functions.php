@@ -114,3 +114,22 @@ function mycustomblocks_block_init() {
 	register_block_type( __DIR__ . '/build/menu-item' );
 }
 add_action( 'init', 'mycustomblocks_block_init' );
+
+function register_layout_category( $categories ) {
+    // Define the custom category
+    $custom_category = array(
+        'slug'  => 'custom-layout-category',
+        'title' => 'Restaurant Layouts',
+    );
+
+    // Prepend the custom category to the categories array
+    array_unshift( $categories, $custom_category );
+
+    return $categories;
+}
+
+if ( version_compare( get_bloginfo( 'version' ), '5.8', '>=' ) ) {
+    add_filter( 'block_categories_all', 'register_layout_category' );
+} else {
+    add_filter( 'block_categories', 'register_layout_category' );
+}

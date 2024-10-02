@@ -4,5 +4,6 @@
   "name": "ourblocktheme/menu-item",
   "title": "menu-item",
   "editorScript": "file:./index.js",
-  "render": "file:./render.php"
+  "render": "file:./render.php",
+  "category": "custom-layout-category"
 }

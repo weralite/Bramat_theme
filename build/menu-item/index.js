@@ -67,7 +67,7 @@ module.exports = window["wp"]["blocks"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ourblocktheme/menu-item","title":"menu-item","editorScript":"file:./index.js","render":"file:./render.php"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ourblocktheme/menu-item","title":"menu-item","editorScript":"file:./index.js","render":"file:./render.php","category":"custom-layout-category"}');
 
 /***/ })
 
