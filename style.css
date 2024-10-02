@@ -1,28 +1,12 @@
 /*
-Theme Name: TailPress
+Theme Name: BraMat
 Theme URI: https://github.com/jeffreyvr/tailpress
-Author: Jeffrey van Rossum
+Author: 
 Author URI: https://vanrossum.dev
-Description: TailPress is a simple boilerplate WordPress theme with Tailwind CSS.
+Description: .
 Version: 3.4.0
 License: MIT
 License URI: https://github.com/jeffreyvr/tailpress/blob/master/LICENSE
 Text Domain: tailpress
 */
 
-
-.group a::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    height: 2px; /* Height of the underline */
-    background-color: currentColor; /* Color of the underline */
-    width: 0; /* Initial width */
-    transition: width 0.15s ease, left 0.15s ease; /* Transition effect */
-}
-
-.group:hover a::after {
-    width: 100%; /* Full width on hover */
-    left: 0; /* Move to the left */
-}
