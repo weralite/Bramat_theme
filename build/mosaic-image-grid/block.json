@@ -9,6 +9,23 @@
     "html": false
   },
   "attributes": {
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "alt": {
+            "type": "string"
+          },
+          "id": {
+            "type": "number"
+          }
+        }
+      }
+    },
     "url": {
       "type": "string"
     },
