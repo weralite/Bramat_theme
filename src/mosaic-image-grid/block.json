@@ -26,6 +26,18 @@
                 }
             }
         },
+        "columns": {
+            "type": "number",
+            "default": 3
+        },
+        "mosaicLayout": {
+            "type": "string",
+            "default": "grid"
+        },
+        "gap": {
+            "type": "number",
+            "default": 10
+        },
         "url": {
             "type": "string"
         },

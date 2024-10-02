@@ -27,15 +27,18 @@ function Edit({
 }) {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)();
   const {
-    images = []
-  } = attributes; // Ensure images is initialized as an empty array
-
+    images = [],
+    mosaicLayout,
+    columns,
+    gap
+  } = attributes;
   const addImage = media => {
     setAttributes({
       images: [...images, {
         url: media.url,
         id: media.id,
-        alt: media.alt || 'Our beautiful image'
+        alt: media.alt || 'Our beautiful image',
+        caption: '' // Initialize caption as an empty string
       }]
     });
   };
@@ -47,6 +50,7 @@ function Edit({
   };
   const updateImage = (index, media) => {
     const newImages = images.map((img, i) => i === index ? {
+      ...img,
       url: media.url,
       id: media.id,
       alt: media.alt || 'Our beautiful image'
@@ -55,6 +59,34 @@ function Edit({
       images: newImages
     });
   };
+  const updateCaption = (index, caption) => {
+    const newImages = images.map((img, i) => i === index ? {
+      ...img,
+      caption: caption
+    } : img);
+    setAttributes({
+      images: newImages
+    });
+  };
+  const mosaicPattern = [{
+    gridColumn: '1 / span 3',
+    gridRow: '1 / span 5'
+  }, {
+    gridColumn: '3 / span 7',
+    gridRow: '1 / span 3'
+  }, {
+    gridColumn: '3 / span 5',
+    gridRow: '3 / span 5'
+  }, {
+    gridColumn: '5 / span 7',
+    gridRow: '3 / span 7'
+  }, {
+    gridColumn: '1 / span 5',
+    gridRow: '5 / span 7'
+  }
+
+  // Add more patterns as needed
+  ];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     ...blockProps,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.BlockControls, {
@@ -71,8 +103,8 @@ function Edit({
           })
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
         title: "Image Settings",
         initialOpen: true,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, {
@@ -145,25 +177,87 @@ function Edit({
                   children: "Remove Image"
                 })]
               })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+              label: "Caption",
+              value: image.caption,
+              onChange: value => updateCaption(index, value)
             })]
           })
         }, index))]
-      })
-    }), images.length > 0 ? images.map((image, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-      src: image.url,
-      alt: image.alt,
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: "Mosaic Settings",
+        initialOpen: true,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+          label: "Layout",
+          value: mosaicLayout,
+          options: [{
+            label: 'Grid',
+            value: 'grid'
+          }, {
+            label: 'Masonry',
+            value: 'masonry'
+          }, {
+            label: 'Mosaic',
+            value: 'mosaic'
+          } // Add mosaic option
+          ],
+          onChange: value => setAttributes({
+            mosaicLayout: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+          label: "Columns",
+          value: columns,
+          onChange: value => setAttributes({
+            columns: value
+          }),
+          min: 1,
+          max: 6
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+          label: "Gap (px)",
+          value: gap,
+          onChange: value => setAttributes({
+            gap: value
+          }),
+          min: 0,
+          max: 50
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       style: {
-        width: '100%',
-        height: 'auto',
-        objectFit: 'cover',
-        marginBottom: '10px'
-      }
-    }, index)) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaPlaceholder, {
-      onSelect: addImage,
-      allowedTypes: ['image'],
-      labels: {
-        title: 'Select Images'
-      }
+        display: mosaicLayout === 'grid' ? 'grid' : mosaicLayout === 'mosaic' ? 'grid' : 'block',
+        gridTemplateColumns: mosaicLayout === 'mosaic' ? 'repeat(6, 1fr)' : `repeat(${columns}, 1fr)`,
+        gridAutoRows: mosaicLayout === 'mosaic' ? 'minmax(150px, auto)' : 'auto',
+        maxWidth: mosaicLayout === 'mosaic' ? '960px' : 'none',
+        margin: mosaicLayout === 'mosaic' ? '0 auto' : '0',
+        gap: `${gap}px`
+      },
+      children: images.map((image, index) => {
+        const pattern = mosaicPattern[index % mosaicPattern.length];
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          style: {
+            gridColumn: mosaicLayout === 'mosaic' ? pattern.gridColumn : 'span 1',
+            gridRow: mosaicLayout === 'mosaic' ? pattern.gridRow : 'span 1',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            src: image.url,
+            alt: image.alt,
+            style: {
+              width: '100%',
+              height: 'auto',
+              objectFit: 'cover'
+            }
+          }), image.caption && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            style: {
+              textAlign: 'center',
+              marginTop: '5px'
+            },
+            children: image.caption
+          })]
+        }, index);
+      })
     })]
   });
 }
@@ -216,7 +310,7 @@ module.exports = window["wp"]["components"];
   \******************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"yourtheme/mosaic-image-grid","title":"Mosaic Image Grid","category":"custom-layout-category","icon":"images-alt2","description":"A custom block to display images in a mosaic grid.","supports":{"html":false},"attributes":{"images":{"type":"array","items":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"},"id":{"type":"number"}}}},"url":{"type":"string"},"alt":{"type":"string"},"id":{"type":"number"}},"editorScript":"file:./index.js","render":"file:./render.php"}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"yourtheme/mosaic-image-grid","title":"Mosaic Image Grid","category":"custom-layout-category","icon":"images-alt2","description":"A custom block to display images in a mosaic grid.","supports":{"html":false},"attributes":{"images":{"type":"array","items":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"},"id":{"type":"number"}}}},"columns":{"type":"number","default":3},"mosaicLayout":{"type":"string","default":"grid"},"gap":{"type":"number","default":10},"url":{"type":"string"},"alt":{"type":"string"},"id":{"type":"number"}},"editorScript":"file:./index.js","render":"file:./render.php"}');
 
 /***/ })
 

@@ -576,6 +576,9 @@ video {
 .mt-4{
     margin-top: 1rem
 }
+.block{
+    display: block
+}
 .inline-block{
     display: inline-block
 }
@@ -596,6 +599,9 @@ video {
 }
 .h-auto{
     height: auto
+}
+.h-full{
+    height: 100%
 }
 .min-h-screen{
     min-height: 100vh
@@ -674,6 +680,10 @@ video {
 .object-cover{
     -o-object-fit: cover;
        object-fit: cover
+}
+.object-fill{
+    -o-object-fit: fill;
+       object-fit: fill
 }
 .p-4{
     padding: 1rem
