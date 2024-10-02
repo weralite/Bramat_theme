@@ -9,6 +9,7 @@ function tailpress_setup() {
 	register_nav_menus(
 		array(
 			'primary' => __( 'Primary Menu', 'tailpress' ),
+			'secondary' => __( 'Secondary Menu', 'tailpress' ),
 		)
 	);
 
@@ -154,5 +155,4 @@ if ( version_compare( get_bloginfo( 'version' ), '5.8', '>=' ) ) {
 } else {
     add_filter( 'block_categories', 'register_layout_category' );
 }
-
 

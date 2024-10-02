@@ -9,3 +9,20 @@ License: MIT
 License URI: https://github.com/jeffreyvr/tailpress/blob/master/LICENSE
 Text Domain: tailpress
 */
+
+
+.group a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 2px; /* Height of the underline */
+    background-color: currentColor; /* Color of the underline */
+    width: 0; /* Initial width */
+    transition: width 0.15s ease, left 0.15s ease; /* Transition effect */
+}
+
+.group:hover a::after {
+    width: 100%; /* Full width on hover */
+    left: 0; /* Move to the left */
+}
