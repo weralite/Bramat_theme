@@ -20,7 +20,7 @@
 	<header>
 
 		<div class="mx-auto container">
-			<div class="lg:flex lg:justify-between lg:items-center border-b py-6">
+			<div class="lg:flex lg:justify-between lg:items-center border-b">
 				<div class="flex justify-between items-center">
 					<div>
 						<?php if ( has_custom_logo() ) { ?>
@@ -59,7 +59,8 @@
 						'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 						'menu_class'      => 'lg:flex lg:-mx-4',
 						'theme_location'  => 'primary',
-						'li_class'        => 'lg:mx-4',
+						'li_class'        => 'lg:mx-4 group', // Add group class here
+						'a_class'         => 'relative inline-block font-bold text-xl uppercase transition-all duration-150', // Class for <a>
 						'fallback_cb'     => false,
 					)
 				);

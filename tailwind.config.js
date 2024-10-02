@@ -20,7 +20,7 @@ module.exports = {
         },
         extend: {
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
-            fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme))
+            fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme)),
         },
         screens: {
             'xs': '480px',
@@ -29,6 +29,12 @@ module.exports = {
             'lg': tailpress.theme('settings.layout.contentSize', theme),
             'xl': tailpress.theme('settings.layout.wideSize', theme),
             '2xl': '1440px'
+        }
+    },
+    variants: {
+        extend: {
+            textColor: ['hover', 'focus'],
+            fontWeight: ['hover', 'focus'],
         }
     },
     plugins: [

@@ -19,6 +19,7 @@
   --tw-content: '';
 }
 
+
 /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -540,6 +541,18 @@ video {
 .static{
     position: static
 }
+.absolute{
+    position: absolute
+}
+.relative{
+    position: relative
+}
+.bottom-0{
+    bottom: 0px
+}
+.left-1\/2{
+    left: 50%
+}
 .m-8{
     margin: 2rem
 }
@@ -588,6 +601,9 @@ video {
 .h-6{
     height: 1.5rem
 }
+.h-\[2px\]{
+    height: 2px
+}
 .min-h-screen{
     min-height: 100vh
 }
@@ -599,6 +615,9 @@ video {
 }
 .w-full{
     width: 100%
+}
+.w-0{
+    width: 0px
 }
 .max-w-sm{
     max-width: 24rem
@@ -652,13 +671,12 @@ video {
     --tw-bg-opacity: 1;
     background-color: rgb(229 231 235 / var(--tw-bg-opacity))
 }
-.bg-gray-50{
-    --tw-bg-opacity: 1;
-    background-color: rgb(249 250 251 / var(--tw-bg-opacity))
-}
 .bg-primary{
     --tw-bg-opacity: 1;
     background-color: rgb(14 165 233 / var(--tw-bg-opacity))
+}
+.bg-current{
+    background-color: currentColor
 }
 .p-4{
     padding: 1rem
@@ -702,6 +720,9 @@ video {
     font-size: 0.875rem;
     line-height: 1.25rem
 }
+.text-xl{
+    font-size: 1.25rem
+}
 .font-bold{
     font-weight: 700
 }
@@ -725,10 +746,6 @@ video {
     --tw-text-opacity: 1;
     color: rgb(229 231 235 / var(--tw-text-opacity))
 }
-.text-gray-500{
-    --tw-text-opacity: 1;
-    color: rgb(107 114 128 / var(--tw-text-opacity))
-}
 .text-gray-600{
     --tw-text-opacity: 1;
     color: rgb(75 85 99 / var(--tw-text-opacity))
@@ -751,6 +768,14 @@ video {
 .antialiased{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
+}
+.transition-all{
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+.duration-150{
+    transition-duration: 150ms
 }
 .alignfull{
     margin: 2rem calc(50% - 50vw) !important;
@@ -840,6 +865,74 @@ article > *:not(.entry-content),
     list-style-position: inside;
     list-style-type: decimal
 }
+.after\:absolute::after{
+    content: var(--tw-content);
+    position: absolute
+}
+.after\:bottom-0::after{
+    content: var(--tw-content);
+    bottom: 0px
+}
+.after\:left-0::after{
+    content: var(--tw-content);
+    left: 0px
+}
+.after\:left-1\/2::after{
+    content: var(--tw-content);
+    left: 50%
+}
+.after\:h-\[2px\]::after{
+    content: var(--tw-content);
+    height: 2px
+}
+.after\:w-0::after{
+    content: var(--tw-content);
+    width: 0px
+}
+.after\:w-full::after{
+    content: var(--tw-content);
+    width: 100%
+}
+.after\:bg-current::after{
+    content: var(--tw-content);
+    background-color: currentColor
+}
+.after\:transition-all::after{
+    content: var(--tw-content);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+.after\:duration-150::after{
+    content: var(--tw-content);
+    transition-duration: 150ms
+}
+.after\:content-\[\'\'\]::after{
+    --tw-content: '';
+    content: var(--tw-content)
+}
+.hover\:text-red-500:hover{
+    --tw-text-opacity: 1;
+    color: rgb(239 68 68 / var(--tw-text-opacity))
+}
+.hover\:text-blue-500:hover{
+    --tw-text-opacity: 1;
+    color: rgb(59 130 246 / var(--tw-text-opacity))
+}
+.hover\:after\:left-0:hover::after{
+    content: var(--tw-content);
+    left: 0px
+}
+.hover\:after\:w-full:hover::after{
+    content: var(--tw-content);
+    width: 100%
+}
+.group:hover .group-hover\:left-0{
+    left: 0px
+}
+.group:hover .group-hover\:w-full{
+    width: 100%
+}
 @media (min-width: 782px){
 
     .md\:my-6{
@@ -910,3 +1003,20 @@ article > *:not(.entry-content),
     }
 }
 
+
+
+.group a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 2px; /* Height of the underline */
+    background-color: currentColor; /* Color of the underline */
+    width: 0; /* Initial width */
+    transition: width 0.15s ease, left 0.15s ease; /* Transition effect */
+}
+
+.group:hover a::after {
+    width: 100%; /* Full width on hover */
+    left: 0; /* Move to the left */
+}

@@ -10,8 +10,8 @@
 <footer id="colophon" class="site-footer py-12" role="contentinfo">
 	<?php do_action( 'tailpress_footer' ); ?>
 
-	<div class="container mx-auto text-center text-gray-500">
-		&copy; <?php echo date_i18n( 'Y' );?> - <?php echo get_bloginfo( 'name' );?>
+	<div class="container mx-auto text-center">
+		&copy; <?php echo date_i18n( 'Y' );?> 
 	</div>
 </footer>
 

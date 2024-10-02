@@ -64,6 +64,7 @@ function tailpress_asset( $path ) {
 	return add_query_arg( 'time', time(),  get_stylesheet_directory_uri() . '/' . $path );
 }
 
+
 /**
  * Adds option 'li_class' to 'wp_nav_menu'.
  *
@@ -86,6 +87,24 @@ function tailpress_nav_menu_add_li_class( $classes, $item, $args, $depth ) {
 }
 
 add_filter( 'nav_menu_css_class', 'tailpress_nav_menu_add_li_class', 10, 4 );
+
+function tailpress_nav_menu_add_a_class($atts, $item, $args, $depth) {
+    // Check if the a_class argument is set and apply it to the a tag
+    if ( isset( $args->a_class ) ) {
+        $atts['class'] = $args->a_class;
+    }
+
+    // Optionally add depth-specific class for more granular control
+    if ( isset( $args->{"a_class_$depth"} ) ) {
+        $atts['class'] .= ' ' . $args->{"a_class_$depth"};
+    }
+
+    return $atts;
+}
+
+add_filter('nav_menu_link_attributes', 'tailpress_nav_menu_add_a_class', 10, 4);
+
+
 
 /**
  * Adds option 'submenu_class' to 'wp_nav_menu'.
@@ -110,6 +129,8 @@ function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 
 add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
 
+
+
 function mycustomblocks_block_init() {
 	register_block_type( __DIR__ . '/build/menu-item' );
 }
@@ -133,3 +154,5 @@ if ( version_compare( get_bloginfo( 'version' ), '5.8', '>=' ) ) {
 } else {
     add_filter( 'block_categories', 'register_layout_category' );
 }
+
+
