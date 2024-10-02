@@ -6,7 +6,6 @@
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			the_content();
 			?>
 
 <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
