@@ -1,0 +1,37 @@
+{
+  "apiVersion": 2,
+  "name": "custom/menu-list",
+  "title": "Menu List",
+  "category": "custom-layout-category",
+  "icon": "menu",
+  "description": "A block to create a menu with days and items.",
+  "supports": {
+    "html": false,
+    "align": true, 
+    "customClassName": true 
+  },
+  "textdomain": "custom-menu-list",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "days": {
+      "type": "array",
+      "default": []
+    },
+    "align": {
+      "type": "string",
+      "default": "left" 
+    },
+    "HeadlineAlignment": {
+      "type": "string",
+      "default": "center" 
+    },
+    "anchor": {
+      "type": "string",
+      "default": "" 
+    }
+  }
+}

@@ -52,6 +52,16 @@ function tailpress_enqueue_scripts()
 
 add_action('wp_enqueue_scripts', 'tailpress_enqueue_scripts');
 
+function enqueue_frontend_assets() {
+    wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/resources/css/app.css'); // Adjust the path as needed
+}
+add_action('wp_enqueue_scripts', 'enqueue_frontend_assets');
+
+function enqueue_block_editor_assets() {
+    wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/resources/css/app.css'); // Adjust the path as needed
+}
+add_action('enqueue_block_editor_assets', 'enqueue_block_editor_assets');
+
 /**
  * Get asset path.
  *
@@ -140,8 +150,10 @@ add_filter('nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class',
 
 function mycustomblocks_block_init()
 {
-	register_block_type(__DIR__ . '/build/menu-item');
 	register_block_type(__DIR__ . '/build/mosaic-image-grid');
+	register_block_type(__DIR__ . '/build/menu-list');
+	register_block_type(__DIR__ . '/build/day-item');
+	register_block_type(__DIR__ . '/build/dish-item');
 }
 add_action('init', 'mycustomblocks_block_init');
 

@@ -10,10 +10,12 @@ article > *:not(.entry-content),
 
     h2 {
         @apply text-xl;
+        
     }
 
     h3 {
         @apply text-lg;
+        
     }
 
     p, ul, ol {

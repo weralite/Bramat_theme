@@ -97,9 +97,6 @@
 .h-6 {
     height: 1.5rem
 }
-.h-auto {
-    height: auto
-}
 .h-full {
     height: 100%
 }
@@ -133,9 +130,6 @@
 .list-disc {
     list-style-type: disc
 }
-.grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr))
-}
 .flex-col {
     flex-direction: column
 }
@@ -147,9 +141,6 @@
 }
 .justify-between {
     justify-content: space-between
-}
-.gap-4 {
-    gap: 1rem
 }
 .rounded {
     border-radius: 0.25rem
@@ -176,10 +167,6 @@
 .bg-primary {
     --tw-bg-opacity: 1;
     background-color: rgb(14 165 233 / var(--tw-bg-opacity))
-}
-.object-cover {
-    -o-object-fit: cover;
-       object-fit: cover
 }
 .object-fill {
     -o-object-fit: fill;
@@ -272,6 +259,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
+.filter {
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+}
 .transition {
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -347,11 +337,6 @@ body {
 .wp-block[data-align=full] {
     max-width: 100%
 }
-@media (min-width: 600px) {
-    .sm\:grid-cols-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr))
-    }
-}
 @media (min-width: 782px) {
     .md\:my-6 {
         margin-top: 1.5rem;
@@ -362,9 +347,6 @@ body {
     }
     .md\:w-1\/2 {
         width: 50%
-    }
-    .md\:grid-cols-3 {
-        grid-template-columns: repeat(3, minmax(0, 1fr))
     }
     .md\:text-3xl {
         font-size: 1.875rem;
