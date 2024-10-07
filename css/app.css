@@ -840,7 +840,8 @@ article > *:not(.entry-content),
     line-height: 2rem
 }
 .entry-content h2, .block-editor-block-list__layout h2{
-    font-size: 1.25rem
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem
 }
 .entry-content h3, .block-editor-block-list__layout h3{
     font-size: 1.125rem;

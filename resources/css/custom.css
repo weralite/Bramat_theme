@@ -10,6 +10,8 @@ article > *:not(.entry-content),
 
     h2 {
         @apply text-xl;
+        @apply mb-5;
+        
         
     }
 

@@ -5,9 +5,7 @@ import { __ } from '@wordpress/i18n';
 import metadata from "./block.json";
 
 const Edit = ({ attributes, setAttributes }) => {
-  const blockProps = useBlockProps({
-    className: 'bg-gray-100 p-4 rounded' // Tailwind classes directly in block props
-})
+  const blockProps = useBlockProps()
 
   return (
     <div {...blockProps}>
@@ -16,7 +14,6 @@ const Edit = ({ attributes, setAttributes }) => {
         value={attributes.dish}
         onChange={(dish) => setAttributes({ dish })}
         placeholder={__('Add dish name...')}
-        className="mb-"
       />
       <RichText
         tagName="p"
@@ -28,9 +25,12 @@ const Edit = ({ attributes, setAttributes }) => {
   );
 };
 
+
+
+
 const save = ({ attributes }) => (
-  <div className="bg-gray-100 p-4 rounded">
-    <RichText.Content tagName="b" value={attributes.dish}  className="mb-4" />
+  <div>
+    <RichText.Content tagName="b" value={attributes.dish} />
     <RichText.Content tagName="p" value={attributes.description} />
   </div>
 );

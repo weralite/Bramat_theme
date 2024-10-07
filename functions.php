@@ -53,12 +53,12 @@ function tailpress_enqueue_scripts()
 add_action('wp_enqueue_scripts', 'tailpress_enqueue_scripts');
 
 function enqueue_frontend_assets() {
-    wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/resources/css/app.css'); // Adjust the path as needed
+    wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/css/app.css'); // Adjust the path as needed
 }
 add_action('wp_enqueue_scripts', 'enqueue_frontend_assets');
 
 function enqueue_block_editor_assets() {
-    wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/resources/css/app.css'); // Adjust the path as needed
+    wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/css/app.css'); // Adjust the path as needed
 }
 add_action('enqueue_block_editor_assets', 'enqueue_block_editor_assets');
 
