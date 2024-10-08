@@ -42,25 +42,24 @@ add_action('after_setup_theme', 'tailpress_setup');
 /**
  * Enqueue theme assets.
  */
-function tailpress_enqueue_scripts()
-{
-	$theme = wp_get_theme();
+function tailpress_enqueue_assets() {
+    $theme = wp_get_theme();
 
-	wp_enqueue_style('tailpress', tailpress_asset('css/app.css'), array(), $theme->get('Version'));
-	wp_enqueue_script('tailpress', tailpress_asset('js/app.js'), array(), $theme->get('Version'));
+    // Enqueue theme styles
+    wp_enqueue_style('tailpress', tailpress_asset('css/app.css'), array(), $theme->get('Version'));
+
+    // Enqueue custom fonts
+    wp_enqueue_style('tailpress-fonts', get_template_directory_uri() . '/assets/css/fonts.css', array(), $theme->get('Version'));
+
+    // Enqueue theme scripts (load in footer)
+    wp_enqueue_script('tailpress', tailpress_asset('js/app.js'), array(), $theme->get('Version'), true);
 }
 
-add_action('wp_enqueue_scripts', 'tailpress_enqueue_scripts');
+// Enqueue assets for frontend
+add_action('wp_enqueue_scripts', 'tailpress_enqueue_assets');
 
-function enqueue_frontend_assets() {
-    wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/css/app.css'); // Adjust the path as needed
-}
-add_action('wp_enqueue_scripts', 'enqueue_frontend_assets');
-
-function enqueue_block_editor_assets() {
-    wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/css/app.css'); // Adjust the path as needed
-}
-add_action('enqueue_block_editor_assets', 'enqueue_block_editor_assets');
+// Enqueue assets for block editor (same function)
+add_action('enqueue_block_editor_assets', 'tailpress_enqueue_assets');
 
 /**
  * Get asset path.

@@ -13,11 +13,19 @@
   "attributes": {
     "dish": {
       "type": "string",
-      "default": "Dish Name"
+      "default": ""
     },
     "description": {
       "type": "string",
-      "default": "Description of the dish."
+      "default": ""
+    },
+    "flexDirection": {
+      "type": "string",
+      "default": "column"
+    },
+    "gap": {
+      "type": "string",
+      "default": ""
     }
   }
 }

@@ -1,24 +1,32 @@
 {
-    "apiVersion": 2,
-    "name": "custom/dish-item",
-    "title": "Dish Item",
-    "category": "custom-layout-category",
-    "icon": "food",
-    "description": "A block to add a dish to a day.",
-    "supports": {
-      "html": false
+  "apiVersion": 2,
+  "name": "custom/dish-item",
+  "title": "Dish Item",
+  "category": "custom-layout-category",
+  "icon": "food",
+  "description": "A block to add a dish to a day.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "custom-dish-item",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "dish": {
+      "type": "string",
+      "default": ""
     },
-    "textdomain": "custom-dish-item",
-    "editorScript": "file:./index.js",
-    "attributes": {
-      "dish": {
-        "type": "string",
-        "default": "Dish Name"
-      },
-      "description": {
-        "type": "string",
-        "default": "Description of the dish."
-      }
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "flexDirection": {
+      "type": "string",
+      "default": "column"
+    },
+    "gap": {
+      "type": "string",
+      "default": ""
     }
+
   }
-  
+}

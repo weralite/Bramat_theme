@@ -7,8 +7,12 @@ const Edit = ({ attributes, setAttributes }) => {
   const blockProps = useBlockProps({
     style: {
       textAlign: attributes.align,
+      maxWidth: attributes.maxWidth,
+      display: "flex",
+      flexDirection: "column",
+      gap: attributes.gap,
     },
-    id: attributes.anchor ? attributes.anchor : undefined,
+    className: "bg-slate-500"
   });
 
   return (
@@ -20,7 +24,7 @@ const Edit = ({ attributes, setAttributes }) => {
           value={attributes.title}
           onChange={(title) => setAttributes({ title })}
           placeholder={('Add title...')}
-          style={{ textAlign: attributes.HeadlineAlignment }} 
+          style={{ textAlign: attributes.HeadlineAlignment }}
         />
         <InnerBlocks allowedBlocks={['custom/day-item']} />
       </div>
@@ -30,7 +34,12 @@ const Edit = ({ attributes, setAttributes }) => {
 
 const save = ({ attributes }) => {
   return (
-    <div>
+    <div className="bg-slate-500" style={{
+      maxWidth: attributes.maxWidth, 
+      display: "flex",
+      flexDirection: "column",
+      gap: attributes.gap,
+    }}>
       <RichText.Content tagName="h2" value={attributes.title} style={{ textAlign: attributes.HeadlineAlignment }} />
       <InnerBlocks.Content />
     </div>

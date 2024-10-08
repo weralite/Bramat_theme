@@ -29,9 +29,13 @@
       "type": "string",
       "default": "center"
     },
-    "anchor": {
+    "maxWidth": {
       "type": "string",
-      "default": ""
+      "default": "960px"
+    },
+    "gap": {
+      "type": "number",
+      "default": "0"
     }
   }
 }

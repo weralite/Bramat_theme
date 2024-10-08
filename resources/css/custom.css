@@ -10,9 +10,8 @@ article > *:not(.entry-content),
 
     h2 {
         @apply text-xl;
-        @apply mb-5;
-        
-        
+
+    
     }
 
     h3 {
@@ -29,7 +28,7 @@ article > *:not(.entry-content),
             }
         }
 
-        @apply mb-8;
+        /* @apply mb-8; */
     }
 
     ul:not(.block-editor-block-variation-picker__variations) {
