@@ -612,14 +612,14 @@ video {
 .w-full {
   width: 100%;
 }
-.max-w-sm {
-  max-width: 24rem;
-}
 .max-w-full {
   max-width: 100%;
 }
 .max-w-screen-xl {
   max-width: 1280px;
+}
+.max-w-sm {
+  max-width: 24rem;
 }
 .flex-grow {
   flex-grow: 1;
@@ -650,6 +650,9 @@ video {
 }
 .justify-between {
   justify-content: space-between;
+}
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 .rounded {
   border-radius: 0.25rem;
@@ -710,24 +713,26 @@ video {
 .font-josefin {
   font-family: Josefin Slab, serif;
 }
+.font-teko {
+  font-family: Teko, sans-serif;
+}
 .text-2xl {
   font-size: 1.5rem;
-  line-height: 2rem;
 }
 .text-5xl {
   font-size: 3rem;
-  line-height: 1;
 }
 .text-lg {
   font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 .text-sm {
   font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 .text-xl {
   font-size: 1.25rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
 }
 .font-bold {
   font-weight: 700;
@@ -841,24 +846,24 @@ video {
   line-height: 1;
 }
 .wp-caption-text {
-  font-size: 0.875rem;
+  font-size: 0;
   color: #4b5563;
 }
 /* assets/css/fonts.css */
-/* Variable Fonts */
+/* Josefin Slab Variable Fonts */
 @font-face {
     font-family: 'Josefin Slab';
     src: url(../fonts/JosefinSlab-VariableFont_wght.ttf?6a4e168263c2ebe1d56c25aa9aa9fc27) format('truetype');
-    font-weight: 100 900; /* This indicates the variable weight range */
+    font-weight: 100 900; /* Variable weight range */
     font-style: normal;
 }
 @font-face {
     font-family: 'Josefin Slab';
     src: url(../fonts/JosefinSlab-Italic-VariableFont_wght.ttf?1d8585582e78dadddffa0c123cc04b5e) format('truetype');
-    font-weight: 100 900; /* This indicates the variable weight range */
+    font-weight: 100 900; /* Variable weight range */
     font-style: italic;
 }
-/* Static Fonts */
+/* Josefin Slab Static Fonts */
 @font-face {
     font-family: 'Josefin Slab';
     src: url(../fonts/JosefinSlab-Thin.ttf?be4ebe4b3271d35a525c812f9b7a2b50) format('truetype');
@@ -943,6 +948,44 @@ video {
     font-weight: 700;
     font-style: italic;
 }
+/* Teko Variable Font */
+@font-face {
+    font-family: 'Teko';
+    src: url(../fonts/Teko-VariableFont_wght.ttf?2c304a82d8b73b2829fafa269f83336c) format('truetype');
+    font-weight: 100 900; /* Variable weight range */
+    font-style: normal;
+}
+/* Teko Static Fonts */
+@font-face {
+    font-family: 'Teko';
+    src: url(../fonts/Teko-Light.ttf?067ada3620afcdd8be4c2e51dbb1b696) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Teko';
+    src: url(../fonts/Teko-Regular.ttf?f7f091c5d5372c407f699a7c82a78818) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Teko';
+    src: url(../fonts/Teko-Medium.ttf?b23a442b2f645ed7aa78dd5cf0d7a2bf) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Teko';
+    src: url(../fonts/Teko-SemiBold.ttf?fef42651f07d6990f17c4a9afa45af68) format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Teko';
+    src: url(../fonts/Teko-Bold.ttf?ab5742532000bad6973e9448173411d5) format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
 article>*:not(.entry-content),
 .entry-content>* {
   margin-left: auto;
@@ -951,14 +994,12 @@ article>*:not(.entry-content),
 }
 .entry-content h1, .block-editor-block-list__layout h1 {
   font-size: 1.5rem;
-  line-height: 2rem;
 }
 .entry-content h2, .block-editor-block-list__layout h2 {
   font-size: 1.25rem;
 }
 .entry-content h3, .block-editor-block-list__layout h3 {
   font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 .entry-content h1,
     .entry-content h2,
@@ -1033,7 +1074,6 @@ article>*:not(.entry-content),
 
   .md\:text-3xl {
     font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 }
 @media (min-width: 960px) {
@@ -1082,7 +1122,6 @@ article>*:not(.entry-content),
 
   .lg\:text-5xl {
     font-size: 3rem;
-    line-height: 1;
   }
 }
 

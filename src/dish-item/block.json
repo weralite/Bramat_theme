@@ -19,6 +19,14 @@
       "type": "string",
       "default": ""
     },
+    "price": {
+      "type": "string",
+      "default": ""
+    },
+    "showPrice": {
+      "type": "boolean",
+      "default": true
+    },
     "flexDirection": {
       "type": "string",
       "default": "column"

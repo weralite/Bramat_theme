@@ -1,17 +1,37 @@
 // inspectorControls.js
-import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
+import { PanelBody, TextControl, SelectControl, ToggleControl  } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 
 const CustomInspectorControls = ({ attributes, setAttributes }) => {
   return (
     <InspectorControls>
-      <PanelBody title="Settings" initialOpen={true}>
-        {/* <TextControl
+      <PanelBody title="Text" initialOpen={true}>
+      <TextControl
           label="Title"
-          value={attributes.title} // Bind the title attribute
-          onChange={(title) => setAttributes({ title })} // Update title on change
+          value={attributes.dish} // Bind the title attribute
+          onChange={(dish) => setAttributes({ dish })} // Update title on change
           placeholder="Enter your title..."
-        /> */}
+        />
+      <TextControl
+          label="Title"
+          value={attributes.price} // Bind the title attribute
+          onChange={(price) => setAttributes({ price })} // Update title on change
+          placeholder="Enter your price..."
+        />
+      <TextControl
+          label="Description"
+          value={attributes.description} // Bind the title attribute
+          onChange={(description) => setAttributes({ description })} // Update title on change
+          placeholder="Describe your dish..."
+        />
+
+      </PanelBody>
+      <PanelBody title="Settings" initialOpen={true}>
+      <ToggleControl
+          label="Show Price"
+          checked={attributes.showPrice}
+          onChange={(value) => setAttributes({ showPrice: value })}
+        />
         <SelectControl
           label="Direction"
           value={attributes.flexDirection}

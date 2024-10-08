@@ -1,21 +1,21 @@
 /* assets/css/fonts.css */
 
-/* Variable Fonts */
+/* Josefin Slab Variable Fonts */
 @font-face {
     font-family: 'Josefin Slab';
     src: url('../../assets/fonts/JosefinSlab-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900; /* This indicates the variable weight range */
+    font-weight: 100 900; /* Variable weight range */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Josefin Slab';
     src: url('../../assets/fonts/JosefinSlab-Italic-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900; /* This indicates the variable weight range */
+    font-weight: 100 900; /* Variable weight range */
     font-style: italic;
 }
 
-/* Static Fonts */
+/* Josefin Slab Static Fonts */
 @font-face {
     font-family: 'Josefin Slab';
     src: url('../../assets/fonts/static/JosefinSlab-Thin.ttf') format('truetype');
@@ -112,4 +112,48 @@
     src: url('../../assets/fonts/static/JosefinSlab-BoldItalic.ttf') format('truetype');
     font-weight: 700;
     font-style: italic;
+}
+
+/* Teko Variable Font */
+@font-face {
+    font-family: 'Teko';
+    src: url('../../assets/fonts/Teko-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900; /* Variable weight range */
+    font-style: normal;
+}
+
+/* Teko Static Fonts */
+@font-face {
+    font-family: 'Teko';
+    src: url('../../assets/fonts/static/Teko-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Teko';
+    src: url('../../assets/fonts/static/Teko-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Teko';
+    src: url('../../assets/fonts/static/Teko-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Teko';
+    src: url('../../assets/fonts/static/Teko-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Teko';
+    src: url('../../assets/fonts/static/Teko-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
 }

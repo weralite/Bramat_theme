@@ -26,11 +26,48 @@ const CustomInspectorControls = ({
   attributes,
   setAttributes
 }) => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      title: "Text",
+      initialOpen: true,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
+        label: "Title",
+        value: attributes.dish // Bind the title attribute
+        ,
+        onChange: dish => setAttributes({
+          dish
+        }) // Update title on change
+        ,
+        placeholder: "Enter your title..."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
+        label: "Title",
+        value: attributes.price // Bind the title attribute
+        ,
+        onChange: price => setAttributes({
+          price
+        }) // Update title on change
+        ,
+        placeholder: "Enter your price..."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
+        label: "Description",
+        value: attributes.description // Bind the title attribute
+        ,
+        onChange: description => setAttributes({
+          description
+        }) // Update title on change
+        ,
+        placeholder: "Describe your dish..."
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
       title: "Settings",
       initialOpen: true,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+        label: "Show Price",
+        checked: attributes.showPrice,
+        onChange: value => setAttributes({
+          showPrice: value
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
         label: "Direction",
         value: attributes.flexDirection,
         options: [{
@@ -53,7 +90,7 @@ const CustomInspectorControls = ({
         ,
         placeholder: "Add gap"
       })]
-    })
+    })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CustomInspectorControls);
@@ -116,7 +153,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"custom/dish-item","title":"Dish Item","category":"custom-layout-category","icon":"food","description":"A block to add a dish to a day.","supports":{"html":false},"textdomain":"custom-dish-item","editorScript":"file:./index.js","attributes":{"dish":{"type":"string","default":""},"description":{"type":"string","default":""},"flexDirection":{"type":"string","default":"column"},"gap":{"type":"string","default":""}}}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"custom/dish-item","title":"Dish Item","category":"custom-layout-category","icon":"food","description":"A block to add a dish to a day.","supports":{"html":false},"textdomain":"custom-dish-item","editorScript":"file:./index.js","attributes":{"dish":{"type":"string","default":""},"description":{"type":"string","default":""},"price":{"type":"string","default":""},"showPrice":{"type":"boolean","default":true},"flexDirection":{"type":"string","default":"column"},"gap":{"type":"string","default":""}}}');
 
 /***/ })
 
@@ -228,13 +265,24 @@ const Edit = ({
       setAttributes: setAttributes
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       ...blockProps,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-        tagName: "b",
-        value: attributes.dish,
-        onChange: dish => setAttributes({
-          dish
-        }),
-        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Add dish name...')
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "flex flex-row justify-between",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+          tagName: "b",
+          value: attributes.dish,
+          onChange: dish => setAttributes({
+            dish
+          }),
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Add dish name...')
+        }), attributes.showPrice && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+          tagName: "span",
+          value: attributes.price,
+          onChange: price => setAttributes({
+            price
+          }),
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Add price...'),
+          className: "price"
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
         tagName: "p",
         value: attributes.description,
@@ -254,9 +302,16 @@ const save = ({
     flexDirection: attributes.flexDirection,
     gap: attributes.gap
   },
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
-    tagName: "b",
-    value: attributes.dish
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    className: "flex flex-row justify-between",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+      tagName: "b",
+      value: attributes.dish
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+      className: "whitespace-nowrap",
+      tagName: "b",
+      value: attributes.price
+    })]
   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
     tagName: "p",
     value: attributes.description

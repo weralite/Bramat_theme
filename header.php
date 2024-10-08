@@ -61,7 +61,7 @@
 							'menu_class'      => 'lg:flex lg:-mx-4',
 							'theme_location'  => 'primary',
 							'li_class'        => 'lg:mx-4 group', // Add group class here
-							'a_class'         => 'relative inline-block font-bold text-xl uppercase transition-all duration-150', // Class for <a>
+							'a_class'         => 'relative inline-block font-teko text-3xl uppercase transition-all duration-150', // Class for <a>
 							'fallback_cb'     => false,
 						)
 					);

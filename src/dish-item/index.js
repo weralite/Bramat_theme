@@ -18,12 +18,23 @@ const Edit = ({ attributes, setAttributes }) => {
     <>
       <CustomInspectorControls attributes={attributes} setAttributes={setAttributes} />
     <div {...blockProps}>
+      <div className="flex flex-row justify-between">
       <RichText
         tagName="b"
         value={attributes.dish}
         onChange={(dish) => setAttributes({ dish })}
         placeholder={__('Add dish name...')}
       />
+      {attributes.showPrice && (
+          <RichText
+            tagName="span"
+            value={attributes.price}
+            onChange={(price) => setAttributes({ price })}
+            placeholder={__('Add price...')}
+            className="price"
+          />
+        )}
+      </div>
       <RichText
         tagName="p"
         value={attributes.description}
@@ -44,7 +55,10 @@ const save = ({ attributes }) => (
     flexDirection: attributes.flexDirection,
     gap: attributes.gap,
   }}>
+    <div className="flex flex-row justify-between">
     <RichText.Content tagName="b" value={attributes.dish} />
+    <RichText.Content className="whitespace-nowrap" tagName="b" value={attributes.price} />
+    </div>
     <RichText.Content tagName="p" value={attributes.description} />
   </div>
 );

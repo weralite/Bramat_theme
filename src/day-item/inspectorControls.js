@@ -9,8 +9,20 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
   return (
     <>
       <InspectorControls>
-        <PanelBody title="Add block" initialOpen={true}>
+        {/* <PanelBody title="Add block" initialOpen={true}>
           <InnerBlocks.ButtonBlockAppender />
+        </PanelBody> */}
+        <PanelBody title="Text" initialOpen={true}>
+      <TextControl
+          label="Veckodag"
+          value={attributes.day} // Bind the title attribute
+          onChange={(day) => setAttributes({ day })} // Update title on change
+          placeholder="Enter your title..."
+        />
+      </PanelBody>
+      <PanelBody title="Settings" initialOpen={true}>
+
+        <InnerBlocks/>
         </PanelBody>
 
 
