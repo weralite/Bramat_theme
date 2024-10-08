@@ -9,7 +9,6 @@ const Edit = ({ attributes, setAttributes }) => {
       maxWidth: attributes.maxWidth,
       display: "flex",
       flexDirection: "column",
-      gap: attributes.gap,
     },
     className: "py-10"
   });
@@ -23,9 +22,9 @@ const Edit = ({ attributes, setAttributes }) => {
           value={attributes.title}
           onChange={(title) => setAttributes({ title })}
           placeholder={('Add title...')}
-          style={{ textAlign: attributes.HeadlineAlignment }}
+          className="text-center"
         />
-        <InnerBlocks style={{ textAlign: attributes.textAlign }} allowedBlocks={['custom/day-item']}  />
+        <InnerBlocks allowedBlocks={['custom/day-item']} />
       </div>
     </>
   );
@@ -34,15 +33,12 @@ const Edit = ({ attributes, setAttributes }) => {
 const save = ({ attributes }) => {
   return (
     <div
-    className="py-10"
-    style={{
-      maxWidth: attributes.maxWidth, 
-      display: "flex",
-      flexDirection: "column",
-      gap: attributes.gap,
-    }}>
-      <RichText.Content tagName="h2" value={attributes.title} style={{ textAlign: attributes.HeadlineAlignment }} />
-      <InnerBlocks.Content style={{ textAlign: attributes.textAlign }} />
+      className="py-10"
+      style={{
+        maxWidth: attributes.maxWidth
+      }}>
+      <RichText.Content className="text-center" tagName="h2" value={attributes.title} />
+      <InnerBlocks.Content/>
     </div>
   );
 };

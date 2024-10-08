@@ -37,5 +37,11 @@ h3 {
 /* Ensure the text in the body is center-aligned */
 body {
 @apply flex flex-col justify-center;
+}
 
+.wp-block-custom-day-item {
+    @apply py-4;
+}
+.wp-block-custom-dish-item {
+    @apply py-2;
 }

@@ -45,47 +45,6 @@ const CustomInspectorControls = ({
           ,
           placeholder: "Enter your title..."
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
-          label: "Align heading",
-          value: attributes.HeadlineAlignment,
-          options: [{
-            label: 'Left',
-            value: 'left'
-          }, {
-            label: 'Center',
-            value: 'center'
-          }, {
-            label: 'Right',
-            value: 'right'
-          }],
-          onChange: HeadlineAlignment => setAttributes({
-            HeadlineAlignment
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
-          label: "Text Alignment",
-          value: attributes.textAlign,
-          options: [{
-            label: 'Left',
-            value: 'left'
-          }, {
-            label: 'Center',
-            value: 'center'
-          }, {
-            label: 'Right',
-            value: 'right'
-          }],
-          onChange: textAlign => setAttributes({
-            textAlign
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
-          label: "Object Gap",
-          value: attributes.gap,
-          min: "1",
-          max: "30",
-          step: "1",
-          onChange: gap => setAttributes({
-            gap
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
           label: "Page Width",
           value: attributes.maxWidth,
           options: [{
@@ -256,8 +215,7 @@ const Edit = ({
     style: {
       maxWidth: attributes.maxWidth,
       display: "flex",
-      flexDirection: "column",
-      gap: attributes.gap
+      flexDirection: "column"
     },
     className: "py-10"
   });
@@ -274,13 +232,8 @@ const Edit = ({
           title
         }),
         placeholder: 'Add title...',
-        style: {
-          textAlign: attributes.HeadlineAlignment
-        }
+        className: "text-center"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
-        style: {
-          textAlign: attributes.textAlign
-        },
         allowedBlocks: ['custom/day-item']
       })]
     })]
@@ -292,22 +245,13 @@ const save = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "py-10",
     style: {
-      maxWidth: attributes.maxWidth,
-      display: "flex",
-      flexDirection: "column",
-      gap: attributes.gap
+      maxWidth: attributes.maxWidth
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+      className: "text-center",
       tagName: "h2",
-      value: attributes.title,
-      style: {
-        textAlign: attributes.HeadlineAlignment
-      }
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, {
-      style: {
-        textAlign: attributes.textAlign
-      }
-    })]
+      value: attributes.title
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, {})]
   });
 };
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_2__.name, {

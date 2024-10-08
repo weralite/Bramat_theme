@@ -23,32 +23,6 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
             placeholder="Enter your title..."
           />
           <SelectControl
-            label="Align heading"
-            value={attributes.HeadlineAlignment}
-            options={[
-              { label: 'Left', value: 'left' },
-              { label: 'Center', value: 'center' },
-              { label: 'Right', value: 'right' },
-            ]}
-            onChange={(HeadlineAlignment) => setAttributes({ HeadlineAlignment })}
-          />
-          <SelectControl
-            label="Text Alignment"
-            value={attributes.textAlign}
-            options={[
-              { label: 'Left', value: 'left' },
-              { label: 'Center', value: 'center' },
-              { label: 'Right', value: 'right' },
-            ]}
-            onChange={(textAlign) => setAttributes({ textAlign })}
-          />
-          <RangeControl
-            label="Object Gap"
-            value={attributes.gap}
-            min="1" max="30" step="1"
-            onChange={(gap) => setAttributes({ gap })}
-          />
-          <SelectControl
             label="Page Width"
             value={attributes.maxWidth}
             options={[

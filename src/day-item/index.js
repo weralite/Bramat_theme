@@ -20,6 +20,7 @@ const Edit = ({ attributes, setAttributes }) => {
         value={attributes.day}
         onChange={onChangeDay}
         placeholder="Add day..."
+        className="underline"
       />
       <InnerBlocks 
         allowedBlocks={['custom/dish-item']} // Only allow dish-item blocks
@@ -32,8 +33,8 @@ const Edit = ({ attributes, setAttributes }) => {
 
 const save = ({ attributes }) => {
   return (
-    <div>
-      <RichText.Content tagName="h3" value={attributes.day} />
+    <div className="py-4">
+      <RichText.Content className="underline" tagName="h3" value={attributes.day} />
       <InnerBlocks.Content />
     </div>
   );

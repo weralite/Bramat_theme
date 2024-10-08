@@ -11,7 +11,7 @@ const Edit = ({ attributes, setAttributes }) => {
       display: 'flex',
       flexDirection: attributes.flexDirection,
       gap: attributes.gap,
-    }
+    },
   })
 
   return (
@@ -50,7 +50,7 @@ const Edit = ({ attributes, setAttributes }) => {
 
 
 const save = ({ attributes }) => (
-  <div style={{
+  <div className="py-2" style={{
     display: 'flex',
     flexDirection: attributes.flexDirection,
     gap: attributes.gap,

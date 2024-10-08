@@ -297,6 +297,7 @@ const Edit = ({
 const save = ({
   attributes
 }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+  className: "py-2",
   style: {
     display: 'flex',
     flexDirection: attributes.flexDirection,
