@@ -21,7 +21,7 @@
 		<header class="sticky top-0 bg-black">
 
 			<div class="mx-auto container">
-				<div class="lg:relative lg:flex lg:justify-between lg:items-center border-b py-2">
+				<div class="lg:relative lg:flex lg:justify-between lg:items-center border-b py-6">
 					<div class="flex justify-between items-center lg:child-left">
 					<div>
 							<?php if (has_custom_logo()) { ?>
@@ -57,11 +57,11 @@
 					wp_nav_menu(
 						array(
 							'container_id'    => 'primary-menu',
-							'container_class' => 'hidden bg-black mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2',
+							'container_class' => 'hidden bg-black mt-4 p-4 lg:mt-0 lg:p-0 lg:pl-10 xl:pl-16 lg:block xl:bg-transparent xl:block xl:absolute xl:left-1/2 xl:transform xl:-translate-x-1/2',
 							'menu_class'      => 'lg:flex lg:mx-10 lg:gap-4',
 							'theme_location'  => 'primary',
 							'li_class'        => 'lg:mx-4 group', // Add group class here
-							'a_class'         => 'relative inline-block font-teko lg:font-light lg:text-5xl uppercase transition-all duration-150', // Class for <a>
+							'a_class'         => 'relative inline-block font-teko lg:font-light lg:text-4xl xl:text-5xl uppercase transition-all duration-150', // Class for <a>
 							'fallback_cb'     => false,
 						)
 					);

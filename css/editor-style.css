@@ -52,9 +52,6 @@
 .top-0 {
  top: 0px
 }
-.z-10 {
- z-index: 10
-}
 .m-8 {
  margin: 2rem
 }
@@ -133,10 +130,6 @@
 .flex-grow {
  flex-grow: 1
 }
-.-translate-x-1\/2 {
- --tw-translate-x: -50%;
- transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-}
 .transform {
  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
@@ -181,10 +174,6 @@
  --tw-bg-opacity: 1;
  background-color: rgb(0 0 0 / var(--tw-bg-opacity))
 }
-.bg-gray-100 {
- --tw-bg-opacity: 1;
- background-color: rgb(243 244 246 / var(--tw-bg-opacity))
-}
 .bg-gray-200 {
  --tw-bg-opacity: 1;
  background-color: rgb(229 231 235 / var(--tw-bg-opacity))
@@ -192,10 +181,6 @@
 .bg-primary {
  --tw-bg-opacity: 1;
  background-color: rgb(14 165 233 / var(--tw-bg-opacity))
-}
-.bg-white {
- --tw-bg-opacity: 1;
- background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
 .object-fill {
  -o-object-fit: fill;
@@ -224,11 +209,17 @@
  padding-top: 0.5rem;
  padding-bottom: 0.5rem
 }
-.pr-4 {
- padding-right: 1rem
+.py-4 {
+ padding-top: 1rem;
+ padding-bottom: 1rem
 }
-.pr-5 {
- padding-right: 1.25rem
+.py-8 {
+ padding-top: 2rem;
+ padding-bottom: 2rem
+}
+.py-6 {
+ padding-top: 1.5rem;
+ padding-bottom: 1.5rem
 }
 .text-center {
  text-align: center
@@ -253,12 +244,6 @@
 }
 .text-xl {
  font-size: 1.25rem
-}
-.text-3xl {
- font-size: 1.875rem
-}
-.text-4xl {
- font-size: 2.25rem
 }
 .font-bold {
  font-weight: 700
@@ -297,18 +282,6 @@
 .text-white {
  --tw-text-opacity: 1;
  color: rgb(255 255 255 / var(--tw-text-opacity))
-}
-.text-gray-900 {
- --tw-text-opacity: 1;
- color: rgb(17 24 39 / var(--tw-text-opacity))
-}
-.text-gray-300 {
- --tw-text-opacity: 1;
- color: rgb(209 213 219 / var(--tw-text-opacity))
-}
-.text-gray-100 {
- --tw-text-opacity: 1;
- color: rgb(243 244 246 / var(--tw-text-opacity))
 }
 .underline {
  text-decoration-line: underline
@@ -449,25 +422,13 @@ body {
   margin-left: -1rem;
   margin-right: -1rem
  }
- .lg\:mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem
- }
- .lg\:-mx-6 {
-  margin-left: -1.5rem;
-  margin-right: -1.5rem
- }
- .lg\:-mx-10 {
-  margin-left: -2.5rem;
-  margin-right: -2.5rem
- }
- .lg\:-mx-2 {
-  margin-left: -0.5rem;
-  margin-right: -0.5rem
- }
  .lg\:mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem
+ }
+ .lg\:mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem
  }
  .lg\:mt-0 {
   margin-top: 0px
@@ -503,13 +464,124 @@ body {
  .lg\:p-0 {
   padding: 0px
  }
- .lg\:pr-0 {
-  padding-right: 0px
+ .lg\:pl-10 {
+  padding-left: 2.5rem
+ }
+ .lg\:pl-14 {
+  padding-left: 3.5rem
+ }
+ .lg\:pl-16 {
+  padding-left: 4rem
+ }
+ .lg\:pl-8 {
+  padding-left: 2rem
+ }
+ .lg\:pl-12 {
+  padding-left: 3rem
  }
  .lg\:text-5xl {
   font-size: 3rem
  }
+ .lg\:text-2xl {
+  font-size: 1.5rem
+ }
+ .lg\:text-3xl {
+  font-size: 1.875rem
+ }
+ .lg\:text-4xl {
+  font-size: 2.25rem
+ }
+ .lg\:text-xl {
+  font-size: 1.25rem
+ }
  .lg\:font-light {
+  font-weight: 300
+ }
+}
+@media (min-width: 1280px) {
+ .xl\:absolute {
+  position: absolute
+ }
+ .xl\:relative {
+  position: relative
+ }
+ .xl\:left-1\/2 {
+  left: 50%
+ }
+ .xl\:-mx-4 {
+  margin-left: -1rem;
+  margin-right: -1rem
+ }
+ .xl\:mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem
+ }
+ .xl\:mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem
+ }
+ .xl\:mt-0 {
+  margin-top: 0px
+ }
+ .xl\:block {
+  display: block
+ }
+ .xl\:flex {
+  display: flex
+ }
+ .xl\:hidden {
+  display: none
+ }
+ .xl\:-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+ }
+ .xl\:transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+ }
+ .xl\:items-center {
+  align-items: center
+ }
+ .xl\:justify-between {
+  justify-content: space-between
+ }
+ .xl\:gap-4 {
+  gap: 1rem
+ }
+ .xl\:bg-transparent {
+  background-color: transparent
+ }
+ .xl\:p-0 {
+  padding: 0px
+ }
+ .xl\:pl-4 {
+  padding-left: 1rem
+ }
+ .xl\:pl-5 {
+  padding-left: 1.25rem
+ }
+ .xl\:pr-5 {
+  padding-right: 1.25rem
+ }
+ .xl\:pl-10 {
+  padding-left: 2.5rem
+ }
+ .xl\:pl-12 {
+  padding-left: 3rem
+ }
+ .xl\:pl-14 {
+  padding-left: 3.5rem
+ }
+ .xl\:pl-16 {
+  padding-left: 4rem
+ }
+ .xl\:text-5xl {
+  font-size: 3rem
+ }
+ .xl\:text-2xl {
+  font-size: 1.5rem
+ }
+ .xl\:font-light {
   font-weight: 300
  }
 }
