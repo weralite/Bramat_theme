@@ -22,7 +22,7 @@
 
 			<div class="mx-auto container">
 				<div class="lg:relative lg:flex lg:justify-between lg:items-center border-b">
-					<div class="flex justify-between items-center lg:child-left">
+					<div class="flex justify-between items-center lg:child-left pb-4">
 					<div>
 							<?php if (has_custom_logo()) { ?>
 								<?php the_custom_logo(); ?>
