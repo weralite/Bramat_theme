@@ -171,10 +171,6 @@
     --tw-bg-opacity: 1;
     background-color: rgb(14 165 233 / var(--tw-bg-opacity))
 }
-.bg-slate-500 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(100 116 139 / var(--tw-bg-opacity))
-}
 .object-fill {
     -o-object-fit: fill;
        object-fit: fill
@@ -231,6 +227,9 @@
 }
 .uppercase {
     text-transform: uppercase
+}
+.italic {
+    font-style: italic
 }
 .leading-tight {
     line-height: 1.25

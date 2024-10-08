@@ -1,9 +1,10 @@
-article > *:not(.entry-content),
-.entry-content > * {
+article>*:not(.entry-content),
+.entry-content>* {
     @apply mx-auto max-w-content;
 }
 
-.entry-content, .block-editor-block-list__layout {
+.entry-content,
+.block-editor-block-list__layout {
     h1 {
         @apply text-2xl;
     }
@@ -11,15 +12,26 @@ article > *:not(.entry-content),
     h2 {
         @apply text-xl;
 
-    
+
     }
 
     h3 {
         @apply text-lg;
-        
+
     }
 
-    p, ul, ol {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        @apply font-josefin; /* Use the Tailwind utility class */
+    }
+
+    b,
+    p,
+    ul,
+    ol {
         a {
             @apply text-blue-500 underline;
 
@@ -29,6 +41,8 @@ article > *:not(.entry-content),
         }
 
         /* @apply mb-8; */
+        font-family: 'Josefin Slab',
+        serif;
     }
 
     ul:not(.block-editor-block-variation-picker__variations) {
@@ -52,13 +66,19 @@ article > *:not(.entry-content),
     position: absolute;
     left: 50%;
     bottom: 0;
-    height: 2px; /* Height of the underline */
-    background-color: currentColor; /* Color of the underline */
-    width: 0; /* Initial width */
-    transition: width 0.15s ease, left 0.15s ease; /* Transition effect */
+    height: 2px;
+    /* Height of the underline */
+    background-color: currentColor;
+    /* Color of the underline */
+    width: 0;
+    /* Initial width */
+    transition: width 0.15s ease, left 0.15s ease;
+    /* Transition effect */
 }
 
 .group:hover a::after {
-    width: 100%; /* Full width on hover */
-    left: 0; /* Move to the left */
+    width: 100%;
+    /* Full width on hover */
+    left: 0;
+    /* Move to the left */
 }

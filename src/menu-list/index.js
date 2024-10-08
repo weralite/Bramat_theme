@@ -12,7 +12,6 @@ const Edit = ({ attributes, setAttributes }) => {
       flexDirection: "column",
       gap: attributes.gap,
     },
-    className: "bg-slate-500"
   });
 
   return (
@@ -34,7 +33,7 @@ const Edit = ({ attributes, setAttributes }) => {
 
 const save = ({ attributes }) => {
   return (
-    <div className="bg-slate-500" style={{
+    <div style={{
       maxWidth: attributes.maxWidth, 
       display: "flex",
       flexDirection: "column",

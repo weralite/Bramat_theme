@@ -22,6 +22,9 @@ module.exports = {
         extend: {
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
             fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme)),
+            fontFamily: {
+                'josefin': ['Josefin Slab', 'serif'], // Add your custom font
+            },
         },
         screens: {
             'xs': '480px',

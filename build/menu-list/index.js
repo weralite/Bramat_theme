@@ -253,8 +253,7 @@ const Edit = ({
       display: "flex",
       flexDirection: "column",
       gap: attributes.gap
-    },
-    className: "bg-slate-500"
+    }
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inspectorControls__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -282,7 +281,6 @@ const save = ({
   attributes
 }) => {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "bg-slate-500",
     style: {
       maxWidth: attributes.maxWidth,
       display: "flex",
