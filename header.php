@@ -18,12 +18,12 @@
 
 		<?php do_action('tailpress_header'); ?>
 
-		<header>
+		<header class="sticky top-0 bg-black">
 
 			<div class="mx-auto container">
-				<div class="lg:flex lg:justify-between lg:items-center border-b py-2">
-					<div class="flex justify-between items-center">
-						<div>
+				<div class="lg:relative lg:flex lg:justify-between lg:items-center border-b py-2">
+					<div class="flex justify-between items-center lg:child-left">
+					<div>
 							<?php if (has_custom_logo()) { ?>
 								<?php the_custom_logo(); ?>
 							<?php } else { ?>
@@ -57,11 +57,11 @@
 					wp_nav_menu(
 						array(
 							'container_id'    => 'primary-menu',
-							'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
-							'menu_class'      => 'lg:flex lg:-mx-4',
+							'container_class' => 'hidden bg-black mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2',
+							'menu_class'      => 'lg:flex lg:mx-10 lg:gap-4',
 							'theme_location'  => 'primary',
 							'li_class'        => 'lg:mx-4 group', // Add group class here
-							'a_class'         => 'relative inline-block font-teko text-3xl uppercase transition-all duration-150', // Class for <a>
+							'a_class'         => 'relative inline-block font-teko lg:font-light lg:text-5xl uppercase transition-all duration-150', // Class for <a>
 							'fallback_cb'     => false,
 						)
 					);
