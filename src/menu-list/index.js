@@ -12,6 +12,7 @@ const Edit = ({ attributes, setAttributes }) => {
       flexDirection: "column",
       gap: attributes.gap,
     },
+    className: "py-10"
   });
 
   return (
@@ -33,7 +34,9 @@ const Edit = ({ attributes, setAttributes }) => {
 
 const save = ({ attributes }) => {
   return (
-    <div style={{
+    <div
+    className="py-10"
+    style={{
       maxWidth: attributes.maxWidth, 
       display: "flex",
       flexDirection: "column",

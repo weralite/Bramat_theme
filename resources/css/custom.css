@@ -17,6 +17,7 @@ article>*:not(.entry-content),
 
     h3 {
         @apply text-lg;
+        
 
     }
 
@@ -32,17 +33,10 @@ article>*:not(.entry-content),
     p,
     ul,
     ol {
-        a {
-            @apply text-blue-500 underline;
-
-            &:hover {
-                @apply no-underline;
-            }
-        }
-
+        
         /* @apply mb-8; */
-        font-family: 'Josefin Slab',
-        serif;
+        @apply font-josefin; 
+        @apply text-xl;
     }
 
     ul:not(.block-editor-block-variation-picker__variations) {

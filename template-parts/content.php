@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-12' ); ?>>
 
-	<header class="entry-header mb-4">
-		<?php the_title( sprintf( '<h2 class="entry-title text-center text-2xl md:text-3xl font-bold leading-tight mb-5">', esc_url( get_permalink() ) ), '</h2>' ); ?>
+	<header class="entry-header">
+		<?php the_title( sprintf( '<h2 class="font-josefin entry-title text-center text-2xl md:text-3xl font-bold leading-tight">', esc_url( get_permalink() ) ), '</h2>' ); ?>
 
 	</header>
 
