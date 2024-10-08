@@ -26,76 +26,82 @@ const CustomInspectorControls = ({
   attributes,
   setAttributes
 }) => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
-      title: "Settings",
-      initialOpen: true,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
-        label: "Title",
-        value: attributes.title // Bind the title attribute
-        ,
-        onChange: title => setAttributes({
-          title
-        }) // Update title on change
-        ,
-        placeholder: "Enter your title..."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
-        label: "Align heading",
-        value: attributes.HeadlineAlignment,
-        options: [{
-          label: 'Left',
-          value: 'left'
-        }, {
-          label: 'Center',
-          value: 'center'
-        }, {
-          label: 'Right',
-          value: 'right'
-        }],
-        onChange: HeadlineAlignment => setAttributes({
-          HeadlineAlignment
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
-        label: "Text Alignment",
-        value: attributes.align,
-        options: [{
-          label: 'Left',
-          value: 'left'
-        }, {
-          label: 'Center',
-          value: 'center'
-        }, {
-          label: 'Right',
-          value: 'right'
-        }],
-        onChange: align => setAttributes({
-          align
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
-        label: "Object Gap",
-        value: attributes.gap,
-        min: "1",
-        max: "30",
-        step: "1",
-        onChange: gap => setAttributes({
-          gap
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
-        label: "Page Width",
-        value: attributes.maxWidth,
-        options: [{
-          label: 'Small',
-          value: '500px'
-        }, {
-          label: 'Medium',
-          value: '700px'
-        }, {
-          label: 'Large',
-          value: '960px'
-        }],
-        onChange: maxWidth => setAttributes({
-          maxWidth
-        })
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+        title: "Add block",
+        initialOpen: true,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.ButtonBlockAppender, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+        title: "Settings",
+        initialOpen: true,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
+          label: "Title",
+          value: attributes.title // Bind the title attribute
+          ,
+          onChange: title => setAttributes({
+            title
+          }) // Update title on change
+          ,
+          placeholder: "Enter your title..."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          label: "Align heading",
+          value: attributes.HeadlineAlignment,
+          options: [{
+            label: 'Left',
+            value: 'left'
+          }, {
+            label: 'Center',
+            value: 'center'
+          }, {
+            label: 'Right',
+            value: 'right'
+          }],
+          onChange: HeadlineAlignment => setAttributes({
+            HeadlineAlignment
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          label: "Text Alignment",
+          value: attributes.textAlign,
+          options: [{
+            label: 'Left',
+            value: 'left'
+          }, {
+            label: 'Center',
+            value: 'center'
+          }, {
+            label: 'Right',
+            value: 'right'
+          }],
+          onChange: textAlign => setAttributes({
+            textAlign
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          label: "Object Gap",
+          value: attributes.gap,
+          min: "1",
+          max: "30",
+          step: "1",
+          onChange: gap => setAttributes({
+            gap
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          label: "Page Width",
+          value: attributes.maxWidth,
+          options: [{
+            label: 'Small',
+            value: '500px'
+          }, {
+            label: 'Medium',
+            value: '700px'
+          }, {
+            label: 'Large',
+            value: '960px'
+          }],
+          onChange: maxWidth => setAttributes({
+            maxWidth
+          })
+        })]
       })]
     })
   });
@@ -150,7 +156,7 @@ module.exports = window["wp"]["components"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"custom/menu-list","title":"Menu List","category":"custom-layout-category","icon":"menu","description":"A block to create a menu with days and items.","supports":{"html":false,"align":true,"customClassName":true},"textdomain":"custom-menu-list","editorScript":"file:./index.js","attributes":{"title":{"type":"string","default":""},"days":{"type":"array","default":[]},"align":{"type":"string","default":"left"},"HeadlineAlignment":{"type":"string","default":"center"},"maxWidth":{"type":"string","default":"960px"},"gap":{"type":"number","default":"0"}}}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"custom/menu-list","title":"Menu List","category":"custom-layout-category","icon":"menu","description":"A block to create a menu with days and items.","supports":{"html":false,"align":true,"customClassName":true},"textdomain":"custom-menu-list","editorScript":"file:./index.js","attributes":{"title":{"type":"string","default":""},"days":{"type":"array","default":[]},"textAlign":{"type":"string","default":"left"},"HeadlineAlignment":{"type":"string","default":"center"},"maxWidth":{"type":"string","default":"700px"},"gap":{"type":"number","default":"0"}}}');
 
 /***/ })
 
@@ -248,7 +254,6 @@ const Edit = ({
 }) => {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
     style: {
-      textAlign: attributes.align,
       maxWidth: attributes.maxWidth,
       display: "flex",
       flexDirection: "column",
@@ -273,6 +278,9 @@ const Edit = ({
           textAlign: attributes.HeadlineAlignment
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
+        style: {
+          textAlign: attributes.textAlign
+        },
         allowedBlocks: ['custom/day-item']
       })]
     })]
@@ -295,7 +303,11 @@ const save = ({
       style: {
         textAlign: attributes.HeadlineAlignment
       }
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, {
+      style: {
+        textAlign: attributes.textAlign
+      }
+    })]
   });
 };
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_2__.name, {

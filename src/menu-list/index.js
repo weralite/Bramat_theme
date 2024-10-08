@@ -6,7 +6,6 @@ import CustomInspectorControls from "./inspectorControls";
 const Edit = ({ attributes, setAttributes }) => {
   const blockProps = useBlockProps({
     style: {
-      textAlign: attributes.align,
       maxWidth: attributes.maxWidth,
       display: "flex",
       flexDirection: "column",
@@ -26,7 +25,7 @@ const Edit = ({ attributes, setAttributes }) => {
           placeholder={('Add title...')}
           style={{ textAlign: attributes.HeadlineAlignment }}
         />
-        <InnerBlocks allowedBlocks={['custom/day-item']} />
+        <InnerBlocks style={{ textAlign: attributes.textAlign }} allowedBlocks={['custom/day-item']}  />
       </div>
     </>
   );
@@ -43,7 +42,7 @@ const save = ({ attributes }) => {
       gap: attributes.gap,
     }}>
       <RichText.Content tagName="h2" value={attributes.title} style={{ textAlign: attributes.HeadlineAlignment }} />
-      <InnerBlocks.Content />
+      <InnerBlocks.Content style={{ textAlign: attributes.textAlign }} />
     </div>
   );
 };

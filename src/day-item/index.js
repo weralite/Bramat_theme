@@ -2,6 +2,7 @@ import { useBlockProps, RichText, InnerBlocks } from "@wordpress/block-editor";
 import { registerBlockType } from "@wordpress/blocks";
 import { __ } from '@wordpress/i18n';
 import metadata from "./block.json";
+import CustomInspectorControls from "./inspectorControls";
 
 const Edit = ({ attributes, setAttributes }) => {
   const blockProps = useBlockProps();
@@ -11,6 +12,8 @@ const Edit = ({ attributes, setAttributes }) => {
   };
 
   return (
+    <>
+    <CustomInspectorControls attributes={attributes} setAttributes={setAttributes} />
     <div {...blockProps}>
       <RichText
         tagName="h3" // Change tag to h3 for the day heading
@@ -23,6 +26,7 @@ const Edit = ({ attributes, setAttributes }) => {
         template={[['custom/dish-item']]} // Optional: start with a dish-item block
       />
     </div>
+    </>
   );
 };
 

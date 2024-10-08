@@ -21,7 +21,7 @@
       "type": "array",
       "default": []
     },
-    "align": {
+    "textAlign": {
       "type": "string",
       "default": "left"
     },
@@ -31,7 +31,7 @@
     },
     "maxWidth": {
       "type": "string",
-      "default": "960px"
+      "default": "700px"
     },
     "gap": {
       "type": "number",

@@ -5,14 +5,37 @@ body {
     @apply font-sans;
 }
 
-.wp-block{
-    @apply max-w-screen-xl;
+.wp-block {
+    @apply max-w-screen-xl mx-auto; /* Center horizontally */
 }
 
 .wp-block[data-align=wide] {
-    @apply max-w-screen-xl;
+    @apply max-w-screen-xl mx-auto; /* Center horizontally */
 }
 
 .wp-block[data-align=full] {
-    @apply max-w-full;
+    @apply max-w-full mx-auto; /* Center horizontally */
+}
+
+h1, h2, h3, h4, h5 {
+    @apply font-josefin; /* Use the Tailwind utility class */
+}
+
+h1 {
+    @apply text-2xl;
+    @apply text-center;
+}
+
+h2 {
+    @apply text-xl;
+}
+
+h3 {
+    @apply text-lg;
+}
+
+/* Ensure the text in the body is center-aligned */
+body {
+@apply flex flex-col justify-center;
+
 }

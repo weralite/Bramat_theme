@@ -1,11 +1,20 @@
 // inspectorControls.js
-import { PanelBody, TextControl, SelectControl, RangeControl } from '@wordpress/components';
-import { InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, TextControl, SelectControl, RangeControl, Button } from '@wordpress/components';
+import { InspectorControls, InnerBlocks } from '@wordpress/block-editor';
+
 
 const CustomInspectorControls = ({ attributes, setAttributes }) => {
+
+
   return (
+    <>
     <InspectorControls>
+<PanelBody title="Add block" initialOpen={true}>
+<InnerBlocks.ButtonBlockAppender />
+  </PanelBody>
+
       <PanelBody title="Settings" initialOpen={true}>
+
         <TextControl
           label="Title"
           value={attributes.title} // Bind the title attribute
@@ -24,13 +33,13 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
         />
         <SelectControl
           label="Text Alignment"
-          value={attributes.align}
+          value={attributes.textAlign}
           options={[
             { label: 'Left', value: 'left' },
             { label: 'Center', value: 'center' },
             { label: 'Right', value: 'right' },
           ]}
-          onChange={(align) => setAttributes({ align })}
+          onChange={(textAlign) => setAttributes({ textAlign })}
         />
         <RangeControl
           label="Object Gap"
@@ -49,7 +58,10 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
           onChange={(maxWidth) => setAttributes({ maxWidth })}
         />
       </PanelBody>
+
     </InspectorControls>
+
+    </>
   );
 };
 
