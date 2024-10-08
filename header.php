@@ -66,16 +66,15 @@
 						)
 					);
 					?>
-
 					<?php
 					// Secondary Menu
 					wp_nav_menu(
 						array(
 							'container_id'    => 'secondary-menu',
-							'container_class' => 'hidden bg-gray-200 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+							'container_class' => 'hidden bg-gray-200 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent',
 							'menu_class'      => 'lg:flex lg:-mx-4',
 							'theme_location'  => 'secondary',
-							'li_class'        => 'lg:mx-4 group', // Add group class here
+							'li_class'        => 'lg:mx-4', // Add group class here
 							'a_class'         => 'relative inline-block font-bold text-xl uppercase transition-all duration-150', // Class for <a>
 							'fallback_cb'     => false,
 						)
