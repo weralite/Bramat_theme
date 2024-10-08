@@ -58,7 +58,7 @@ article>*:not(.entry-content),
     content: '';
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 15px;
     height: 2px;
     /* Height of the underline */
     background-color: currentColor;
