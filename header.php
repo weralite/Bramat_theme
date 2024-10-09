@@ -86,9 +86,9 @@
 							'container_class' => 'hidden bg-black mt-4 p-4 lg:mt-0 lg:p-0 xl:pl-14 lg:block',
 							'menu_class'      => 'lg:flex',
 							'theme_location'  => 'secondary',
-							'li_class'        => 'text-lg group relative w-max pt-2', // Add group class here
-							'a_class'         => 'text-xl tracking-wide font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black',
-							'submenu_class'   => 'hidden absolute group-hover:block group-hover:block bg-gray-300 w-full',
+							'li_class'        => 'text-lg group relative w-max w-full pt-2 hover:bg-gray-300 group-hover:bg-gray-300', // Add group class here
+							'a_class'         => 'text-xl tracking-wide font-teko w-full font-semibold uppercase p-4 relative',
+							'submenu_class'   => 'hidden absolute w-full bg-gray-300 text-black transition-all duration-300 ease-in-out lg:group-hover:block',
 							'submenu_li_class' => '',
 							'fallback_cb'     => false,
 						)
