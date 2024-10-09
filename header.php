@@ -66,20 +66,6 @@
 						)
 					);
 					?>
-					<?php
-					// Secondary Menu
-					wp_nav_menu(
-						array(
-							'container_id'    => 'secondary-menu',
-							'container_class' => 'hidden bg-gray-200 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent',
-							'menu_class'      => 'lg:flex lg:-mx-4',
-							'theme_location'  => 'secondary',
-							'li_class'        => 'lg:mx-4', // Add group class here
-							'a_class'         => 'relative inline-block font-bold text-xl uppercase transition-all duration-150', // Class for <a>
-							'fallback_cb'     => false,
-						)
-					);
-					?>
 
 				</div>
 				<!-- <div class="flex justify-center p-2">
@@ -92,7 +78,21 @@
 			<div class="mx-auto max-w-[1440px] h-2 bg-gray-300">
 			</div>
 			<div class="w-full flex justify-center">
-			<ul class="lg:flex">
+			<?php
+					// Secondary Menu
+					wp_nav_menu(
+						array(
+							'container_id'    => 'secondary-menu',
+							'container_class' => 'hidden bg-black mt-4 p-4 lg:mt-0 lg:p-0 xl:pl-14 lg:block',
+							'menu_class'      => 'lg:flex',
+							'theme_location'  => 'secondary',
+							'li_class'        => 'text-lg group relative w-max pt-2', // Add group class here
+							'a_class'         => 'text-xl tracking-wide font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black', // Class for <a>
+							'fallback_cb'     => false,
+						)
+					);
+					?>
+			<!-- <ul class="lg:flex">
 			<li class="text-lg group relative w-max pt-2 ">
 					<a href="#" class="text-xl font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black">hEM</a>
 					      <span class="absolute left-0 top-0 w-full h-0 transition-all bg-gray-300 z-0 group-hover:h-full "></span>
@@ -126,7 +126,7 @@
 					      <span class="absolute left-0 top-0 w-full h-0 transition-all bg-gray-300 z-0 group-hover:h-full "></span>
 				</li>
 
-</ul>
+</ul> -->
 
 </div>
 		</header>
