@@ -14,7 +14,7 @@ function appendSpanToSecondaryMenuItems() {
       // Check if the element exists
       if (secondaryMenu) {
           // Find all li elements within the ul
-          const menuItems = secondaryMenu.querySelectorAll('li');
+          const menuItems = secondaryMenu.querySelectorAll(':scope > li');
   
           // Iterate over each li element
           menuItems.forEach((menuItem) => {

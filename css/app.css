@@ -711,6 +711,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(14 165 233 / var(--tw-bg-opacity));
 }
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
 .object-fill {
   -o-object-fit: fill;
      object-fit: fill;
@@ -846,6 +850,9 @@ video {
 }
 .duration-150 {
   transition-duration: 150ms;
+}
+.duration-300 {
+  transition-duration: 300ms;
 }
 .alignfull {
   margin: 2rem calc(50% - 50vw) !important;
