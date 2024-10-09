@@ -21,7 +21,7 @@
 		<header class="sticky top-0 bg-black pt-2">
 
 			<div class="mx-auto container">
-				<div class="lg:relative lg:flex lg:justify-between lg:items-center border-b">
+				<div class="lg:relative lg:flex lg:justify-between lg:items-center">
 					<div class="flex justify-between items-center lg:child-left pb-4">
 					<div>
 							<?php if (has_custom_logo()) { ?>
@@ -86,6 +86,7 @@
 					<b>Julbord</b>
 				</div> -->
 			</div>
+			<div class="mx-auto max-w-[1440px] h-2 bg-gray-300"></div>
 		</header>
 
 		<div id="content" class="site-content flex-grow">
