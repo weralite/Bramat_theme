@@ -555,17 +555,11 @@ video {
 .top-0 {
   top: 0px;
 }
-.bottom-0 {
-  bottom: 0px;
-}
 .z-0 {
   z-index: 0;
 }
 .z-10 {
   z-index: 10;
-}
-.z-20 {
-  z-index: 20;
 }
 .m-8 {
   margin: 2rem;
@@ -825,6 +819,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .underline {
   text-decoration-line: underline;
 }
@@ -850,14 +848,11 @@ video {
 .duration-150 {
   transition-duration: 150ms;
 }
-.duration-300 {
-  transition-duration: 300ms;
-}
-.duration-100 {
-  transition-duration: 100ms;
-}
 .duration-200 {
   transition-duration: 200ms;
+}
+.duration-300 {
+  transition-duration: 300ms;
 }
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1124,14 +1119,22 @@ article>*:not(.entry-content),
     left: 0;
     /* Move to the left */
 }
-.group:hover .group-hover\:absolute {
-  position: absolute;
+.hover\:bg-gray-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 .group:hover .group-hover\:block {
   display: block;
 }
 .group:hover .group-hover\:h-full {
   height: 100%;
+}
+.group:hover .group-hover\:w-full {
+  width: 100%;
+}
+.group:hover .group-hover\:bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 .group:hover .group-hover\:text-black {
   --tw-text-opacity: 1;
@@ -1158,16 +1161,8 @@ article>*:not(.entry-content),
 }
 @media (min-width: 960px) {
 
-  .lg\:absolute {
-    position: absolute;
-  }
-
   .lg\:relative {
     position: relative;
-  }
-
-  .lg\:z-10 {
-    z-index: 10;
   }
 
   .lg\:mx-4 {
@@ -1223,20 +1218,13 @@ article>*:not(.entry-content),
     font-weight: 300;
   }
 
-  .lg\:hover\:block:hover {
-    display: block;
-  }
-
-  .group:hover .lg\:group-hover\:absolute {
-    position: absolute;
-  }
-
-  .group:hover .lg\:group-hover\:relative {
-    position: relative;
-  }
-
   .group:hover .lg\:group-hover\:block {
     display: block;
+  }
+
+  .group:hover .lg\:group-hover\:bg-gray-200 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
   }
 }
 @media (min-width: 1280px) {
