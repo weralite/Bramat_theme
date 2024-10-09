@@ -145,6 +145,21 @@ function tailpress_nav_menu_add_submenu_class($classes, $args, $depth)
 
 add_filter('nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3);
 
+function tailpress_nav_menu_add_submenu_li_class($classes, $item, $args, $depth)
+{
+    if (isset($args->submenu_li_class) && $depth > 0) {
+        $classes[] = $args->submenu_li_class;
+    }
+
+    if (isset($args->{"submenu_li_class_$depth"})) {
+        $classes[] = $args->{"submenu_li_class_$depth"};
+    }
+
+    return $classes;
+}
+
+add_filter('nav_menu_css_class', 'tailpress_nav_menu_add_submenu_li_class', 10, 4);
+
 
 
 function mycustomblocks_block_init()

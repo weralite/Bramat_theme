@@ -88,7 +88,8 @@
 							'theme_location'  => 'secondary',
 							'li_class'        => 'text-lg group relative w-max pt-2', // Add group class here
 							'a_class'         => 'text-xl tracking-wide font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black',
-							'submenu_class'   => 'hidden  group-hover:block',
+							'submenu_class'   => 'hidden absolute group-hover:block group-hover:block bg-gray-300 w-full',
+							'submenu_li_class' => '',
 							'fallback_cb'     => false,
 						)
 					);
