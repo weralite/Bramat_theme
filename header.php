@@ -57,10 +57,10 @@
 					wp_nav_menu(
 						array(
 							'container_id'    => 'primary-menu',
-							'container_class' => 'hidden bg-black mt-4 p-4 lg:mt-0 lg:p-0 lg:pl-10 xl:pl-16 lg:block xl:bg-transparent xl:block xl:absolute xl:left-1/2 xl:transform xl:-translate-x-1/2',
+							'container_class' => 'hidden bg-black mt-4 p-4 lg:mt-0 lg:p-0 lg:pl-10 xl:pl-14 lg:block xl:bg-transparent xl:block xl:absolute xl:left-1/2 xl:transform xl:-translate-x-1/2',
 							'menu_class'      => 'lg:flex lg:gap-4',
 							'theme_location'  => 'primary',
-							'li_class'        => 'lg:mx-4 group', // Add group class here
+							'li_class'        => 'lg:mx-4 groupa', // Add group class here
 							'a_class'         => 'relative inline-block font-teko lg:font-light lg:text-4xl xl:text-5xl uppercase transition-all duration-150', // Class for <a>
 							'fallback_cb'     => false,
 						)
@@ -86,7 +86,49 @@
 					<b>Julbord</b>
 				</div> -->
 			</div>
-			<div class="mx-auto max-w-[1440px] h-2 bg-gray-300"></div>
+
+			
+
+			<div class="mx-auto max-w-[1440px] h-2 bg-gray-300">
+			</div>
+			<div class="w-full flex justify-center">
+			<ul class="lg:flex">
+			<li class="text-lg group relative w-max pt-2 ">
+					<a href="#" class="text-xl font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black">hEM</a>
+					      <span class="absolute left-0 top-0 w-full h-0 transition-all bg-gray-300 z-0 group-hover:h-full "></span>
+				</li>
+				<li class="text-lg group relative w-max pt-2">
+					<a href="#" class="text-xl font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black">boka</a>
+					      <span class="absolute left-0 top-0 w-full h-0 transition-all bg-gray-300 z-0 group-hover:h-full "></span>
+				</li>
+				<li class="text-lg group relative w-max pt-2">
+					<a href="#" class="text-xl font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black">Öppettider</a>
+					      <span class="absolute left-0 top-0 w-full h-0 transition-all bg-gray-300 z-0 group-hover:h-full "></span>
+				</li>
+				<li class="text-lg group relative w-max pt-2">
+					<a href="#" class="text-xl font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black">Take Away</a>
+					      <span class="absolute left-0 top-0 w-full h-0 transition-all bg-gray-300 z-0 group-hover:h-full "></span>
+				</li>
+				<li class="text-lg group relative w-max pt-2">
+					<a href="#" class="text-xl font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black">Lokalen</a>
+					      <span class="absolute left-0 top-0 w-full h-0 transition-all bg-gray-300 z-0 group-hover:h-full "></span>
+				</li>
+				<li class="text-lg group relative w-max pt-2">
+					<a href="#" class="text-xl font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black">Lediga tjänster</a>
+					      <span class="absolute left-0 top-0 w-full h-0 transition-all bg-gray-300 z-0 group-hover:h-full "></span>
+				</li>
+				<li class="text-lg group relative w-max pt-2">
+					<a href="#" class="text-xl font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black">Om oss</a>
+					      <span class="absolute left-0 top-0 w-full h-0 transition-all bg-gray-300 z-0 group-hover:h-full "></span>
+				</li>
+				<li class="text-lg group relative w-max pt-2">
+					<a href="#" class="text-xl font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black">Julbord</a>
+					      <span class="absolute left-0 top-0 w-full h-0 transition-all bg-gray-300 z-0 group-hover:h-full "></span>
+				</li>
+
+</ul>
+
+</div>
 		</header>
 
 		<div id="content" class="site-content flex-grow">

@@ -36,6 +36,7 @@ article>*:not(.entry-content),
         /* @apply mb-8; */
         @apply font-josefin; 
         @apply text-xl;
+        @apply tracking-wider;
     }
 
     ul:not(.block-editor-block-variation-picker__variations) {
@@ -54,7 +55,7 @@ article>*:not(.entry-content),
 /* Hover underline effect for navigation links */
 
 
-.group a::after {
+.groupa a::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -69,7 +70,7 @@ article>*:not(.entry-content),
     /* Transition effect */
 }
 
-.group:hover a::after {
+.groupa:hover a::after {
     width: 100%;
     /* Full width on hover */
     left: 0;

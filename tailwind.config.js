@@ -38,6 +38,14 @@ module.exports = {
                 'josefin': ['Josefin Slab', 'serif'], 
                 'teko': ['Teko', 'sans-serif'], 
             },
+            height: {
+                '7': '1.75rem', // Custom height value
+                '8': '2rem', // Custom height value
+                '9': '2.25rem', // Custom height value
+                '10': '2.5rem', // Custom height value
+                '11': '2.75rem', // Custom height value
+                '12': '3rem', // Custom height value
+            },
         },
         screens: {
             'xs': '480px',

@@ -11,7 +11,7 @@
 	<?php do_action( 'tailpress_footer' ); ?>
 
 	<div class="container mx-auto text-center">
-		&copy; <?php echo date_i18n( 'Y' );?> 
+		<!-- &copy; <?php echo date_i18n( 'Y' );?>  -->
 	</div>
 </footer>
 

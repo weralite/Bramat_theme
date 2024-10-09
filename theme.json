@@ -55,11 +55,6 @@
           "slug": "xxl",
           "name": "2XL",
           "size": "1.5rem"
-        },
-        {
-          "slug": "xxxl",
-          "name": "3XL",
-          "size": "1.875rem"
         }
       ]
     }
