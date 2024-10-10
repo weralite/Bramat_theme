@@ -83,10 +83,10 @@ wp_nav_menu( array(
     'theme_location'  => 'secondary',
     'container_class' => '', // Tailwind styles for container
     'menu_class'      => 'flex flex-row', 
-    'li_class'        => 'align-top group relative pt-2 hover:bg-gray-300 group-hover:bg-gray-300 text-white transition-all duration-100', // Parent item styles
+    'li_class'        => 'align-top group relative pt-2 hover:bg-gray-300 hover:text-black hover:underline hover:decoration-black group-hover:bg-gray-300 text-white transition-all duration-100', // Parent item styles
     'a_class'         => 'text-xl tracking-wide font-teko z-20 w-full font-semibold uppercase p-4 relative',
     'submenu_class'   => 'absolute top-full left-0 w-full max-h-0 overflow-hidden transition-all duration-100 ease-in-out transform origin-top scale-y-0 group-hover:max-h-40 group-hover:scale-y-100 will-change-transform', // Added will-change
-    'submenu_li_class' => '', // Submenu items styles
+    'submenu_li_class' => 'text-black hover:underline', // Submenu items styles
 ));
 ?>
 			<!-- <ul class="lg:flex">

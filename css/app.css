@@ -1220,6 +1220,12 @@ article>*:not(.entry-content),
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+.hover\:decoration-black:hover {
+  text-decoration-color: #000;
+}
 .group:hover .group-hover\:block {
   display: block;
 }
