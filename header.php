@@ -81,14 +81,14 @@
 			<?php
 wp_nav_menu( array(
     'theme_location'  => 'secondary',
-    'container_class' => 'p-2', // Tailwind styles for container
+    'container_class' => '', // Tailwind styles for container
     'menu_class'      => 'flex flex-row', 
-    'li_class'        => 'align-top group relative p-2 hover:bg-blue-600 group-hover:bg-blue-600 text-white transition-all duration-300', // Parent item styles
+    'li_class'        => 'align-top group relative pt-2 hover:bg-blue-600 group-hover:bg-blue-600 text-white transition-all duration-300', // Parent item styles
     'a_class'         => 'text-xl tracking-wide font-teko w-full font-semibold uppercase p-4 relative',
-    'submenu_class'   => 'max-h-0 overflow-hidden absolute transition-max-height duration-300 ease-in-out group-hover:max-h-40 w-full', // Control visibility of submenu
-    'submenu_li_class' => 'flex flex-col', // Submenu items styles
+    'submenu_class'   => 'absolute top-full left-0 w-full max-h-0 overflow-hidden transition-all duration-300 ease-in-out transform origin-top scale-y-0 group-hover:max-h-40 group-hover:scale-y-100', // Updated for scaling effect
+    'submenu_li_class' => '', // Submenu items styles
 ));
-					?>
+?>
 			<!-- <ul class="lg:flex">
 			<li class="text-lg group relative w-max pt-2 ">
 					<a href="#" class="text-xl font-teko font-semibold uppercase p-5 relative z-10 group-hover:text-black">hEM</a>
