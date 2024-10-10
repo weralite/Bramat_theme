@@ -83,9 +83,9 @@ wp_nav_menu( array(
     'theme_location'  => 'secondary',
     'container_class' => '', // Tailwind styles for container
     'menu_class'      => 'flex flex-row', 
-    'li_class'        => 'align-top group relative pt-2 hover:bg-blue-600 group-hover:bg-blue-600 text-white transition-all duration-300', // Parent item styles
+    'li_class'        => 'align-top group relative pt-2 hover:bg-gray-300 group-hover:bg-gray-300 hover:text-black group-hover:text-black text-white transition-all duration-300', // Parent item styles
     'a_class'         => 'text-xl tracking-wide font-teko w-full font-semibold uppercase p-4 relative',
-    'submenu_class'   => 'absolute top-full left-0 w-full max-h-0 overflow-hidden transition-all duration-300 ease-in-out transform origin-top scale-y-0 group-hover:max-h-40 group-hover:scale-y-100', // Updated for scaling effect
+    'submenu_class'   => 'absolute top-full left-0 w-full max-h-0 overflow-hidden transition-all duration-300 ease-in-out transform origin-top scale-y-0 group-hover:max-h-40 group-hover:scale-y-100 will-change-transform', // Added will-change
     'submenu_li_class' => '', // Submenu items styles
 ));
 ?>
