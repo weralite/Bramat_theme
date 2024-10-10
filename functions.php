@@ -160,7 +160,20 @@ function tailpress_nav_menu_add_submenu_li_class($classes, $item, $args, $depth)
 
 add_filter('nav_menu_css_class', 'tailpress_nav_menu_add_submenu_li_class', 10, 4);
 
+function tailpress_nav_menu_add_submenu_a_class($atts, $item, $args, $depth)
+{
+    if (isset($args->submenu_a_class) && $depth > 0) {
+        $atts['class'] = isset($atts['class']) ? $atts['class'] . ' ' . $args->submenu_a_class : $args->submenu_a_class;
+    }
 
+    if (isset($args->{"submenu_a_class_$depth"})) {
+        $atts['class'] = isset($atts['class']) ? $atts['class'] . ' ' . $args->{"submenu_a_class_$depth"} : $args->{"submenu_a_class_$depth"};
+    }
+
+    return $atts;
+}
+
+add_filter('nav_menu_link_attributes', 'tailpress_nav_menu_add_submenu_a_class', 10, 4);
 
 
 
@@ -193,3 +206,6 @@ if (version_compare(get_bloginfo('version'), '5.8', '>=')) {
 } else {
 	add_filter('block_categories', 'register_layout_category');
 }
+
+
+
