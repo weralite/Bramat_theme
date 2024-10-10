@@ -570,6 +570,9 @@ video {
 .z-10 {
   z-index: 10;
 }
+.z-20 {
+  z-index: 20;
+}
 .m-8 {
   margin: 2rem;
 }
@@ -635,6 +638,9 @@ video {
 }
 .h-full {
   height: 100%;
+}
+.h-40 {
+  height: 10rem;
 }
 .max-h-0 {
   max-height: 0px;
