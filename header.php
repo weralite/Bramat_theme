@@ -79,20 +79,15 @@
 			</div>
 			<div class="w-full flex justify-center">
 			<?php
-					// Secondary Menu
-					wp_nav_menu(
-						array(
-							'container_id'    => 'secondary-menu',
-							'container_class' => 'hidden bg-black mt-4 p-4 lg:mt-0 lg:p-0 xl:pl-14 lg:block',
-							'menu_class'      => 'lg:flex',
-							'theme_location'  => 'secondary',
-							'li_class'        => 'text-lg group relative w-max w-full pt-2 hover:bg-gray-300 group-hover:bg-gray-300', // Add group class here
-							'a_class'         => 'text-xl tracking-wide font-teko w-full font-semibold uppercase p-4 relative',
-							'submenu_class'   => 'hidden absolute w-full bg-gray-300 text-black transition-all duration-300 ease-in-out lg:group-hover:block',
-							'submenu_li_class' => '',
-							'fallback_cb'     => false,
-						)
-					);
+wp_nav_menu( array(
+    'theme_location'  => 'secondary',
+    'container_class' => 'p-2', // Tailwind styles for container
+    'menu_class'      => 'flex flex-row', 
+    'li_class'        => 'align-top group relative p-2 hover:bg-blue-600 group-hover:bg-blue-600 text-white transition-all duration-300', // Parent item styles
+    'a_class'         => 'text-xl tracking-wide font-teko w-full font-semibold uppercase p-4 relative',
+    'submenu_class'   => 'max-h-0 overflow-hidden absolute transition-max-height duration-300 ease-in-out group-hover:max-h-40 w-full', // Control visibility of submenu
+    'submenu_li_class' => 'flex flex-col', // Submenu items styles
+));
 					?>
 			<!-- <ul class="lg:flex">
 			<li class="text-lg group relative w-max pt-2 ">

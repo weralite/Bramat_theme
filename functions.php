@@ -162,6 +162,8 @@ add_filter('nav_menu_css_class', 'tailpress_nav_menu_add_submenu_li_class', 10, 
 
 
 
+
+
 function mycustomblocks_block_init()
 {
 	register_block_type(__DIR__ . '/build/mosaic-image-grid');
