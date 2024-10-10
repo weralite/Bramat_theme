@@ -179,7 +179,6 @@ add_filter('nav_menu_link_attributes', 'tailpress_nav_menu_add_submenu_a_class',
 
 function mycustomblocks_block_init()
 {
-	register_block_type(__DIR__ . '/build/mosaic-image-grid');
 	register_block_type(__DIR__ . '/build/menu-list');
 	register_block_type(__DIR__ . '/build/day-item');
 	register_block_type(__DIR__ . '/build/dish-item');

@@ -30,6 +30,45 @@
       ]
     },
     "typography": {
+      "lineHeight": [
+        {
+          "name": "Small",
+          "slug": "small",
+          "lineHeight": "1.5"
+        },
+        {
+          "name": "Regular",
+          "slug": "regular",
+          "lineHeight": "1.75"
+        },
+        {
+          "name": "Large",
+          "slug": "large",
+          "lineHeight": "2"
+        }
+      ],
+      "fontFamilies": [
+        {
+          "name": "Roboto",
+          "slug": "roboto",
+          "fontFamily": "Roboto, sans-serif"
+        },
+        {
+          "name": "Merriweather",
+          "slug": "merriweather",
+          "fontFamily": "Merriweather, serif"
+        },
+        {
+          "name": "Josefin Slab",
+          "slug": "josefin-slab",
+          "fontFamily": "Josefin Slab, serif"
+        },
+        {
+          "name": "Teko",
+          "slug": "teko",
+          "fontFamily": "Teko, sans-serif"
+        }
+      ],
       "fontSizes": [
         {
           "name": "Small",
@@ -39,7 +78,7 @@
         {
           "slug": "regular",
           "name": "Regular",
-          "size": "1.5rem"
+          "size": "1rem"
         },
         {
           "slug": "large",

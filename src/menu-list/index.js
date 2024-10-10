@@ -31,12 +31,15 @@ const Edit = ({ attributes, setAttributes }) => {
 };
 
 const save = ({ attributes }) => {
+  const blockProps = useBlockProps.save({
+    className: "py-10",
+    style: {
+      maxWidth: attributes.maxWidth
+    }
+  });
+
   return (
-    <div
-      className="py-10"
-      style={{
-        maxWidth: attributes.maxWidth
-      }}>
+    <div {...blockProps}>
       <RichText.Content className="text-center" tagName="h2" value={attributes.title} />
       <InnerBlocks.Content/>
     </div>

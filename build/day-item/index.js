@@ -109,7 +109,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"custom/day-item","title":"Day Item","category":"widgets","icon":"calendar","description":"A block to add a day\'s menu items.","supports":{"html":false},"textdomain":"custom-day-item","editorScript":"file:./index.js","attributes":{"day":{"type":"string","default":""},"items":{"type":"array","default":[]}}}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"custom/day-item","title":"Day Item","category":"custom-layout-category","icon":"calendar","description":"A block to add a day\'s menu items.","supports":{"html":false},"textdomain":"custom-day-item","editorScript":"file:./index.js","attributes":{"day":{"type":"string","default":""},"items":{"type":"array","default":[]}}}');
 
 /***/ })
 

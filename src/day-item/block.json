@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "custom/day-item",
   "title": "Day Item",
-  "category": "widgets",
+  "category": "custom-layout-category",
   "icon": "calendar",
   "description": "A block to add a day's menu items.",
   "supports": {
