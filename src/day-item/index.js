@@ -24,8 +24,10 @@ const Edit = ({ attributes, setAttributes }) => {
       />
       <InnerBlocks 
         allowedBlocks={['custom/dish-item']} // Only allow dish-item blocks
-        template={[['custom/dish-item']]} // Optional: start with a dish-item block
+        template={[['custom/dish-item']]}
+        renderAppender={ false } // Optional: start with a dish-item block
       />
+      
     </div>
     </>
   );

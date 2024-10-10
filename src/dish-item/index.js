@@ -41,6 +41,7 @@ const Edit = ({ attributes, setAttributes }) => {
         onChange={(description) => setAttributes({ description })}
         placeholder={__('Add dish description...')}
       />
+      
     </div>
     </>
   );

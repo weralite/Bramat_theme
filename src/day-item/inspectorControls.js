@@ -3,6 +3,7 @@ import { PanelBody, TextControl, SelectControl, RangeControl, Button } from '@wo
 import { InspectorControls, InnerBlocks } from '@wordpress/block-editor';
 
 
+
 const CustomInspectorControls = ({ attributes, setAttributes }) => {
 
 
@@ -22,7 +23,9 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
       </PanelBody>
       <PanelBody title="Settings" initialOpen={true}>
 
-        <InnerBlocks/>
+        <InnerBlocks 
+        allowedBlocks={['custom/dish-item']}
+        renderAppender={ InnerBlocks.ButtonBlockAppender }/>
         </PanelBody>
 
 

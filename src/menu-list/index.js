@@ -24,7 +24,10 @@ const Edit = ({ attributes, setAttributes }) => {
           placeholder={('Add title...')}
           className="text-center"
         />
-        <InnerBlocks allowedBlocks={['custom/day-item']} />
+        <InnerBlocks 
+        allowedBlocks={['custom/day-item', 'custom/dish-item']} 
+        renderAppender={ false } />
+
       </div>
     </>
   );
