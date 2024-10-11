@@ -1,5 +1,5 @@
 // inspectorControls.js
-import { PanelBody, TextControl, SelectControl, ToggleControl } from '@wordpress/components';
+import { PanelBody, TextControl, CheckboxControl, SelectControl, ToggleControl } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 
 const CustomInspectorControls = ({ attributes, setAttributes }) => {
@@ -8,23 +8,42 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
       <PanelBody title="Text" initialOpen={true}>
         <TextControl
           label="Title"
-          value={attributes.dish} // Bind the title attribute
-          onChange={(dish) => setAttributes({ dish })} // Update title on change
+          value={attributes.dish} 
+          onChange={(dish) => setAttributes({ dish })} 
           placeholder="Enter your title..."
         />
         <TextControl
           label="Description"
-          value={attributes.description} // Bind the title attribute
-          onChange={(description) => setAttributes({ description })} // Update title on change
+          value={attributes.description} 
+          onChange={(description) => setAttributes({ description })} 
           placeholder="Describe your dish..."
         />
         <TextControl
           label="Price"
-          value={attributes.price} // Bind the title attribute
-          onChange={(price) => setAttributes({ price })} // Update title on change
+          value={attributes.price} 
+          onChange={(price) => setAttributes({ price })}
           placeholder="Enter your price..."
         />
-
+        <CheckboxControl
+          label="Lactose Free"
+          checked={attributes.isLactoseFree} 
+          onChange={(isLactoseFree) => setAttributes({ isLactoseFree })} 
+        />
+        <CheckboxControl
+          label="Gluten Free"
+          checked={attributes.isGlutenFree} 
+          onChange={(isGlutenFree) => setAttributes({ isGlutenFree })}
+        />
+        <CheckboxControl
+          label="Vegan"
+          checked={attributes.isVegan} 
+          onChange={(isVegan) => setAttributes({ isVegan })} 
+        />
+        <CheckboxControl
+          label="Vegetarian"
+          checked={attributes.isVegetarian} 
+          onChange={(isVegetarian) => setAttributes({ isVegetarian })} 
+        />
 
       </PanelBody>
       <PanelBody title="Settings" initialOpen={true}>
@@ -33,22 +52,6 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
           checked={attributes.showPrice}
           onChange={(value) => setAttributes({ showPrice: value })}
         />
-        <SelectControl
-          label="Direction"
-          value={attributes.flexDirection}
-          options={[
-            { label: 'Row', value: 'row' },
-            { label: 'Column', value: 'column' },
-          ]}
-          onChange={(flexDirection) => setAttributes({ flexDirection })}
-        />
-        <TextControl
-          label="Gap"
-          value={attributes.title} // Bind the title attribute
-          onChange={(gap) => setAttributes({ gap })} // Update title on change
-          placeholder="Add gap"
-        />
-
       </PanelBody>
     </InspectorControls>
   );

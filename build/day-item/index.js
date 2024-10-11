@@ -212,11 +212,6 @@ const Edit = ({
   setAttributes
 }) => {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)();
-  const onChangeDay = day => {
-    setAttributes({
-      day
-    });
-  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inspectorControls__WEBPACK_IMPORTED_MODULE_4__["default"], {
       attributes: attributes,
@@ -227,7 +222,9 @@ const Edit = ({
         tagName: "h3" // Change tag to h3 for the day heading
         ,
         value: attributes.day,
-        onChange: onChangeDay,
+        onChange: day => setAttributes({
+          day
+        }),
         placeholder: "Add day...",
         className: "underline"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks, {

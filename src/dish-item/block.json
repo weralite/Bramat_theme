@@ -27,14 +27,21 @@
       "type": "boolean",
       "default": true
     },
-    "flexDirection": {
-      "type": "string",
-      "default": "column"
+    "isGlutenFree": {
+      "type": "boolean",
+      "default": false
     },
-    "gap": {
-      "type": "string",
-      "default": ""
+    "isLactoseFree": {
+      "type": "boolean",
+      "default": false
+    },
+    "isVegan": {
+      "type": "boolean",
+      "default": false
+    },
+    "isVegetarian": {
+      "type": "boolean",
+      "default": false
     }
-
   }
 }

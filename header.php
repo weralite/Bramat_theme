@@ -81,7 +81,7 @@
 			<?php
 wp_nav_menu( array(
     'theme_location'  => 'secondary',
-    'container_class' => '', // Tailwind styles for container
+    'container_class' => 'hidden', // Tailwind styles for container
     'menu_class'      => 'flex flex-row', 
     'li_class'        => 'primary-li-class-parent-desktop group', // Parent item styles
     'a_class'         => 'text-xl tracking-wide font-teko z-20 w-full font-semibold uppercase p-4 relative',

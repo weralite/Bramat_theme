@@ -45,6 +45,12 @@ module.exports = {
                 '10': '2.5rem', // Custom height value
                 '11': '2.75rem', // Custom height value
                 '12': '3rem', // Custom height value
+                '14': '3.5rem', // Custom height value
+                '16': '4rem', // Custom height value
+                '18': '4.5rem', // Custom height value
+                '20': '5rem', // Custom height value
+                '24': '6rem', // Custom height value
+                '72': '18rem', // Custom height value
             },
         },
         screens: {

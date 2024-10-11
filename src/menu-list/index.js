@@ -1,5 +1,6 @@
 import { registerBlockType } from "@wordpress/blocks";
 import { useBlockProps, InnerBlocks, RichText } from "@wordpress/block-editor";
+import { __ } from '@wordpress/i18n';
 import metadata from "./block.json";
 import CustomInspectorControls from "./inspectorControls";
 
@@ -52,4 +53,9 @@ const save = ({ attributes }) => {
 registerBlockType(metadata.name, {
   edit: Edit,
   save,
+  __experimentalLabel: (attributes, { context }) => {
+    return context === 'list-view' && attributes.title
+      ? attributes.title
+      : __('Menu Item');
+  },
 });

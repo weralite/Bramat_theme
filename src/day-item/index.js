@@ -7,10 +7,6 @@ import CustomInspectorControls from "./inspectorControls";
 const Edit = ({ attributes, setAttributes }) => {
   const blockProps = useBlockProps();
 
-  const onChangeDay = (day) => {
-    setAttributes({ day });
-  };
-
   return (
     <>
     <CustomInspectorControls attributes={attributes} setAttributes={setAttributes} />
@@ -18,7 +14,7 @@ const Edit = ({ attributes, setAttributes }) => {
       <RichText
         tagName="h3" // Change tag to h3 for the day heading
         value={attributes.day}
-        onChange={onChangeDay}
+        onChange={(day) => setAttributes({ day })}
         placeholder="Add day..."
         className="underline"
       />
