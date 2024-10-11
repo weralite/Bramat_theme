@@ -8,41 +8,41 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
       <PanelBody title="Text" initialOpen={true}>
         <TextControl
           label="Title"
-          value={attributes.dish} 
-          onChange={(dish) => setAttributes({ dish })} 
+          value={attributes.dish}
+          onChange={(dish) => setAttributes({ dish })}
           placeholder="Enter your title..."
         />
         <TextControl
           label="Description"
-          value={attributes.description} 
-          onChange={(description) => setAttributes({ description })} 
+          value={attributes.description}
+          onChange={(description) => setAttributes({ description })}
           placeholder="Describe your dish..."
         />
         <TextControl
           label="Price"
-          value={attributes.price} 
+          value={attributes.price}
           onChange={(price) => setAttributes({ price })}
           placeholder="Enter your price..."
         />
         <CheckboxControl
           label="Lactose Free"
-          checked={attributes.isLactoseFree} 
-          onChange={(isLactoseFree) => setAttributes({ isLactoseFree })} 
+          checked={attributes.isLactoseFree}
+          onChange={(isLactoseFree) => setAttributes({ isLactoseFree })}
         />
         <CheckboxControl
           label="Gluten Free"
-          checked={attributes.isGlutenFree} 
+          checked={attributes.isGlutenFree}
           onChange={(isGlutenFree) => setAttributes({ isGlutenFree })}
         />
         <CheckboxControl
           label="Vegan"
-          checked={attributes.isVegan} 
-          onChange={(isVegan) => setAttributes({ isVegan })} 
+          checked={attributes.isVegan}
+          onChange={(isVegan) => setAttributes({ isVegan })}
         />
         <CheckboxControl
           label="Vegetarian"
-          checked={attributes.isVegetarian} 
-          onChange={(isVegetarian) => setAttributes({ isVegetarian })} 
+          checked={attributes.isVegetarian}
+          onChange={(isVegetarian) => setAttributes({ isVegetarian })}
         />
 
       </PanelBody>

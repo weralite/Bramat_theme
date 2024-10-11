@@ -33,12 +33,10 @@ const CustomInspectorControls = ({
         initialOpen: true,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
           label: "Veckodag",
-          value: attributes.day // Bind the title attribute
-          ,
+          value: attributes.day,
           onChange: day => setAttributes({
             day
-          }) // Update title on change
-          ,
+          }),
           placeholder: "Enter your title..."
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
@@ -230,7 +228,6 @@ const Edit = ({
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks, {
         allowedBlocks: ['custom/dish-item'] // Only allow dish-item blocks
         ,
-        template: [['custom/dish-item']],
         renderAppender: false // Optional: start with a dish-item block
       })]
     })]

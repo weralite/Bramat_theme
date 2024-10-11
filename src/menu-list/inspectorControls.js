@@ -11,18 +11,15 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
       <InspectorControls>
         <PanelBody title="Add block" initialOpen={true}>
           <InnerBlocks
-            allowedBlocks={['custom/dish-item', 'custom/day-item']}
+            allowedBlocks={['core/heading', 'custom/dish-item', 'custom/day-item']}
             renderAppender={InnerBlocks.ButtonBlockAppender}
-
           />
         </PanelBody>
-
         <PanelBody title="Settings" initialOpen={true}>
-
           <TextControl
             label="Title"
-            value={attributes.title} // Bind the title attribute
-            onChange={(title) => setAttributes({ title })} // Update title on change
+            value={attributes.title}
+            onChange={(title) => setAttributes({ title })}
             placeholder="Enter your title..."
           />
           <SelectControl
