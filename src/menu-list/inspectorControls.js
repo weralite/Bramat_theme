@@ -11,10 +11,10 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
       <InspectorControls>
         <PanelBody title="Add block" initialOpen={true}>
           <InnerBlocks
-                  allowedBlocks={['custom/dish-item', 'custom/day-item']}
-                  renderAppender={ InnerBlocks.ButtonBlockAppender }
-                  
- />
+            allowedBlocks={['custom/dish-item', 'custom/day-item']}
+            renderAppender={InnerBlocks.ButtonBlockAppender}
+
+          />
         </PanelBody>
 
         <PanelBody title="Settings" initialOpen={true}>

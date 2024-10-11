@@ -537,6 +537,22 @@ video {
     max-width: 1440px;
   }
 }
+.primary-li-class-parent-desktop {
+  align-items: top;
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  color: white;
+  text-decoration: none;
+  transition: all 100ms;
+}
+.primary-li-class-parent-desktop:hover {
+  background-color: #d1d5db;
+  color: black;
+  text-decoration: underline;
+}
+.group:hover .primary-li-class-parent-desktop {
+  background-color: #d1d5db;
+}
 .static {
   position: static;
 }
@@ -755,10 +771,6 @@ video {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -770,10 +782,6 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
 }
 .py-4 {
   padding-top: 1rem;
@@ -793,9 +801,6 @@ video {
 }
 .text-center {
   text-align: center;
-}
-.align-top {
-  vertical-align: top;
 }
 .font-josefin {
   font-family: Josefin Slab, serif;
@@ -1165,19 +1170,8 @@ article>*:not(.entry-content),
     left: 0;
     /* Move to the left */
 }
-.hover\:bg-gray-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-.hover\:text-black:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
 .hover\:underline:hover {
   text-decoration-line: underline;
-}
-.hover\:decoration-black:hover {
-  text-decoration-color: #000;
 }
 .group:hover .group-hover\:h-full {
   height: 100%;
@@ -1188,10 +1182,6 @@ article>*:not(.entry-content),
 .group:hover .group-hover\:scale-y-100 {
   --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.group:hover .group-hover\:bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 .group:hover .group-hover\:text-black {
   --tw-text-opacity: 1;

@@ -64,5 +64,25 @@ module.exports = {
     },
     plugins: [
         tailpress.tailwind,
+        function ({ addComponents }) {
+            addComponents({
+              '.primary-li-class-parent-desktop': {
+                'align-items': 'top',
+                'position': 'relative',
+                'padding': '0.75rem 1.25rem', /* equivalent to py-3 px-5 */
+                'color': 'white',
+                'text-decoration': 'none',
+                'transition': 'all 100ms',
+                '&:hover': {
+                  'background-color': '#d1d5db', /* hover:bg-gray-300 */
+                  'color': 'black',              /* hover:text-black */
+                  'text-decoration': 'underline',
+                },
+                '.group:hover &': {
+                  'background-color': '#d1d5db', /* group-hover:bg-gray-300 */
+                },
+              },
+            });
+          },
     ]
 };

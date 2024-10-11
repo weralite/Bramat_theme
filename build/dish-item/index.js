@@ -40,15 +40,6 @@ const CustomInspectorControls = ({
         ,
         placeholder: "Enter your title..."
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
-        label: "Title",
-        value: attributes.price // Bind the title attribute
-        ,
-        onChange: price => setAttributes({
-          price
-        }) // Update title on change
-        ,
-        placeholder: "Enter your price..."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
         label: "Description",
         value: attributes.description // Bind the title attribute
         ,
@@ -57,6 +48,15 @@ const CustomInspectorControls = ({
         }) // Update title on change
         ,
         placeholder: "Describe your dish..."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
+        label: "Price",
+        value: attributes.price // Bind the title attribute
+        ,
+        onChange: price => setAttributes({
+          price
+        }) // Update title on change
+        ,
+        placeholder: "Enter your price..."
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
       title: "Settings",
