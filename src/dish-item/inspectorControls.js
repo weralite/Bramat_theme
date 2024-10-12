@@ -1,5 +1,5 @@
 // inspectorControls.js
-import { PanelBody, TextControl, CheckboxControl, SelectControl, ToggleControl } from '@wordpress/components';
+import { PanelBody, TextControl, CheckboxControl, RangeControl, ToggleControl } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 
 const CustomInspectorControls = ({ attributes, setAttributes }) => {
@@ -53,6 +53,14 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
           onChange={(value) => setAttributes({ showPrice: value })}
         />
       </PanelBody>
+      <RangeControl
+            label="Padding"
+            value={attributes.paddingRange}
+            onChange={(value) => setAttributes({ paddingRange: value })}
+            min={0}
+            max={6}
+            step={2}
+          />
     </InspectorControls>
   );
 };

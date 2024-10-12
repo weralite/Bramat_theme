@@ -10,7 +10,17 @@ import VegetarianIcon from "../../assets/icons/icon_vegetarian.png";
 import LactoseIcon from "../../assets/icons/icon_lactose.png";
 
 const Edit = ({ attributes, setAttributes }) => {
-  const blockProps = useBlockProps();
+  const paddingClasses = {
+    0: 'px-0',  
+    2: 'px-2',  
+    4: 'px-4',  
+    6: 'px-6',    
+};
+const paddingClass = paddingClasses[attributes.paddingRange];
+
+  const blockProps = useBlockProps({
+    className: paddingClass,
+  });
 
   return (
     <>
@@ -55,7 +65,7 @@ const Edit = ({ attributes, setAttributes }) => {
 
 
 const save = ({ attributes }) => (
-  <div className="pb-2">
+  <div className="py-2">
     <div className="gap-4 flex flex-row justify-between">
       <div className="md:flex-shrink">
         <RichText.Content tagName="b" value={attributes.dish} />

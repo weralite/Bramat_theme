@@ -116,7 +116,7 @@ module.exports = window["wp"]["components"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"custom/menu-list","title":"Menu List","category":"custom-layout-category","icon":"menu","description":"A block to create a menu with days and items.","supports":{"html":false,"align":true,"customClassName":true},"textdomain":"custom-menu-list","editorScript":"file:./index.js","attributes":{"title":{"type":"string","default":""},"days":{"type":"array","default":[]},"textAlign":{"type":"string","default":"left"},"HeadlineAlignment":{"type":"string","default":"center"},"maxWidth":{"type":"string","default":"700px"},"gap":{"type":"number","default":0}}}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"custom/menu-list","title":"Menu List","category":"custom-layout-category","icon":"menu","description":"A block to create a menu with days and items.","supports":{"html":false,"align":true,"customClassName":true,"blockGap":true},"textdomain":"custom-menu-list","editorScript":"file:./index.js","attributes":{"title":{"type":"string","default":""},"days":{"type":"array","default":[]},"textAlign":{"type":"string","default":"left"},"HeadlineAlignment":{"type":"string","default":"center"},"maxWidth":{"type":"string","default":"700px"}}}');
 
 /***/ })
 
@@ -222,12 +222,12 @@ const Edit = ({
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inspectorControls__WEBPACK_IMPORTED_MODULE_3__["default"], {
       attributes: attributes,
       setAttributes: setAttributes
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       ...blockProps,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
         allowedBlocks: ['core/heading', 'custom/day-item', 'custom/dish-item'],
         renderAppender: false
-      })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.ButtonBlockAppender, {})]
     })]
   });
 };

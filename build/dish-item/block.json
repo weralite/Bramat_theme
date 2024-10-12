@@ -42,6 +42,10 @@
     "isVegetarian": {
       "type": "boolean",
       "default": false
+    },
+    "paddingRange": {
+      "type": "number",
+      "default": 0
     }
   }
 }

@@ -6,11 +6,10 @@ import CustomInspectorControls from "./inspectorControls";
 const Edit = ({ attributes, setAttributes }) => {
   const blockProps = useBlockProps({
     style: {
-      maxWidth: attributes.maxWidth
+      maxWidth: attributes.maxWidth,
     },
     className: `py-10 flex flex-col`,
   });
-
   return (
     <>
       <CustomInspectorControls attributes={attributes} setAttributes={setAttributes} />
@@ -19,6 +18,7 @@ const Edit = ({ attributes, setAttributes }) => {
           allowedBlocks={['core/heading', 'custom/day-item', 'custom/dish-item']} 
           renderAppender={ false } 
         />
+        <InnerBlocks.ButtonBlockAppender />
       </div>
     </>
   );

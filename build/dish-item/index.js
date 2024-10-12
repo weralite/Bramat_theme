@@ -86,6 +86,15 @@ const CustomInspectorControls = ({
           showPrice: value
         })
       })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+      label: "Padding",
+      value: attributes.paddingRange,
+      onChange: value => setAttributes({
+        paddingRange: value
+      }),
+      min: 0,
+      max: 6,
+      step: 2
     })]
   });
 };
@@ -189,7 +198,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"custom/dish-item","title":"Dish Item","category":"custom-layout-category","icon":"food","description":"A block to add a dish to a day.","supports":{"html":false},"textdomain":"custom-dish-item","editorScript":"file:./index.js","attributes":{"dish":{"type":"string","default":""},"description":{"type":"string","default":""},"price":{"type":"string","default":""},"showPrice":{"type":"boolean","default":true},"isGlutenFree":{"type":"boolean","default":false},"isLactoseFree":{"type":"boolean","default":false},"isVegan":{"type":"boolean","default":false},"isVegetarian":{"type":"boolean","default":false}}}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"custom/dish-item","title":"Dish Item","category":"custom-layout-category","icon":"food","description":"A block to add a dish to a day.","supports":{"html":false},"textdomain":"custom-dish-item","editorScript":"file:./index.js","attributes":{"dish":{"type":"string","default":""},"description":{"type":"string","default":""},"price":{"type":"string","default":""},"showPrice":{"type":"boolean","default":true},"isGlutenFree":{"type":"boolean","default":false},"isLactoseFree":{"type":"boolean","default":false},"isVegan":{"type":"boolean","default":false},"isVegetarian":{"type":"boolean","default":false},"paddingRange":{"type":"number","default":0}}}');
 
 /***/ })
 
@@ -331,7 +340,16 @@ const Edit = ({
   attributes,
   setAttributes
 }) => {
-  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)();
+  const paddingClasses = {
+    0: 'px-0',
+    2: 'px-2',
+    4: 'px-4',
+    6: 'px-6'
+  };
+  const paddingClass = paddingClasses[attributes.paddingRange];
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+    className: paddingClass
+  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_inspectorControls__WEBPACK_IMPORTED_MODULE_4__["default"], {
       attributes: attributes,
@@ -381,7 +399,7 @@ const Edit = ({
 const save = ({
   attributes
 }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-  className: "pb-2",
+  className: "py-2",
   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
     className: "gap-4 flex flex-row justify-between",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
