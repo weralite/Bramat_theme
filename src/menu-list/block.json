@@ -33,6 +33,10 @@
     "maxWidth": {
       "type": "string",
       "default": "700px"
+    },
+    "blockGap": {
+      "type": "number",
+      "default": 0
     }
   }
 }

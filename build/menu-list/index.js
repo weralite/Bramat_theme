@@ -61,6 +61,27 @@ const CustomInspectorControls = ({
           onChange: maxWidth => setAttributes({
             maxWidth
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          label: "List Space",
+          value: attributes.blockGap,
+          options: [{
+            label: 'None',
+            value: 0
+          }, {
+            label: 'Small',
+            value: 2
+          }, {
+            label: 'Medium',
+            value: 4
+          }, {
+            label: 'Large',
+            value: 6
+          }],
+          onChange: value => {
+            setAttributes({
+              blockGap: parseInt(value, 10)
+            }); // Ensure it's a number
+          }
         })]
       })]
     })
@@ -116,7 +137,7 @@ module.exports = window["wp"]["components"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"custom/menu-list","title":"Menu List","category":"custom-layout-category","icon":"menu","description":"A block to create a menu with days and items.","supports":{"html":false,"align":true,"customClassName":true,"blockGap":true},"textdomain":"custom-menu-list","editorScript":"file:./index.js","attributes":{"title":{"type":"string","default":""},"days":{"type":"array","default":[]},"textAlign":{"type":"string","default":"left"},"HeadlineAlignment":{"type":"string","default":"center"},"maxWidth":{"type":"string","default":"700px"}}}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"custom/menu-list","title":"Menu List","category":"custom-layout-category","icon":"menu","description":"A block to create a menu with days and items.","supports":{"html":false,"align":true,"customClassName":true,"blockGap":true},"textdomain":"custom-menu-list","editorScript":"file:./index.js","attributes":{"title":{"type":"string","default":""},"days":{"type":"array","default":[]},"textAlign":{"type":"string","default":"left"},"HeadlineAlignment":{"type":"string","default":"center"},"maxWidth":{"type":"string","default":"700px"},"blockGap":{"type":"number","default":0}}}');
 
 /***/ })
 
@@ -226,7 +247,8 @@ const Edit = ({
       ...blockProps,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
         allowedBlocks: ['core/heading', 'custom/day-item', 'custom/dish-item'],
-        renderAppender: false
+        renderAppender: false,
+        paddingRange: attributes.paddingRange
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.ButtonBlockAppender, {})]
     })]
   });
@@ -234,8 +256,15 @@ const Edit = ({
 const save = ({
   attributes
 }) => {
+  const gapClasses = {
+    0: 'gap-0',
+    2: 'gap-2',
+    4: 'gap-4',
+    6: 'gap-6'
+  };
+  const gapClass = gapClasses[attributes.blockGap];
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
-    className: `py-10 flex flex-col`,
+    className: `py-10 flex flex-col ${gapClass}`,
     style: {
       maxWidth: attributes.maxWidth
     }

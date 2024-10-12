@@ -182,6 +182,7 @@ function mycustomblocks_block_init()
 	register_block_type(__DIR__ . '/build/menu-list');
 	register_block_type(__DIR__ . '/build/day-item');
 	register_block_type(__DIR__ . '/build/dish-item');
+	register_block_type(__DIR__ . '/build/custom-block');
 }
 add_action('init', 'mycustomblocks_block_init');
 

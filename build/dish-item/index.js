@@ -336,16 +336,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const paddingClasses = {
+  0: 'px-0',
+  2: 'px-2',
+  4: 'px-4',
+  6: 'px-6'
+};
 const Edit = ({
   attributes,
   setAttributes
 }) => {
-  const paddingClasses = {
-    0: 'px-0',
-    2: 'px-2',
-    4: 'px-4',
-    6: 'px-6'
-  };
   const paddingClass = paddingClasses[attributes.paddingRange];
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
     className: paddingClass
@@ -398,48 +398,54 @@ const Edit = ({
 };
 const save = ({
   attributes
-}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-  className: "py-2",
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-    className: "gap-4 flex flex-row justify-between",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-      className: "md:flex-shrink",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
-        tagName: "b",
-        value: attributes.dish
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
-        tagName: "p",
-        value: attributes.description
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-      className: "md:flex md:flex-row md:justify-end md:gap-4 md:flex-grow md:flex-shrink-0",
+}) => {
+  const paddingClass = paddingClasses[attributes.paddingRange];
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
+    className: `py-2 ${paddingClass}`
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+    ...blockProps,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      className: "gap-4 flex flex-row justify-between",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-        className: "hidden md:flex md:flex-row ",
-        children: [attributes.isLactoseFree && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
-          src: _assets_icons_icon_lactose_png__WEBPACK_IMPORTED_MODULE_8__,
-          alt: "Lactose Free",
-          className: "bg-transparent w-14 h-14"
-        }), attributes.isGlutenFree && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
-          src: _assets_icons_icon_gluten_png__WEBPACK_IMPORTED_MODULE_5__,
-          alt: "Gluten Free",
-          className: "bg-transparent w-14 h-14"
-        }), attributes.isVegan && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
-          src: _assets_icons_icon_vegan_png__WEBPACK_IMPORTED_MODULE_6__,
-          alt: "Vegan",
-          className: "bg-transparent w-14 h-14"
-        }), attributes.isVegetarian && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
-          src: _assets_icons_icon_vegetarian_png__WEBPACK_IMPORTED_MODULE_7__,
-          alt: "Vegetarian",
-          className: "bg-transparent w-14 h-14"
+        className: "md:flex-shrink",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+          tagName: "b",
+          value: attributes.dish
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+          tagName: "p",
+          value: attributes.description
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
-        className: "whitespace-nowrap text-right",
-        tagName: "b",
-        value: attributes.price
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "md:flex md:flex-row md:justify-end md:gap-4 md:flex-grow md:flex-shrink-0",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "hidden md:flex md:flex-row ",
+          children: [attributes.isLactoseFree && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+            src: _assets_icons_icon_lactose_png__WEBPACK_IMPORTED_MODULE_8__,
+            alt: "Lactose Free",
+            className: "bg-transparent w-14 h-14"
+          }), attributes.isGlutenFree && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+            src: _assets_icons_icon_gluten_png__WEBPACK_IMPORTED_MODULE_5__,
+            alt: "Gluten Free",
+            className: "bg-transparent w-14 h-14"
+          }), attributes.isVegan && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+            src: _assets_icons_icon_vegan_png__WEBPACK_IMPORTED_MODULE_6__,
+            alt: "Vegan",
+            className: "bg-transparent w-14 h-14"
+          }), attributes.isVegetarian && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+            src: _assets_icons_icon_vegetarian_png__WEBPACK_IMPORTED_MODULE_7__,
+            alt: "Vegetarian",
+            className: "bg-transparent w-14 h-14"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+          className: "whitespace-nowrap text-right",
+          tagName: "b",
+          value: attributes.price
+        })]
       })]
-    })]
-  })
-});
+    })
+  });
+};
 
 /**
  * Register block type

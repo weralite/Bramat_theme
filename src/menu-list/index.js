@@ -10,6 +10,7 @@ const Edit = ({ attributes, setAttributes }) => {
     },
     className: `py-10 flex flex-col`,
   });
+
   return (
     <>
       <CustomInspectorControls attributes={attributes} setAttributes={setAttributes} />
@@ -17,6 +18,7 @@ const Edit = ({ attributes, setAttributes }) => {
         <InnerBlocks 
           allowedBlocks={['core/heading', 'custom/day-item', 'custom/dish-item']} 
           renderAppender={ false } 
+          paddingRange={attributes.paddingRange}
         />
         <InnerBlocks.ButtonBlockAppender />
       </div>
@@ -25,8 +27,16 @@ const Edit = ({ attributes, setAttributes }) => {
 };
 
 const save = ({ attributes }) => {
+  const gapClasses = {
+    0: 'gap-0',
+    2: 'gap-2',
+    4: 'gap-4',
+    6: 'gap-6',
+  };
+  const gapClass = gapClasses[attributes.blockGap];
+
   const blockProps = useBlockProps.save({
-    className: `py-10 flex flex-col`,
+    className: `py-10 flex flex-col ${gapClass}`,
     style: {
       maxWidth: attributes.maxWidth,
     },

@@ -9,13 +9,15 @@ import VeganIcon from "../../assets/icons/icon_vegan.png";
 import VegetarianIcon from "../../assets/icons/icon_vegetarian.png";
 import LactoseIcon from "../../assets/icons/icon_lactose.png";
 
-const Edit = ({ attributes, setAttributes }) => {
-  const paddingClasses = {
-    0: 'px-0',  
-    2: 'px-2',  
-    4: 'px-4',  
-    6: 'px-6',    
+const paddingClasses = {
+  0: 'px-0',  
+  2: 'px-2',  
+  4: 'px-4',  
+  6: 'px-6',    
 };
+
+const Edit = ({ attributes, setAttributes }) => {
+
 const paddingClass = paddingClasses[attributes.paddingRange];
 
   const blockProps = useBlockProps({
@@ -64,8 +66,17 @@ const paddingClass = paddingClasses[attributes.paddingRange];
 
 
 
-const save = ({ attributes }) => (
-  <div className="py-2">
+const save = ({ attributes }) => { 
+
+const paddingClass = paddingClasses[attributes.paddingRange];
+  
+const blockProps = useBlockProps.save({
+  className: `py-2 ${paddingClass}`,
+
+});
+  
+  return (
+<div {...blockProps}>
     <div className="gap-4 flex flex-row justify-between">
       <div className="md:flex-shrink">
         <RichText.Content tagName="b" value={attributes.dish} />
@@ -83,7 +94,8 @@ const save = ({ attributes }) => (
     </div>
 
   </div>
-);
+)
+};
 
 /**
  * Register block type
