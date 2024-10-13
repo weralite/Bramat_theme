@@ -191,7 +191,7 @@ function register_layout_category($categories)
 {
 	// Define the custom category
 	$custom_category = array(
-		'slug'  => 'custom-layout-category',
+		'slug'  => 'custom-blocks',
 		'title' => 'Restaurant Layouts',
 	);
 

@@ -110,7 +110,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"custom/day-item","title":"Day Item","category":"custom-layout-category","icon":"calendar","description":"A block to add a day\'s menu items.","supports":{"html":false},"textdomain":"custom-day-item","editorScript":"file:./index.js","attributes":{"day":{"type":"string","default":""},"items":{"type":"array","default":[]}}}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"custom/day-item","title":"Day Item","category":"custom-blocks","icon":"calendar","description":"A block to add a day\'s menu items.","supports":{"html":false},"textdomain":"custom-day-item","editorScript":"file:./index.js","attributes":{"day":{"type":"string","default":""},"items":{"type":"array","default":[]}}}');
 
 /***/ })
 
@@ -226,9 +226,8 @@ const Edit = ({
         placeholder: "Add day...",
         className: "underline"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks, {
-        allowedBlocks: ['custom/dish-item'] // Only allow dish-item blocks
-        ,
-        renderAppender: false // Optional: start with a dish-item block
+        allowedBlocks: ['custom/dish-item'],
+        renderAppender: false
       })]
     })]
   });

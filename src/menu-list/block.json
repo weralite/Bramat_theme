@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "custom/menu-list",
   "title": "Menu List",
-  "category": "custom-layout-category",
+  "category": "custom-blocks",
   "icon": "menu",
   "description": "A block to create a menu with days and items.",
   "supports": {

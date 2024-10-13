@@ -137,7 +137,7 @@ module.exports = window["wp"]["components"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"custom/menu-list","title":"Menu List","category":"custom-layout-category","icon":"menu","description":"A block to create a menu with days and items.","supports":{"html":false,"align":true,"customClassName":true,"blockGap":true},"textdomain":"custom-menu-list","editorScript":"file:./index.js","attributes":{"title":{"type":"string","default":""},"days":{"type":"array","default":[]},"textAlign":{"type":"string","default":"left"},"HeadlineAlignment":{"type":"string","default":"center"},"maxWidth":{"type":"string","default":"700px"},"blockGap":{"type":"number","default":0}}}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"custom/menu-list","title":"Menu List","category":"custom-blocks","icon":"menu","description":"A block to create a menu with days and items.","supports":{"html":false,"align":true,"customClassName":true,"blockGap":true},"textdomain":"custom-menu-list","editorScript":"file:./index.js","attributes":{"title":{"type":"string","default":""},"days":{"type":"array","default":[]},"textAlign":{"type":"string","default":"left"},"HeadlineAlignment":{"type":"string","default":"center"},"maxWidth":{"type":"string","default":"700px"},"blockGap":{"type":"number","default":0}}}');
 
 /***/ })
 
@@ -239,6 +239,9 @@ const Edit = ({
     },
     className: `py-10 flex flex-col`
   });
+
+  // TODO: save heading value to title attribute and use it with experimental label in save function to display the menu name in listview.
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inspectorControls__WEBPACK_IMPORTED_MODULE_3__["default"], {
       attributes: attributes,

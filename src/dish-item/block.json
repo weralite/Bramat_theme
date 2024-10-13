@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "custom/dish-item",
   "title": "Dish Item",
-  "category": "custom-layout-category",
+  "category": "custom-blocks",
   "icon": "food",
   "description": "A block to add a dish to a day.",
   "supports": {

@@ -76,25 +76,25 @@ const CustomInspectorControls = ({
           isVegetarian
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
       title: "Settings",
       initialOpen: true,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
         label: "Show Price",
         checked: attributes.showPrice,
         onChange: value => setAttributes({
           showPrice: value
         })
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
-      label: "Padding",
-      value: attributes.paddingRange,
-      onChange: value => setAttributes({
-        paddingRange: value
-      }),
-      min: 0,
-      max: 6,
-      step: 2
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+        label: "Padding",
+        value: attributes.paddingRange,
+        onChange: value => setAttributes({
+          paddingRange: value
+        }),
+        min: 0,
+        max: 6,
+        step: 2
+      })]
     })]
   });
 };
@@ -198,7 +198,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"custom/dish-item","title":"Dish Item","category":"custom-layout-category","icon":"food","description":"A block to add a dish to a day.","supports":{"html":false},"textdomain":"custom-dish-item","editorScript":"file:./index.js","attributes":{"dish":{"type":"string","default":""},"description":{"type":"string","default":""},"price":{"type":"string","default":""},"showPrice":{"type":"boolean","default":true},"isGlutenFree":{"type":"boolean","default":false},"isLactoseFree":{"type":"boolean","default":false},"isVegan":{"type":"boolean","default":false},"isVegetarian":{"type":"boolean","default":false},"paddingRange":{"type":"number","default":0}}}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"custom/dish-item","title":"Dish Item","category":"custom-blocks","icon":"food","description":"A block to add a dish to a day.","supports":{"html":false},"textdomain":"custom-dish-item","editorScript":"file:./index.js","attributes":{"dish":{"type":"string","default":""},"description":{"type":"string","default":""},"price":{"type":"string","default":""},"showPrice":{"type":"boolean","default":true},"isGlutenFree":{"type":"boolean","default":false},"isLactoseFree":{"type":"boolean","default":false},"isVegan":{"type":"boolean","default":false},"isVegetarian":{"type":"boolean","default":false},"paddingRange":{"type":"number","default":0}}}');
 
 /***/ })
 
