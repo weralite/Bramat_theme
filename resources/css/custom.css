@@ -16,7 +16,7 @@ article>*:not(.entry-content),
 
     h3 {
         @apply text-lg;
-        
+
 
     }
 
@@ -25,16 +25,17 @@ article>*:not(.entry-content),
     h3,
     h4,
     h5 {
-        @apply font-josefin; /* Use the Tailwind utility class */
+        @apply font-josefin;
+        /* Use the Tailwind utility class */
     }
 
     b,
     p,
     ul,
     ol {
-        
+
         /* @apply mb-8; */
-        @apply font-josefin; 
+        @apply font-josefin;
         @apply text-xl;
         @apply tracking-wider;
     }
@@ -75,4 +76,23 @@ article>*:not(.entry-content),
     /* Full width on hover */
     left: 0;
     /* Move to the left */
+}
+
+.trp-block-container {
+    @apply max-w-[700px];
+    @apply absolute;
+    @apply bottom-10;
+}
+
+.trp-language-switcher>div {
+    @apply bg-black;
+    @apply border-none
+}
+
+.trp-language-switcher>div>a {
+    @apply text-white;
+}
+
+#trp-floater-ls.trp-color-dark {
+    @apply bg-black;
 }
