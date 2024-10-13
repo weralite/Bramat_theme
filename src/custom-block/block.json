@@ -1,9 +1,6 @@
 {
   "apiVersion": 2,
   "name": "custom/custom-block",
-  "title": "custom block",
-  "category": "custom-blocks",
-  "icon": "calendar",
   "description": "A block to add a day's menu items.",
   "supports": {
     "html": false

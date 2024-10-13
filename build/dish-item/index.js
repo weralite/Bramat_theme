@@ -456,7 +456,7 @@ const save = ({
   __experimentalLabel: (attributes, {
     context
   }) => {
-    return context === 'list-view' && attributes.dish ? attributes.dish : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Dish Item');
+    return context === 'list-view' && attributes.dish ? attributes.dish : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Dish');
   }
 });
 })();

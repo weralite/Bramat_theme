@@ -120,7 +120,7 @@ const TEMPLATE = [['core/columns', {}, [['core/column', {}, [['custom/day-item']
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('custom/my-custom-block', {
   title: 'My Custom Block',
   icon: 'block-default',
-  category: 'layout',
+  category: 'custom-blocks',
   edit() {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {

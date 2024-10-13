@@ -1,9 +1,11 @@
 import { registerBlockType } from "@wordpress/blocks";
-import { useBlockProps, InnerBlocks, BlockControls } from "@wordpress/block-editor";
+import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
+import { useSelect } from "@wordpress/data";
+import { __ } from '@wordpress/i18n';
 import metadata from "./block.json";
 import CustomInspectorControls from "./inspectorControls";
 
-const Edit = ({ attributes, setAttributes }) => {
+const Edit = ({ attributes, setAttributes, clientId }) => {
   const blockProps = useBlockProps({
     style: {
       maxWidth: attributes.maxWidth,
@@ -11,7 +13,15 @@ const Edit = ({ attributes, setAttributes }) => {
     className: `py-10 flex flex-col`,
   });
 
+  const headingContent = useSelect((select) => {
+    const blocks = select('core/block-editor').getBlocks(clientId);
+    const headingBlock = blocks.find(block => block.name === 'core/heading');
+    return headingBlock ? headingBlock.attributes.content : '';
+  }, [clientId]);
 
+  if (headingContent !== attributes.title) {
+    setAttributes({ title: headingContent });
+  }
   // TODO: save heading value to title attribute and use it with experimental label in save function to display the menu name in listview.
 
   return (
@@ -55,4 +65,9 @@ const save = ({ attributes }) => {
 registerBlockType(metadata.name, {
   edit: Edit,
   save,
+  __experimentalLabel: (attributes, { context }) => {
+    return context === 'list-view' && attributes.title 
+      ? attributes.title 
+      : __('Menu');
+  },
 });

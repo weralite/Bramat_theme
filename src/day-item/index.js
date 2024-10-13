@@ -1,10 +1,27 @@
 import { useBlockProps, RichText, InnerBlocks } from "@wordpress/block-editor";
 import { registerBlockType } from "@wordpress/blocks";
+import { Button } from "@wordpress/components";
 import { __ } from '@wordpress/i18n';
 import metadata from "./block.json";
 import CustomInspectorControls from "./inspectorControls";
 
-const Edit = ({ attributes, setAttributes }) => {
+const CustomButtonBlockAppender = ({ clientId }) => {
+  return (
+    <Button
+      className="bg-blue-500 text-white"
+      onClick={() => wp.data.dispatch('core/block-editor').insertBlock(
+        wp.blocks.createBlock('custom/dish-item'),
+        undefined,
+        clientId
+      )}
+    >
+      {__('Add')}
+    </Button>
+  );
+};
+
+
+const Edit = ({ attributes, setAttributes, clientId }) => {
   const blockProps = useBlockProps();
 
   return (
@@ -20,8 +37,10 @@ const Edit = ({ attributes, setAttributes }) => {
       />
       <InnerBlocks 
         allowedBlocks={['custom/dish-item']} 
-        renderAppender={ false }  />
-      
+        renderAppender={ false}
+        />
+      <CustomButtonBlockAppender clientId={clientId} />
+
     </div>
     </>
   );
@@ -42,6 +61,6 @@ registerBlockType(metadata.name, {
   __experimentalLabel: (attributes, { context }) => {
     return context === 'list-view' && attributes.day 
       ? attributes.day 
-      : __('Dish Item');
+      : __('Day');
   },
 });

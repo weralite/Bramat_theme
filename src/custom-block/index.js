@@ -11,7 +11,7 @@ const TEMPLATE = [
 registerBlockType('custom/my-custom-block', {
   title: 'My Custom Block',
   icon: 'block-default',
-  category: 'layout',
+  category: 'custom-blocks',
   edit() {
     return (
       <div>

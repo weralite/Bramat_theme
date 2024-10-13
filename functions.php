@@ -207,5 +207,8 @@ if (version_compare(get_bloginfo('version'), '5.8', '>=')) {
 	add_filter('block_categories', 'register_layout_category');
 }
 
-
+function tailpress_load_textdomain() {
+    load_theme_textdomain('tailpress', get_template_directory() . '/languages');
+}
+add_action('after_setup_theme', 'tailpress_load_textdomain');
 

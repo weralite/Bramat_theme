@@ -106,6 +106,6 @@ registerBlockType(metadata.name, {
   __experimentalLabel: (attributes, { context }) => {
     return context === 'list-view' && attributes.dish
       ? attributes.dish
-      : __('Dish Item');
+      : __('Dish');
   },
 });
