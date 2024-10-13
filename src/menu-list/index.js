@@ -11,6 +11,9 @@ const Edit = ({ attributes, setAttributes }) => {
     className: `py-10 flex flex-col`,
   });
 
+
+  // TODO: save heading value to title attribute and use it with experimental label in save function to display the menu name in listview.
+
   return (
     <>
       <CustomInspectorControls attributes={attributes} setAttributes={setAttributes} />

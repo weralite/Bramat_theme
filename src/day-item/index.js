@@ -19,9 +19,8 @@ const Edit = ({ attributes, setAttributes }) => {
         className="underline"
       />
       <InnerBlocks 
-        allowedBlocks={['custom/dish-item']} // Only allow dish-item blocks
-        renderAppender={ false } // Optional: start with a dish-item block
-      />
+        allowedBlocks={['custom/dish-item']} 
+        renderAppender={ false }  />
       
     </div>
     </>

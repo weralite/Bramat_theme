@@ -52,15 +52,16 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
           checked={attributes.showPrice}
           onChange={(value) => setAttributes({ showPrice: value })}
         />
+        <RangeControl
+          label="Padding"
+          value={attributes.paddingRange}
+          onChange={(value) => setAttributes({ paddingRange: value })}
+          min={0}
+          max={6}
+          step={2}
+        />
       </PanelBody>
-      <RangeControl
-            label="Padding"
-            value={attributes.paddingRange}
-            onChange={(value) => setAttributes({ paddingRange: value })}
-            min={0}
-            max={6}
-            step={2}
-          />
+
     </InspectorControls>
   );
 };
