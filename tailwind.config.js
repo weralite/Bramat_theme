@@ -20,6 +20,7 @@ module.exports = {
             },
         },
         extend: {
+            
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
             fontSize: {
                 'xs': '0.75rem', // 12px
@@ -75,16 +76,23 @@ module.exports = {
         }
     },
     variants: {
+        fontSmoothing: ['responsive'],
         extend: {
             textColor: ['hover', 'focus'],
             fontWeight: ['hover', 'focus'],
-        }
+        },
+        
     },
     plugins: [
+        function ({ addUtilities }) {
+            addUtilities({
+
+            });
+          },
         tailpress.tailwind,
         function ({ addComponents }) {
             addComponents({
-                '.primary-li-class-parent-desktop': {
+                '.secondary-li-class-parent-desktop': {
                     'position': 'relative',
                     'min-width': '15rem',
                     'height': '3rem',
@@ -95,14 +103,16 @@ module.exports = {
                     'vertical-align': 'middle',
                     'text-decoration': 'none',
                     'transition': 'all 100ms',
+
                     '&:hover': {
                         'background-color': '#d1d5db', /* hover:bg-gray-300 */
-                        'color': 'black', /* hover:text-black */
+                        'color': 'black',
                         'text-decoration': 'underline',
                     },
                     '.group:hover &': {
-                        'background-color': '#d1d5db', /* group-hover:bg-gray-300 */
-                        'color': 'black', /* group-hover:text-black */
+                        'background-color': '#f3f4f6',
+                        'color': 'black', 
+                        'border-bottom': '1px solid #d1d5db',
                     },
                 },
                 // New class for hover background animation
@@ -123,13 +133,13 @@ module.exports = {
 
                     // Text styles for the <a> tag
                     'a': {
-                        'display': 'block',  // Ensures it takes full width
+                        'display': 'block', 
                         'transform': 'scaleY(0)',  // Hide the text initially
-                        'opacity': '0',  // Also hide text opacity
-                        'transition': 'opacity 100ms ease-in-out', // Smooth transition
+                        'opacity': '0',  
+                        'transition': 'opacity 100ms ease-in-out', 
                         'transform-origin': 'top',  // Animate from the top
-                        'margin-left': '1rem',  // Add some space to the left
-                        'text-align': 'left',  // Align text to the left
+                        'margin-left': '1rem', 
+                        'text-align': 'left',  
                         '.group:hover &': {
                             'transform': 'scaleY(1)',  // Show text on hover
                             'opacity': '1',  // Make text visible

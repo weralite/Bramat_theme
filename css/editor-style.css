@@ -37,7 +37,7 @@
   max-width: 1440px;
  }
 }
-.primary-li-class-parent-desktop {
+.secondary-li-class-parent-desktop {
  position: relative;
  min-width: 15rem;
  height: 3rem;
@@ -49,14 +49,15 @@
  text-decoration: none;
  transition: all 100ms;
 }
-.primary-li-class-parent-desktop:hover {
+.secondary-li-class-parent-desktop:hover {
  background-color: #d1d5db;
  color: black;
  text-decoration: underline;
 }
-.group:hover .primary-li-class-parent-desktop {
- background-color: #d1d5db;
+.group:hover .secondary-li-class-parent-desktop {
+ background-color: #f3f4f6;
  color: black;
+ border-bottom: 1px solid #d1d5db;
 }
 .hover-background-animation {
  position: absolute;
@@ -104,12 +105,6 @@
 }
 .top-0 {
  top: 0px;
-}
-.z-0 {
- z-index: 0;
-}
-.z-10 {
- z-index: 10;
 }
 .z-20 {
  z-index: 20;
@@ -185,10 +180,6 @@
 }
 .w-full {
  width: 100%;
-}
-.w-max {
- width: -moz-max-content;
- width: max-content;
 }
 .max-w-\[1440px\] {
  max-width: 1440px;
@@ -289,14 +280,8 @@
 .bg-opacity-20 {
  --tw-bg-opacity: 0.2;
 }
-.p-2 {
- padding: 0.5rem;
-}
 .p-4 {
  padding: 1rem;
-}
-.p-5 {
- padding: 1.25rem;
 }
 .px-0 {
  padding-left: 0px;
@@ -364,9 +349,6 @@
 .text-sm {
  font-size: 0.875rem;
 }
-.text-xl {
- font-size: 1.25rem;
-}
 .font-bold {
  font-weight: 700;
 }
@@ -376,8 +358,8 @@
 .font-light {
  font-weight: 300;
 }
-.font-semibold {
- font-weight: 600;
+.font-medium {
+ font-weight: 500;
 }
 .uppercase {
  text-transform: uppercase;
@@ -531,10 +513,6 @@ body {
 }
 .group:hover .group-hover\:h-full {
  height: 100%;
-}
-.group:hover .group-hover\:text-black {
- --tw-text-opacity: 1;
- color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 @media (min-width: 782px) {
  .md\:my-6 {
