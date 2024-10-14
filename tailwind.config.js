@@ -113,6 +113,7 @@ module.exports = {
                         'background-color': '#f3f4f6',
                         'color': 'black', 
                         'border-bottom': '1px solid #d1d5db',
+                              'transition': 'border-bottom 100ms ease-in-out'
                     },
                 },
                 // New class for hover background animation
@@ -123,7 +124,7 @@ module.exports = {
                     'transform': 'translateX(-50%) scaleY(0)',  // Initially hidden
                     'width': '15rem',
                     'overflow': 'hidden',
-                    'transition': 'transform 100ms ease-in-out',  // Transition for background
+                    'transition': 'transform 100ms ease-in-out border-bottom 100ms ease-in-out',  // Transition for background
                     'transform-origin': 'top',
                     'will-change': 'transform',
 

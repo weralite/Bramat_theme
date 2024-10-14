@@ -558,6 +558,7 @@ video {
   background-color: #f3f4f6;
   color: black;
   border-bottom: 1px solid #d1d5db;
+  transition: border-bottom 100ms ease-in-out;
 }
 .hover-background-animation {
   position: absolute;
@@ -566,7 +567,7 @@ video {
   transform: translateX(-50%) scaleY(0);
   width: 15rem;
   overflow: hidden;
-  transition: transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out border-bottom 100ms ease-in-out;
   transform-origin: top;
   will-change: transform;
 }
