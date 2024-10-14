@@ -95,7 +95,8 @@ module.exports = {
                 '.secondary-li-class-parent-desktop': {
                     'position': 'relative',
                     'min-width': '15rem',
-                    'height': '3rem',
+                    'max-width': '15rem',
+                    'min-height': '3rem',
                     'display': 'flex',
                     'color': 'white',
                     'text-align': 'center',
@@ -109,6 +110,7 @@ module.exports = {
                         'background-color': '#d1d5db', /* hover:bg-gray-300 */
                         'color': 'black',
                         'text-decoration': 'underline',
+
                     },
                     '.group:hover &': {
                         'background-color': '#f3f4f6',
