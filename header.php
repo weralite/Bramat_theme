@@ -21,7 +21,7 @@
 		<header class="sticky top-0 bg-black pt-2">
 
 			<div class="mx-auto container">
-				<div class="lg:relative lg:flex lg:justify-between lg:items-center">
+				<div class="lg:relative lg:flex lg:justify-evenly lg:items-center">
 					<div class="flex justify-between items-center lg:child-left pb-4">
 					<div>
 							<?php if (has_custom_logo()) { ?>
@@ -57,7 +57,7 @@
 					wp_nav_menu(
 						array(
 							'container_id'    => 'primary-menu',
-							'container_class' => 'hidden bg-black mt-4 p-4 lg:mt-0 lg:p-0 lg:pl-10 xl:pl-14 lg:block xl:bg-transparent xl:block xl:absolute xl:left-1/2 xl:transform xl:-translate-x-1/2',
+							'container_class' => 'hidden bg-black mt-4 p-4 lg:mt-0 lg:p-0 lg:pl-10 xl:pl-14 lg:block xl:bg-transparent',
 							'menu_class'      => 'lg:flex lg:gap-4',
 							'theme_location'  => 'primary',
 							'li_class'        => 'lg:mx-4 groupa', // Add group class here
@@ -75,19 +75,17 @@
 
 			
 
-			<div class="mx-auto max-w-[1440px] h-2 bg-gray-300">
-			</div>
-			<div class="w-full flex justify-center">
+			<!-- <div class="mx-auto max-w-[1440px] h-2 bg-gray-300">
+			</div> -->
+			<div class="w-full flex justify-center bg-gray-300 bg-opacity-20">
 			<?php
-wp_nav_menu( array(
-    'theme_location'  => 'secondary',
-    'container_class' => '', // Tailwind styles for container
-    'menu_class'      => 'flex flex-row', 
-    'li_class'        => 'primary-li-class-parent-desktop group', // Parent item styles
-    'a_class'         => 'text-xl tracking-wide font-teko z-20 w-full font-semibold uppercase p-4 relative',
-   'submenu_class'   => 'absolute pt-4 top-full left-1/2 transform -translate-x-1/2 w-64 overflow-hidden transition-all duration-100 ease-in-out origin-top scale-y-0 group-hover:max-h-40 group-hover:scale-y-100 will-change-transform', // Centered and increased size
-    'submenu_li_class' => 'border-b ', // Submenu items styles
-	'submenu_a_class' => 'text-black text-left  hover:underline',
+		wp_nav_menu( array(
+    		'theme_location'  => 'secondary',
+    		'container_class' => '', // Tailwind styles for container
+   			'menu_class'      => 'flex flex-row', 
+   		    'li_class'        => 'primary-li-class-parent-desktop group', // Parent item styles
+ 		    'a_class'         => 'text-xl tracking-wide font-teko z-20 w-full font-semibold uppercase relative',
+ 		    'submenu_class'   => 'hover-background-animation', // Centered and increased size
 ));
 ?>
 			<!-- <ul class="lg:flex">

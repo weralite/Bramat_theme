@@ -35,8 +35,8 @@ module.exports = {
                 '7xl': '5rem', // 80px
             },
             fontFamily: {
-                'josefin': ['Josefin Slab', 'serif'], 
-                'teko': ['Teko', 'sans-serif'], 
+                'josefin': ['Josefin Slab', 'serif'],
+                'teko': ['Teko', 'sans-serif'],
             },
             height: {
                 '7': '1.75rem', // Custom height value
@@ -63,7 +63,7 @@ module.exports = {
                 '8': '2rem',
                 '9': '2.25rem',
                 '10': '2.5rem',
-              },
+            },
         },
         screens: {
             'xs': '480px',
@@ -84,23 +84,63 @@ module.exports = {
         tailpress.tailwind,
         function ({ addComponents }) {
             addComponents({
-              '.primary-li-class-parent-desktop': {
-                'align-items': 'top',
-                'position': 'relative',
-                'padding': '0.75rem 1.25rem', /* equivalent to py-3 px-5 */
-                'color': 'white',
-                'text-decoration': 'none',
-                'transition': 'all 100ms',
-                '&:hover': {
-                  'background-color': '#d1d5db', /* hover:bg-gray-300 */
-                  'color': 'black',              /* hover:text-black */
-                  'text-decoration': 'underline',
+                '.primary-li-class-parent-desktop': {
+                    'position': 'relative',
+                    'min-width': '15rem',
+                    'height': '3rem',
+                    'display': 'flex',
+                    'color': 'white',
+                    'text-align': 'center',
+                    'align-items': 'center',
+                    'vertical-align': 'middle',
+                    'text-decoration': 'none',
+                    'transition': 'all 100ms',
+                    '&:hover': {
+                        'background-color': '#d1d5db', /* hover:bg-gray-300 */
+                        'color': 'black', /* hover:text-black */
+                        'text-decoration': 'underline',
+                    },
+                    '.group:hover &': {
+                        'background-color': '#d1d5db', /* group-hover:bg-gray-300 */
+                        'color': 'black', /* group-hover:text-black */
+                    },
                 },
-                '.group:hover &': {
-                  'background-color': '#d1d5db', /* group-hover:bg-gray-300 */
+                // New class for hover background animation
+                '.hover-background-animation': {
+                    'position': 'absolute',
+                    'top': '100%',
+                    'left': '50%',
+                    'transform': 'translateX(-50%) scaleY(0)',  // Initially hidden
+                    'width': '15rem',
+                    'overflow': 'hidden',
+                    'transition': 'transform 100ms ease-in-out',  // Transition for background
+                    'transform-origin': 'top',
+                    'will-change': 'transform',
+
+                    '.group:hover &': {
+                        'transform': 'translateX(-50%) scaleY(1)',  // Show background on hover
+                    },
+
+                    // Text styles for the <a> tag
+                    'a': {
+                        'display': 'block',  // Ensures it takes full width
+                        'transform': 'scaleY(0)',  // Hide the text initially
+                        'opacity': '0',  // Also hide text opacity
+                        'transition': 'opacity 100ms ease-in-out', // Smooth transition
+                        'transform-origin': 'top',  // Animate from the top
+                        'margin-left': '1rem',  // Add some space to the left
+                        'text-align': 'left',  // Align text to the left
+                        '.group:hover &': {
+                            'transform': 'scaleY(1)',  // Show text on hover
+                            'opacity': '1',  // Make text visible
+                        },
+                    },
                 },
-              },
+                '.group:hover .hover-background-animation a': {
+                    'visibility': 'visible',  // Ensure text is visible only when background is scaled
+                    'transition': 'opacity 100ms ease-in-out 100ms', // Delay text opacity to start after background
+                },
             });
-          },
+        },
     ]
 };
