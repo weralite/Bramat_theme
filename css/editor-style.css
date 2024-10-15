@@ -39,7 +39,7 @@
 }
 .secondary-li-class-parent-desktop {
  position: relative;
- min-width: 15rem;
+ min-width: 13rem;
  height: 3rem;
  display: flex;
  color: white;
@@ -66,7 +66,7 @@
  top: 100%;
  left: 50%;
  transform: translateX(-50%) scaleY(0);
- width: 15rem;
+ width: 13rem;
  overflow: hidden;
  transition: transform 100ms ease-in-out;
  transform-origin: top;
@@ -205,6 +205,9 @@
 .max-w-sm {
  max-width: 24rem;
 }
+.max-w-xl {
+ max-width: 36rem;
+}
 .transform {
  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -333,9 +336,6 @@
 }
 .pt-10 {
  padding-top: 2.5rem;
-}
-.pt-12 {
- padding-top: 3rem;
 }
 .pt-16 {
  padding-top: 4rem;
@@ -604,12 +604,6 @@ body {
  }
  .lg\:pl-10 {
   padding-left: 2.5rem;
- }
- .lg\:pt-20 {
-  padding-top: 5rem;
- }
- .lg\:pt-28 {
-  padding-top: 7rem;
  }
  .lg\:pt-24 {
   padding-top: 6rem;

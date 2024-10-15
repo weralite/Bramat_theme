@@ -13,7 +13,7 @@
 
 	<?php else : ?>
 
-		<div class="entry-content min-h-[100vh]">
+		<div class="entry-content min-h-[100vh] max-w-xl mx-auto">
 			<?php
 			/* translators: %s: Name of current post */
 			the_content(

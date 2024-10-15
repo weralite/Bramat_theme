@@ -112,7 +112,7 @@ module.exports = {
             addComponents({
                 '.secondary-li-class-parent-desktop': {
                     'position': 'relative',
-                    'min-width': '15rem',
+                    'min-width': '13rem',
                     'height': '3rem',
                     'display': 'flex',
                     'color': 'white',
@@ -143,7 +143,7 @@ module.exports = {
                     'top': '100%',
                     'left': '50%',
                     'transform': 'translateX(-50%) scaleY(0)',  // Initially hidden
-                    'width': '15rem',
+                    'width': '13rem',
                     'overflow': 'hidden',
                     'transition': 'transform 100ms ease-in-out',  // Transition for background
                     'transform-origin': 'top',

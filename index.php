@@ -3,7 +3,6 @@ get_header();
 
 if (is_front_page()) {
     include 'template-parts/homepage.php';
-    exit;
 }
 ?>
 <!--  bg-black bg-opacity-70 pt-10 min-h-screen border-shadow -->
