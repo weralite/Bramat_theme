@@ -49,16 +49,19 @@
  text-decoration: none;
  border-bottom: 1px solid transparent;
  transition: all 100ms;
+ z-index: 10;
 }
 .secondary-li-class-parent-desktop:hover {
  background-color: #d1d5db;
  color: black;
  text-decoration: underline;
+ z-index: 10;
 }
 .group:hover .secondary-li-class-parent-desktop {
  background-color: #f3f4f6;
  color: black;
  border-bottom: 1px solid #d1d5db;
+ z-index: 10;
 }
 .hover-background-animation {
  position: absolute;
@@ -70,9 +73,11 @@
  transition: transform 100ms ease-in-out;
  transform-origin: top;
  will-change: transform;
+ z-index: 10;
 }
 .group:hover .hover-background-animation {
  transform: translateX(-50%) scaleY(1);
+ z-index: 10;
 }
 .hover-background-animation a {
  display: block;
@@ -82,12 +87,14 @@
  transform-origin: top;
  margin-left: 1rem;
  text-align: left;
+ z-index: 10;
 }
 .group:hover .hover-background-animation a {
  transform: scaleY(1);
  opacity: 1;
  visibility: visible;
  transition: opacity 100ms ease-in-out 100ms;
+ z-index: 10;
 }
 .static {
  position: static;
@@ -110,8 +117,20 @@
 .-z-1 {
  z-index: -1;
 }
+.z-1 {
+ z-index: 1;
+}
 .z-20 {
  z-index: 20;
+}
+.z-0 {
+ z-index: 0;
+}
+.-z-1 {
+ z-index: -1;
+}
+.-z-0 {
+ z-index: 0;
 }
 .m-8 {
  margin: 2rem;

@@ -99,6 +99,7 @@
 			<?php if (is_front_page()) { ?>
 				<!-- Start introduction -->
 				 <div class="flex justify-center pt-20">
+					<div class="relative -z-1">
 				<?php
 					wp_nav_menu(
 						array(
@@ -107,11 +108,12 @@
 							'menu_class'      => 'lg:flex lg:gap-4',
 							'theme_location'  => 'primary',
 							'li_class'        => 'lg:mx-4 groupa', // Add group class here
-							'a_class'         => 'relative -z-1 inline-block font-teko lg:font-light lg:text-4xl xl:text-8xl uppercase transition-all duration-150', // Class for <a>
+							'a_class'         => 'relative inline-block font-teko lg:font-light lg:text-4xl xl:text-8xl uppercase transition-all duration-150', // Class for <a>
 							'fallback_cb'     => false,
 						)
 					);
 					?>
+					</div>
 					</div>
 				<!-- End introduction -->
 			<?php } ?>

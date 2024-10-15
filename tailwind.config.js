@@ -21,6 +21,7 @@ module.exports = {
         },
         extend: {
             zIndex: {
+                '1': '1',
                 '0': '0',
                 '-1': '-1',
                 '-2': '-2',
@@ -29,7 +30,7 @@ module.exports = {
                 '-30': '-30',
                 '-40': '-40',
                 '-50': '-50',
-              },
+            },
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
             fontSize: {
                 'xs': '0.75rem', // 12px
@@ -81,24 +82,24 @@ module.exports = {
                 16: '4rem',
                 20: '5rem',
                 24: '6rem',
-        },
-        screens: {
-            'xs': '480px',
-            'sm': '600px',
-            'md': '782px',
-            'lg': tailpress.theme('settings.layout.contentSize', theme),
-            'xl': tailpress.theme('settings.layout.wideSize', theme),
-            '2xl': '1440px'
+            },
+            screens: {
+                'xs': '480px',
+                'sm': '600px',
+                'md': '782px',
+                'lg': tailpress.theme('settings.layout.contentSize', theme),
+                'xl': tailpress.theme('settings.layout.wideSize', theme),
+                '2xl': '1440px'
+            },
         },
     },
-},
     variants: {
         fontSmoothing: ['responsive'],
         extend: {
             textColor: ['hover', 'focus'],
             fontWeight: ['hover', 'focus'],
         },
-        
+
     },
 
 
@@ -106,7 +107,7 @@ module.exports = {
         tailpress.tailwind,
         function ({ addComponents }) {
             addComponents({
-                  '.secondary-li-class-parent-desktop': {
+                '.secondary-li-class-parent-desktop': {
                     'position': 'relative',
                     'min-width': '15rem',
                     'height': '3rem',
@@ -116,18 +117,22 @@ module.exports = {
                     'align-items': 'center',
                     'vertical-align': 'middle',
                     'text-decoration': 'none',
-                     'border-bottom': '1px solid transparent',
+                    'border-bottom': '1px solid transparent',
                     'transition': 'all 100ms',
+                    'z-index': '10',
+
 
                     '&:hover': {
                         'background-color': '#d1d5db', /* hover:bg-gray-300 */
                         'color': 'black',
                         'text-decoration': 'underline',
+                        'z-index': '10'
                     },
                     '.group:hover &': {
                         'background-color': '#f3f4f6',
-                        'color': 'black', 
+                        'color': 'black',
                         'border-bottom': '1px solid #d1d5db',
+                        'z-index': '10'
                     },
                 },
                 // New class for hover background animation
@@ -141,29 +146,34 @@ module.exports = {
                     'transition': 'transform 100ms ease-in-out',  // Transition for background
                     'transform-origin': 'top',
                     'will-change': 'transform',
+                    'z-index': '10',  // Ensure background is behind text
 
                     '.group:hover &': {
-                        'transform': 'translateX(-50%) scaleY(1)',  // Show background on hover
+                        'transform': 'translateX(-50%) scaleY(1)',
+                        'z-index': '10'  // Show background on hover
                     },
 
                     // Text styles for the <a> tag
                     'a': {
-                        'display': 'block', 
+                        'display': 'block',
                         'transform': 'scaleY(0)',  // Hide the text initially
-                        'opacity': '0',  
-                        'transition': 'opacity 100ms ease-in-out', 
+                        'opacity': '0',
+                        'transition': 'opacity 100ms ease-in-out',
                         'transform-origin': 'top',  // Animate from the top
-                        'margin-left': '1rem', 
-                        'text-align': 'left',  
+                        'margin-left': '1rem',
+                        'text-align': 'left',
+                        'z-index': '10',
                         '.group:hover &': {
                             'transform': 'scaleY(1)',  // Show text on hover
                             'opacity': '1',  // Make text visible
+                            'z-index': '10'
                         },
                     },
                 },
                 '.group:hover .hover-background-animation a': {
                     'visibility': 'visible',  // Ensure text is visible only when background is scaled
                     'transition': 'opacity 100ms ease-in-out 100ms', // Delay text opacity to start after background
+                    'z-index': '10'
                 },
             });
         },

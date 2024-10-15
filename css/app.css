@@ -549,16 +549,19 @@ video {
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: all 100ms;
+  z-index: 10;
 }
 .secondary-li-class-parent-desktop:hover {
   background-color: #d1d5db;
   color: black;
   text-decoration: underline;
+  z-index: 10;
 }
 .group:hover .secondary-li-class-parent-desktop {
   background-color: #f3f4f6;
   color: black;
   border-bottom: 1px solid #d1d5db;
+  z-index: 10;
 }
 .hover-background-animation {
   position: absolute;
@@ -570,9 +573,11 @@ video {
   transition: transform 100ms ease-in-out;
   transform-origin: top;
   will-change: transform;
+  z-index: 10;
 }
 .group:hover .hover-background-animation {
   transform: translateX(-50%) scaleY(1);
+  z-index: 10;
 }
 .hover-background-animation a {
   display: block;
@@ -582,12 +587,14 @@ video {
   transform-origin: top;
   margin-left: 1rem;
   text-align: left;
+  z-index: 10;
 }
 .group:hover .hover-background-animation a {
   transform: scaleY(1);
   opacity: 1;
   visibility: visible;
   transition: opacity 100ms ease-in-out 100ms;
+  z-index: 10;
 }
 .static {
   position: static;
@@ -612,6 +619,12 @@ video {
 }
 .z-20 {
   z-index: 20;
+}
+.-z-1 {
+  z-index: -1;
+}
+.z-1 {
+  z-index: 1;
 }
 .m-8 {
   margin: 2rem;
@@ -1126,7 +1139,7 @@ body.custom-background::before {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
     pointer-events: none; /* Allow interaction with the body content */
-    z-index: -1; /* Ensure the overlay is behind the content */
+    z-index: -2; /* Ensure the overlay is behind the content */
 }
 article>*:not(.entry-content),
 .entry-content>* {
@@ -1221,7 +1234,7 @@ article>*:not(.entry-content),
 }
 .border-shadow {
     position: relative;
-    z-index: -1;
+    z-index: -2;
   }
 .border-shadow::before {
     content: '';
@@ -1232,7 +1245,7 @@ article>*:not(.entry-content),
     bottom: 0;
     pointer-events: none; /* Allow interaction with the container content */
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.9); /* Adjust the shadow size and color */
-    z-index: -1; /* Ensure the shadow is behind the content */
+    z-index: -2; /* Ensure the shadow is behind the content */
   }
 .group:hover .group-hover\:h-full {
   height: 100%;

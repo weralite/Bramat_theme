@@ -6,8 +6,8 @@ if (is_front_page()) {
     exit;
 }
 ?>
-
-<div class="container mx-auto bg-black bg-opacity-70 pt-10 min-h-screen border-shadow">
+<!--  bg-black bg-opacity-70 pt-10 min-h-screen border-shadow -->
+<div class="container mx-auto">
 
 	<?php if ( have_posts() ) : ?>
 		<?php
