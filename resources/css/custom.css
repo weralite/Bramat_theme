@@ -1,5 +1,20 @@
 
 
+body.custom-background {
+    position: relative;
+}
+
+body.custom-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    pointer-events: none; /* Allow interaction with the body content */
+    z-index: -1; /* Ensure the overlay is behind the content */
+}
 article>*:not(.entry-content),
 .entry-content>* {
     @apply mx-auto max-w-content;
@@ -61,6 +76,7 @@ article>*:not(.entry-content),
 .groupa a::after {
     content: '';
     position: absolute;
+    z-index: 1;
     left: 50%;
     bottom: 15px;
     height: 2px;
@@ -98,3 +114,19 @@ article>*:not(.entry-content),
 #trp-floater-ls.trp-color-dark {
     @apply bg-black;
 }
+
+.border-shadow {
+    position: relative;
+  }
+  
+  .border-shadow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none; /* Allow interaction with the container content */
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.9); /* Adjust the shadow size and color */
+    z-index: -1; /* Ensure the shadow is behind the content */
+  }

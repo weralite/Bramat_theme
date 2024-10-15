@@ -41,48 +41,14 @@ function appendSpanToSecondaryMenuItems() {
   }
 }
 window.addEventListener('load', appendSpanToSecondaryMenuItems);
-
-//   function toggleSubmenuOnHover() {
-//       const secondaryMenu = document.getElementById('menu-secondary-menu');
-
-//       // Check if the element exists
-//       if (secondaryMenu) {
-//           // Find all li elements within the ul
-//           const menuItems = secondaryMenu.querySelectorAll('li');
-
-//           // Iterate over each li element
-//           menuItems.forEach((menuItem) => {
-//               // Add an event listener to each li element
-//               menuItem.addEventListener('mouseover', function () {
-//                   // Find the ul element within the li
-//                   const submenu = menuItem.querySelector('.sub-menu');
-
-//                   // Check if the element exists
-//                   if (submenu) {
-//                       console.log(submenu);
-//                       // Add a class to the ul element
-//                       submenu.classList.add('block');
-//                     }
-//                 });
-
-//                 // Add an event listener to each li element
-//                 menuItem.addEventListener('mouseout', function () {
-//                     // Find the ul element within the li
-//                     const submenu = menuItem.querySelector('.sub-menu');
-
-//                     // Check if the element exists
-//                     if (submenu) {
-//                         // Add a class to the ul element
-//                         submenu.classList.remove('block');
-//                     }
-//                 });
-//             });
-//         } else {
-//             console.error('Element with ID "menu-secondary-menu" not found.');
-//         }   
-//     }
-
-//     toggleSubmenuOnHover();
+(function () {
+  wp.customize('background_opacity', function (value) {
+    value.bind(function (newval) {
+      // Update the CSS variable for opacity
+      document.body.style.setProperty('--bg-opacity', newval);
+    });
+  });
+})();
 
 /***/ }),
 

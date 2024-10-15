@@ -206,3 +206,57 @@ if (version_compare(get_bloginfo('version'), '5.8', '>=')) {
 } else {
 	add_filter('block_categories', 'register_layout_category');
 }
+
+function mytheme_custom_background_setup() {
+    add_theme_support( 'custom-background', apply_filters( 'mytheme_custom_background_args', array(
+        'default-color'          => 'ffffff', // Default background color
+        'default-image'          => '',       // Default background image (can be set to a specific image URL)
+        'wp-head-callback'       => '_custom_background_cb', // Callback for the background styling
+    ) ) );
+}
+add_action( 'after_setup_theme', 'mytheme_custom_background_setup' );
+
+function mytheme_customize_register( $wp_customize ) {
+    // Add Opacity Setting
+    $wp_customize->add_setting( 'background_opacity', array(
+        'default'   => '1',
+        'transport' => 'postMessage', // Important for live preview
+        'sanitize_callback' => 'absint', // Sanitizing opacity value
+    ));
+
+    // Add Control for Opacity
+    $wp_customize->add_control( 'background_opacity_control', array(
+        'label'    => __( 'Background Opacity', 'mytheme' ),
+        'section'  => 'background_image', // Add it to the Background section or your custom section
+        'settings' => 'background_opacity',
+        'type'     => 'range',
+        'input_attrs' => array(
+            'min'   => 0,
+            'max'   => 1,
+            'step'  => 0.01,
+        ),
+    ));
+}
+add_action( 'customize_register', 'mytheme_customize_register' );
+
+function mytheme_custom_background_opacity_css() {
+    $background_opacity = get_theme_mod( 'background_opacity', 1 ); // Default is 1 (fully opaque)
+    ?>
+    <style type="text/css">
+        body.custom-background {
+            background-color: rgba(255, 255, 255, <?php echo esc_attr( $background_opacity ); ?>);
+        }
+    </style>
+    <?php
+}
+
+function mytheme_customize_live_preview() {
+    wp_enqueue_script(
+        'mytheme-customizer', // Handle name
+        get_template_directory_uri() . '/js/app.js', // Replace with actual path to your `app.js`
+        array( 'customize-preview' ), // Only `customize-preview` dependency
+        null, // Version (optional, can leave null)
+        true  // Load in footer
+    );
+}
+add_action( 'customize_preview_init', 'mytheme_customize_live_preview' );

@@ -94,9 +94,11 @@ module.exports = {
             addComponents({
                 '.secondary-li-class-parent-desktop': {
                     'position': 'relative',
-                    'min-width': '15rem',
+                    'width': '15rem',
                     'max-width': '15rem',
                     'min-height': '3rem',
+                    'z-index': '9999',
+                    'padding-top': '0.2rem',
                     'display': 'flex',
                     'color': 'white',
                     'text-align': 'center',
@@ -116,6 +118,7 @@ module.exports = {
                         'background-color': '#f3f4f6',
                         'color': 'black', 
                         'border-bottom': '1px solid #d1d5db',
+                        
                     },
                 },
                 // New class for hover background animation
@@ -137,6 +140,7 @@ module.exports = {
                     // Text styles for the <a> tag
                     'a': {
                         'display': 'block', 
+                        'z-index': '20',
                         'transform': 'scaleY(0)',  // Hide the text initially
                         'opacity': '0',  
                         'transition': 'opacity 100ms ease-in-out', 
@@ -152,6 +156,7 @@ module.exports = {
                 '.group:hover .hover-background-animation a': {
                     'visibility': 'visible',  // Ensure text is visible only when background is scaled
                     'transition': 'opacity 100ms ease-in-out 100ms', // Delay text opacity to start after background
+                    'z-index': '20',
                 },
             });
         },
