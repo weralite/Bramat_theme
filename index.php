@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+get_header();
+
+if (is_front_page()) {
+    include 'template-parts/content.php';
+    exit;
+}
+?>
 
 <div class="container mx-auto bg-black bg-opacity-70 pt-10 min-h-screen border-shadow">
 

@@ -20,7 +20,16 @@ module.exports = {
             },
         },
         extend: {
-            
+            zIndex: {
+                '0': '0',
+                '-1': '-1',
+                '-2': '-2',
+                '-10': '-10',
+                '-20': '-20',
+                '-30': '-30',
+                '-40': '-40',
+                '-50': '-50',
+              },
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
             fontSize: {
                 'xs': '0.75rem', // 12px
@@ -34,6 +43,8 @@ module.exports = {
                 '5xl': '3rem', // 48px
                 '6xl': '4rem', // 64px
                 '7xl': '5rem', // 80px
+                '8xl': '6rem', // 96px
+                '9xl': '8rem', // 128px
             },
             fontFamily: {
                 'josefin': ['Josefin Slab', 'serif'],
@@ -65,6 +76,11 @@ module.exports = {
                 '9': '2.25rem',
                 '10': '2.5rem',
             },
+            padding: {
+                12: '3rem',
+                16: '4rem',
+                20: '5rem',
+                24: '6rem',
         },
         screens: {
             'xs': '480px',
@@ -73,8 +89,9 @@ module.exports = {
             'lg': tailpress.theme('settings.layout.contentSize', theme),
             'xl': tailpress.theme('settings.layout.wideSize', theme),
             '2xl': '1440px'
-        }
+        },
     },
+},
     variants: {
         fontSmoothing: ['responsive'],
         extend: {
@@ -83,22 +100,16 @@ module.exports = {
         },
         
     },
-    plugins: [
-        function ({ addUtilities }) {
-            addUtilities({
 
-            });
-          },
+
+    plugins: [
         tailpress.tailwind,
         function ({ addComponents }) {
             addComponents({
-                '.secondary-li-class-parent-desktop': {
+                  '.secondary-li-class-parent-desktop': {
                     'position': 'relative',
-                    'width': '15rem',
-                    'max-width': '15rem',
-                    'min-height': '3rem',
-                    'z-index': '9999',
-                    'padding-top': '0.2rem',
+                    'min-width': '15rem',
+                    'height': '3rem',
                     'display': 'flex',
                     'color': 'white',
                     'text-align': 'center',
@@ -112,13 +123,11 @@ module.exports = {
                         'background-color': '#d1d5db', /* hover:bg-gray-300 */
                         'color': 'black',
                         'text-decoration': 'underline',
-
                     },
                     '.group:hover &': {
                         'background-color': '#f3f4f6',
                         'color': 'black', 
                         'border-bottom': '1px solid #d1d5db',
-                        
                     },
                 },
                 // New class for hover background animation
@@ -140,7 +149,6 @@ module.exports = {
                     // Text styles for the <a> tag
                     'a': {
                         'display': 'block', 
-                        'z-index': '20',
                         'transform': 'scaleY(0)',  // Hide the text initially
                         'opacity': '0',  
                         'transition': 'opacity 100ms ease-in-out', 
@@ -156,7 +164,6 @@ module.exports = {
                 '.group:hover .hover-background-animation a': {
                     'visibility': 'visible',  // Ensure text is visible only when background is scaled
                     'transition': 'opacity 100ms ease-in-out 100ms', // Delay text opacity to start after background
-                    'z-index': '20',
                 },
             });
         },

@@ -2,6 +2,7 @@
 
 body.custom-background {
     position: relative;
+    
 }
 
 body.custom-background::before {
@@ -17,7 +18,7 @@ body.custom-background::before {
 }
 article>*:not(.entry-content),
 .entry-content>* {
-    @apply mx-auto max-w-content;
+    @apply mx-auto;
 }
 
 .entry-content,
@@ -53,7 +54,7 @@ article>*:not(.entry-content),
 
         /* @apply mb-8; */
         @apply font-josefin;
-        @apply text-xl;
+        @apply text-2xl;
         @apply tracking-wider;
     }
 
@@ -76,7 +77,6 @@ article>*:not(.entry-content),
 .groupa a::after {
     content: '';
     position: absolute;
-    z-index: 1;
     left: 50%;
     bottom: 15px;
     height: 2px;
@@ -117,6 +117,7 @@ article>*:not(.entry-content),
 
 .border-shadow {
     position: relative;
+    z-index: -1;
   }
   
   .border-shadow::before {

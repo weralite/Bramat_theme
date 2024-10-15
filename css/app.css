@@ -539,11 +539,8 @@ video {
 }
 .secondary-li-class-parent-desktop {
   position: relative;
-  width: 15rem;
-  max-width: 15rem;
-  min-height: 3rem;
-  z-index: 9999;
-  padding-top: 0.2rem;
+  min-width: 15rem;
+  height: 3rem;
   display: flex;
   color: white;
   text-align: center;
@@ -579,7 +576,6 @@ video {
 }
 .hover-background-animation a {
   display: block;
-  z-index: 20;
   transform: scaleY(0);
   opacity: 0;
   transition: opacity 100ms ease-in-out;
@@ -592,7 +588,6 @@ video {
   opacity: 1;
   visibility: visible;
   transition: opacity 100ms ease-in-out 100ms;
-  z-index: 20;
 }
 .static {
   position: static;
@@ -611,6 +606,12 @@ video {
 }
 .top-0 {
   top: 0px;
+}
+.-z-1 {
+  z-index: -1;
+}
+.z-20 {
+  z-index: 20;
 }
 .m-8 {
   margin: 2rem;
@@ -680,6 +681,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.min-w-full {
+  min-width: 100%;
 }
 .max-w-\[700px\] {
   max-width: 700px;
@@ -824,6 +828,9 @@ video {
 }
 .pt-10 {
   padding-top: 2.5rem;
+}
+.pt-20 {
+  padding-top: 5rem;
 }
 .text-center {
   text-align: center;
@@ -1108,6 +1115,7 @@ video {
 }
 body.custom-background {
     position: relative;
+    
 }
 body.custom-background::before {
     content: '';
@@ -1124,7 +1132,6 @@ article>*:not(.entry-content),
 .entry-content>* {
   margin-left: auto;
   margin-right: auto;
-  max-width: 960px;
 }
 .entry-content h1, .block-editor-block-list__layout h1 {
   font-size: 1.5rem;
@@ -1161,7 +1168,7 @@ article>*:not(.entry-content),
 
         font-family: Josefin Slab, serif;
 
-        font-size: 1.25rem;
+        font-size: 1.5rem;
 
         letter-spacing: 0.05em;
     }
@@ -1177,7 +1184,6 @@ article>*:not(.entry-content),
 .groupa a::after {
     content: '';
     position: absolute;
-    z-index: 1;
     left: 50%;
     bottom: 15px;
     height: 2px;
@@ -1215,6 +1221,7 @@ article>*:not(.entry-content),
 }
 .border-shadow {
     position: relative;
+    z-index: -1;
   }
 .border-shadow::before {
     content: '';
@@ -1279,10 +1286,6 @@ article>*:not(.entry-content),
     position: relative;
   }
 
-  .lg\:z-20 {
-    z-index: 20;
-  }
-
   .lg\:mx-4 {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -1326,15 +1329,6 @@ article>*:not(.entry-content),
 
   .lg\:gap-4 {
     gap: 1rem;
-  }
-
-  .lg\:bg-black {
-    --tw-bg-opacity: 1;
-    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-  }
-
-  .lg\:bg-opacity-80 {
-    --tw-bg-opacity: 0.8;
   }
 
   .lg\:p-0 {
@@ -1410,6 +1404,10 @@ article>*:not(.entry-content),
 
   .xl\:text-7xl {
     font-size: 5rem;
+  }
+
+  .xl\:text-8xl {
+    font-size: 6rem;
   }
 }
 
