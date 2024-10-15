@@ -1,8 +1,13 @@
-
+main {
+    @apply m-0;
+    @apply p-0;
+}
 
 body.custom-background {
     position: relative;
-    
+    height: 100%;
+    transition: height 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* min-height: 100vh; */
 }
 
 body.custom-background::before {
@@ -12,10 +17,28 @@ body.custom-background::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
-    pointer-events: none; /* Allow interaction with the body content */
+    background-color: rgba(0, 0, 0, 0.9); /* Adjust the opacity as needed */
     z-index: -2; /* Ensure the overlay is behind the content */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1.2);
 }
+
+.border-shadow {
+    position: relative;
+    z-index: -2;
+  }
+  
+  .border-shadow::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px; /* Adjust the height as needed */
+    pointer-events: none; /* Allow interaction with the container content */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9); /* Adjust the shadow size and color */
+    z-index: -2; /* Ensure the shadow is behind the content */
+}
+
 article>*:not(.entry-content),
 .entry-content>* {
     @apply mx-auto;
@@ -115,19 +138,3 @@ article>*:not(.entry-content),
     @apply bg-black;
 }
 
-.border-shadow {
-    position: relative;
-    z-index: -2;
-  }
-  
-  .border-shadow::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none; /* Allow interaction with the container content */
-    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.9); /* Adjust the shadow size and color */
-    z-index: -2; /* Ensure the shadow is behind the content */
-  }

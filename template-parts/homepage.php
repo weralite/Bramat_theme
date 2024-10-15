@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'pt-16' ); ?> >
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-12' ); ?>>
 
 	<header class="entry-header">
 		<!-- <?php the_title( sprintf( '<h2 class="font-josefin entry-title text-center text-2xl md:text-3xl font-bold leading-tight">', esc_url( get_permalink() ) ), '</h2>' ); ?> -->
@@ -13,7 +13,7 @@
 
 	<?php else : ?>
 
-		<div class="entry-content min-h-[100vh]">
+		<div class="homepage-content">
 			<?php
 			/* translators: %s: Name of current post */
 			the_content(

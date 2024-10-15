@@ -14,11 +14,11 @@
 
 	<?php do_action('tailpress_site_before'); ?>
 
-	<div id="page" class="min-h-screen flex flex-col">
+	<div id="page">
 
 		<?php do_action('tailpress_header'); ?>
 
-		<header class="sticky top-0 z-9  min-w-full'">
+		<header class="sticky top-0 z-10 min-w-full">
 		<div class="min-w-full flex justify-center">
 			<?php
 		wp_nav_menu( array(
@@ -26,7 +26,7 @@
     		'container_class' => 'min-w-full', // Tailwind styles for container
    			'menu_class'      => 'hidden lg:flex lg:flex-row lg:justify-center', 
    		    'li_class'        => 'secondary-li-class-parent-desktop group', // Parent item styles
- 		    'a_class'         => 'lg:text-2xl lg:tracking-wide lg:font-teko z-20 lg:w-full lg:font-medium lg:uppercase lg:relative',
+ 		    'a_class'         => 'lg:text-2xl z-10 lg:tracking-wide lg:font-teko lg:w-full lg:font-medium lg:uppercase lg:relative',
  		    'submenu_class'   => 'hover-background-animation', // Centered and increased size
 ));?>
 </div>
@@ -77,13 +77,12 @@
 							'menu_class'      => 'lg:flex lg:gap-4 z--1',
 							'theme_location'  => 'primary',
 							'li_class'        => 'lg:mx-4 groupa', // Add group class here
-							'a_class'         => 'relative z--1 inline-block font-teko lg:font-light lg:text-4xl xl:text-7xl uppercase transition-all duration-150', // Class for <a>
+							'a_class'         => 'relative z-1 inline-block font-teko lg:font-light lg:text-4xl xl:text-7xl uppercase transition-all duration-150', // Class for <a>
 							'fallback_cb'     => false,
 						)
 					);
 					?>
-
-
+			
 				</div>
 			</div>
 
@@ -93,13 +92,13 @@
 			</div> -->
 			
 		</header>
-
-		<div id="content" class="site-content flex-grow">
+			<?php do_action('tailpress_content_start'); ?>
 
 			<?php if (is_front_page()) { ?>
 				<!-- Start introduction -->
-				 <div class="flex justify-center pt-20">
-					<div class="relative -z-1">
+				 <div class="hidden lg:flex lg:justify-center lg:pt-24">
+					<div class="lg:relative">
+					<!-- z-1 -->
 				<?php
 					wp_nav_menu(
 						array(
@@ -117,8 +116,5 @@
 					</div>
 				<!-- End introduction -->
 			<?php } ?>
-
-			<?php do_action('tailpress_content_start'); ?>
-
 
 			<main>

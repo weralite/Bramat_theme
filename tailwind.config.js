@@ -21,6 +21,7 @@ module.exports = {
         },
         extend: {
             zIndex: {
+                '10': '10',
                 '1': '1',
                 '0': '0',
                 '-1': '-1',
@@ -82,6 +83,8 @@ module.exports = {
                 16: '4rem',
                 20: '5rem',
                 24: '6rem',
+                28: '7rem',
+                32: '8rem',
             },
             screens: {
                 'xs': '480px',
@@ -119,20 +122,19 @@ module.exports = {
                     'text-decoration': 'none',
                     'border-bottom': '1px solid transparent',
                     'transition': 'all 100ms',
-                    'z-index': '10',
 
 
                     '&:hover': {
                         'background-color': '#d1d5db', /* hover:bg-gray-300 */
                         'color': 'black',
                         'text-decoration': 'underline',
-                        'z-index': '10'
+
                     },
                     '.group:hover &': {
                         'background-color': '#f3f4f6',
                         'color': 'black',
                         'border-bottom': '1px solid #d1d5db',
-                        'z-index': '10'
+                        'z-index': '10',
                     },
                 },
                 // New class for hover background animation
@@ -146,11 +148,9 @@ module.exports = {
                     'transition': 'transform 100ms ease-in-out',  // Transition for background
                     'transform-origin': 'top',
                     'will-change': 'transform',
-                    'z-index': '10',  // Ensure background is behind text
 
                     '.group:hover &': {
                         'transform': 'translateX(-50%) scaleY(1)',
-                        'z-index': '10'  // Show background on hover
                     },
 
                     // Text styles for the <a> tag
@@ -166,14 +166,12 @@ module.exports = {
                         '.group:hover &': {
                             'transform': 'scaleY(1)',  // Show text on hover
                             'opacity': '1',  // Make text visible
-                            'z-index': '10'
                         },
                     },
                 },
                 '.group:hover .hover-background-animation a': {
                     'visibility': 'visible',  // Ensure text is visible only when background is scaled
                     'transition': 'opacity 100ms ease-in-out 100ms', // Delay text opacity to start after background
-                    'z-index': '10'
                 },
             });
         },

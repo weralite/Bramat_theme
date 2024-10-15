@@ -2,12 +2,13 @@
 get_header();
 
 if (is_front_page()) {
-    include 'template-parts/content.php';
+    include 'template-parts/homepage.php';
     exit;
 }
 ?>
 <!--  bg-black bg-opacity-70 pt-10 min-h-screen border-shadow -->
 <div class="container mx-auto">
+
 
 	<?php if ( have_posts() ) : ?>
 		<?php
@@ -20,6 +21,7 @@ if (is_front_page()) {
 		<?php endwhile; ?>
 
 	<?php endif; ?>
+
 
 </div>
 
