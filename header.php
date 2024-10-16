@@ -23,10 +23,11 @@
 			<?php
 		wp_nav_menu( array(
     		'theme_location'  => 'secondary',
+			'container_id'    => 'secondary-menu',
     		'container_class' => 'min-w-full', // Tailwind styles for container
    			'menu_class'      => 'hidden lg:flex lg:flex-row lg:justify-center', 
    		    'li_class'        => 'secondary-li-class-parent-desktop group', // Parent item styles
- 		    'a_class'         => 'lg:text-2xl z-10 lg:tracking-wide lg:font-teko lg:w-full lg:font-medium lg:uppercase lg:relative',
+ 		    'a_class'         => 'lg:text-md z-10 lg:tracking-wide lg:font-josefin lg:w-full lg:font-bold lg:uppercase lg:relative',
  		    'submenu_class'   => 'hover-background-animation', // Centered and increased size
 ));?>
 </div>
@@ -87,33 +88,15 @@
 			</div>
 
 			
-<!-- 
-			<div class="mx-auto min-w-xl h-1 bg-gray-300">
-			</div> -->
+
+
 			
 		</header>
 			<?php do_action('tailpress_content_start'); ?>
 
 			<?php if (is_front_page()) { ?>
 				<!-- Start introduction -->
-				 <div class="hidden lg:flex lg:justify-center lg:pt-24">
-					<div class="lg:relative">
-					<!-- z-1 -->
-				<?php
-					wp_nav_menu(
-						array(
-							'container_id'    => 'primary-menu',
-							'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:pl-10 xl:pl-14 lg:block xl:bg-transparent xl:block',
-							'menu_class'      => 'lg:flex lg:gap-4',
-							'theme_location'  => 'primary',
-							'li_class'        => 'lg:mx-4 groupa', // Add group class here
-							'a_class'         => 'relative inline-block font-teko lg:font-light lg:text-4xl xl:text-8xl uppercase transition-all duration-150', // Class for <a>
-							'fallback_cb'     => false,
-						)
-					);
-					?>
-					</div>
-					</div>
+											<!-- HOMEPAGE HEADER -->
 				<!-- End introduction -->
 			<?php } ?>
 
