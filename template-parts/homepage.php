@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-12' ); ?>>
+<article id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 		<!-- <?php the_title( sprintf( '<h2 class="font-josefin entry-title text-center text-2xl md:text-3xl font-bold leading-tight">', esc_url( get_permalink() ) ), '</h2>' ); ?> -->
@@ -13,8 +13,8 @@
 
 	<?php else : ?>
 
-		<div class="homepage-content absolute w-full">
-		<div class="relative w-full flex"> <!-- Added flex class here -->
+		<div class="homepage-content fixed top-0 w-full h-screen bg-black bg-opacity-30">
+		<div class="relative pt-20 w-full flex"> <!-- Added flex class here -->
         <div class="mx-auto">
 
 					<?php
