@@ -11,6 +11,7 @@
 window.addEventListener('load', function () {
   var main_navigation = document.querySelector('#primary-menu');
   document.querySelector('#primary-menu-toggle').addEventListener('click', function (e) {
+    console.log(main_navigation);
     e.preventDefault();
     main_navigation.classList.toggle('hidden');
   });

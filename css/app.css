@@ -909,11 +909,6 @@ video {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.shadow {
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1140,22 +1135,6 @@ body.custom-background::before {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.9); /* Adjust the opacity as needed */
     z-index: -2; /* Ensure the overlay is behind the content */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 1.9);
-}
-.border-shadow {
-    position: relative;
-    z-index: -2;
-  }
-.border-shadow::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 5px; /* Adjust the height as needed */
-    pointer-events: none; /* Allow interaction with the container content */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9); /* Adjust the shadow size and color */
-    z-index: -2; /* Ensure the shadow is behind the content */
 }
 article>*:not(.entry-content),
 .entry-content>* {
@@ -1214,7 +1193,7 @@ article>*:not(.entry-content),
     content: '';
     position: absolute;
     left: 50%;
-    bottom: 15px;
+    bottom: 10px;
     height: 2px;
     /* Height of the underline */
     background-color: currentColor;
@@ -1353,16 +1332,8 @@ article>*:not(.entry-content),
     padding-left: 2.5rem;
   }
 
-  .lg\:pt-24 {
-    padding-top: 6rem;
-  }
-
-  .lg\:font-teko {
-    font-family: Teko, sans-serif;
-  }
-
-  .lg\:text-2xl {
-    font-size: 1.5rem;
+  .lg\:font-josefin {
+    font-family: Josefin Slab, serif;
   }
 
   .lg\:text-4xl {
@@ -1373,12 +1344,12 @@ article>*:not(.entry-content),
     font-size: 3rem;
   }
 
-  .lg\:font-light {
-    font-weight: 300;
+  .lg\:font-bold {
+    font-weight: 700;
   }
 
-  .lg\:font-medium {
-    font-weight: 500;
+  .lg\:font-light {
+    font-weight: 300;
   }
 
   .lg\:uppercase {
@@ -1422,10 +1393,6 @@ article>*:not(.entry-content),
 
   .xl\:text-7xl {
     font-size: 5rem;
-  }
-
-  .xl\:text-8xl {
-    font-size: 6rem;
   }
 }
 

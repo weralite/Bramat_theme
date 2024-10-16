@@ -414,6 +414,11 @@
  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.shadow-mobile {
+ --tw-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.9);
+ --tw-shadow-colored: 0 5px 0 0 var(--tw-shadow-color);
+ box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 .transition {
  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -605,14 +610,8 @@ body {
  .lg\:pl-10 {
   padding-left: 2.5rem;
  }
- .lg\:pt-24 {
-  padding-top: 6rem;
- }
- .lg\:font-teko {
-  font-family: Teko, sans-serif;
- }
- .lg\:text-2xl {
-  font-size: 1.5rem;
+ .lg\:font-josefin {
+  font-family: Josefin Slab, serif;
  }
  .lg\:text-4xl {
   font-size: 2.25rem;
@@ -620,11 +619,11 @@ body {
  .lg\:text-5xl {
   font-size: 3rem;
  }
+ .lg\:font-bold {
+  font-weight: 700;
+ }
  .lg\:font-light {
   font-weight: 300;
- }
- .lg\:font-medium {
-  font-weight: 500;
  }
  .lg\:uppercase {
   text-transform: uppercase;
@@ -658,8 +657,5 @@ body {
  }
  .xl\:text-7xl {
   font-size: 5rem;
- }
- .xl\:text-8xl {
-  font-size: 6rem;
  }
 }

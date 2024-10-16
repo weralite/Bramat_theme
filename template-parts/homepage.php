@@ -13,8 +13,11 @@
 
 	<?php else : ?>
 
-		<div class="homepage-content">
-			<?php
+		<div class="homepage-content absolute w-full">
+		<div class="relative w-full flex"> <!-- Added flex class here -->
+        <div class="mx-auto">
+
+					<?php
 			/* translators: %s: Name of current post */
 			the_content(
 				sprintf(
@@ -34,6 +37,12 @@
 				)
 			);
 			?>
+
+
+				</div>
+				
+			</div>
+
 		</div>
 
 	<?php endif; ?>

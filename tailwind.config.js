@@ -20,6 +20,9 @@ module.exports = {
             },
         },
         extend: {
+            boxShadow: {
+                'mobile': '0 5px 0 0 rgba(0, 0, 0, 0.9)', // Straight bottom line shadow
+              },
             zIndex: {
                 '10': '10',
                 '1': '1',
