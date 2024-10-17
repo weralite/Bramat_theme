@@ -537,62 +537,8 @@ video {
     max-width: 1440px;
   }
 }
-.secondary-li-class-parent-desktop {
-  position: relative;
-  min-width: 13rem;
-  max-width: 13rem;
-  height: 3rem;
-  display: flex;
-  color: white;
-  text-align: center;
-  align-items: center;
-  vertical-align: middle;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: all 100ms;
-}
-.secondary-li-class-parent-desktop:hover {
-  background-color: #d1d5db;
-  color: black;
-  text-decoration: underline;
-}
-.group:hover .secondary-li-class-parent-desktop {
-  background-color: #f3f4f6;
-  color: black;
-  border-bottom: 1px solid #d1d5db;
-  z-index: 10;
-}
-.hover-background-animation {
-  position: absolute;
-  display: block;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%) scaleY(0);
-  max-width: 13rem;
-  min-width: 13rem;
-  overflow: hidden;
-  transition: transform 100ms ease-in-out;
-  transform-origin: top;
-  will-change: transform;
-}
-.group:hover .hover-background-animation {
-  transform: translateX(-50%) scaleY(1);
-}
-.hover-background-animation a {
-  display: block;
-  transform: scaleY(0);
-  opacity: 0;
-  transition: opacity 100ms ease-in-out;
-  transform-origin: top;
-  margin-left: 1rem;
-  text-align: left;
-  z-index: 10;
-}
-.group:hover .hover-background-animation a {
-  transform: scaleY(1);
-  opacity: 1;
+.visible {
   visibility: visible;
-  transition: opacity 100ms ease-in-out 100ms;
 }
 .static {
   position: static;
@@ -930,6 +876,9 @@ video {
 .duration-200 {
   transition-duration: 200ms;
 }
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 .alignfull {
   margin: 2rem calc(50% - 50vw) !important;
   max-width: 100vw !important;
@@ -1169,6 +1118,63 @@ body.custom-background::before {
     left: 0;
     /* Move to the left */
 }
+.secondary-li-class-parent-desktop {
+    position: relative;
+    min-width: 13rem;
+    max-width: 13rem;
+    height: 3rem;
+    display: flex;
+    color: white;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 100ms;
+}
+.secondary-li-class-parent-desktop:hover {
+    background-color: #d1d5db; /* hover:bg-gray-300 */
+    color: black;
+    text-decoration: underline;
+}
+.group:hover .secondary-li-class-parent-desktop {
+    background-color: #f3f4f6;
+    color: black;
+    border-bottom: 1px solid #d1d5db;
+    z-index: 10;
+}
+.hover-background-animation {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0); /* Initially hidden */
+    max-width: 13rem;
+    min-width: 13rem;
+    overflow: hidden;
+    transition: transform 100ms ease-in-out; /* Transition for background */
+    transform-origin: top;
+    will-change: transform;
+}
+.group:hover .hover-background-animation {
+    transform: translateX(-50%) scaleY(1);
+}
+.hover-background-animation a {
+    display: block;
+    transform: scaleY(0); /* Hide the text initially */
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+    transform-origin: top; /* Animate from the top */
+    margin-left: 1rem;
+    text-align: left;
+    z-index: 10;
+}
+.group:hover .hover-background-animation a {
+    transform: scaleY(1); /* Show text on hover */
+    opacity: 1; /* Make text visible */
+    visibility: visible; /* Ensure text is visible only when background is scaled */
+    transition: opacity 100ms ease-in-out 100ms; /* Delay text opacity to start after background */
+}
 html {
     overflow-y: scroll;
 }
@@ -1245,6 +1251,10 @@ article>*:not(.entry-content),
 #trp-floater-ls.trp-color-dark {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.hover\:bg-gray-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 .group:hover .group-hover\:h-full {
   height: 100%;
