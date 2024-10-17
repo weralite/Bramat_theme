@@ -1119,18 +1119,24 @@ video {
     font-weight: 700;
     font-style: normal;
 }
-html {
-    overflow-y: scroll;
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
 }
-main {
-  margin: 0px;
-  padding: 0px;
+.entry-content {
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 body.custom-background {
     position: relative;
     height: 100%;
-    transition: height 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-    /* min-height: 100vh; */
 }
 body.custom-background::before {
     content: '';
@@ -1141,6 +1147,34 @@ body.custom-background::before {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.9); /* Adjust the opacity as needed */
     z-index: -2; /* Ensure the overlay is behind the content */
+}
+/* Hover underline effect for navigation links */
+.groupa a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    height: 2px;
+    /* Height of the underline */
+    background-color: currentColor;
+    /* Color of the underline */
+    width: 0;
+    /* Initial width */
+    transition: width 0.15s ease, left 0.15s ease;
+    /* Transition effect */
+}
+.groupa:hover a::after {
+    width: 100%;
+    /* Full width on hover */
+    left: 0;
+    /* Move to the left */
+}
+html {
+    overflow-y: scroll;
+}
+main {
+  margin: 0px;
+  padding: 0px;
 }
 article>*:not(.entry-content),
 .entry-content>* {
@@ -1193,27 +1227,6 @@ article>*:not(.entry-content),
 .entry-content ol li, .block-editor-block-list__layout ol li {
   list-style-position: inside;
   list-style-type: decimal;
-}
-/* Hover underline effect for navigation links */
-.groupa a::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 10px;
-    height: 2px;
-    /* Height of the underline */
-    background-color: currentColor;
-    /* Color of the underline */
-    width: 0;
-    /* Initial width */
-    transition: width 0.15s ease, left 0.15s ease;
-    /* Transition effect */
-}
-.groupa:hover a::after {
-    width: 100%;
-    /* Full width on hover */
-    left: 0;
-    /* Move to the left */
 }
 .trp-block-container {
   max-width: 700px;

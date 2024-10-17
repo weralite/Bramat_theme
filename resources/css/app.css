@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 @import "fonts.css";
 
-
+@import "custom-animations.css";
 @import "custom.css";
 
 

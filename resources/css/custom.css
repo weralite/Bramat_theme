@@ -8,24 +8,6 @@ main {
     @apply p-0;
 }
 
-body.custom-background {
-    position: relative;
-    height: 100%;
-    transition: height 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-    /* min-height: 100vh; */
-}
-
-body.custom-background::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* Adjust the opacity as needed */
-    z-index: -2; /* Ensure the overlay is behind the content */
-}
-
 article>*:not(.entry-content),
 .entry-content>* {
     @apply mx-auto;
@@ -79,31 +61,6 @@ article>*:not(.entry-content),
             @apply list-decimal list-inside;
         }
     }
-}
-
-/* Hover underline effect for navigation links */
-
-
-.groupa a::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 10px;
-    height: 2px;
-    /* Height of the underline */
-    background-color: currentColor;
-    /* Color of the underline */
-    width: 0;
-    /* Initial width */
-    transition: width 0.15s ease, left 0.15s ease;
-    /* Transition effect */
-}
-
-.groupa:hover a::after {
-    width: 100%;
-    /* Full width on hover */
-    left: 0;
-    /* Move to the left */
 }
 
 .trp-block-container {
