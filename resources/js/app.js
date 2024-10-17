@@ -37,11 +37,3 @@ function appendSpanToSecondaryMenuItems() {
   window.addEventListener('load', appendSpanToSecondaryMenuItems);
 
   
-  (function() {
-    wp.customize('background_opacity', function(value) {
-        value.bind(function(newval) {
-            // Update the CSS variable for opacity
-            document.body.style.setProperty('--bg-opacity', newval);
-        });
-    });
-})();
