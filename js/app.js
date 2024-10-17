@@ -44,6 +44,8 @@ function appendSpanToSecondaryMenuItems() {
 window.addEventListener('load', appendSpanToSecondaryMenuItems);
 document.addEventListener('DOMContentLoaded', function () {
   var links = document.querySelectorAll('.ajax-link');
+  var currentSlug = window.location.pathname;
+  toggleBodyClass(currentSlug);
   links.forEach(function (link) {
     link.addEventListener('click', function (e) {
       e.preventDefault(); // Prevent default behavior
@@ -56,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!slug || slug === '/') {
         slug = '/';
       }
-
+      toggleBodyClass(slug);
       // Perform AJAX request with fetch
       fetch(my_ajax_object.ajax_url, {
         method: 'POST',
@@ -84,6 +86,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+function toggleBodyClass(slug) {
+  if (slug !== '/' && slug !== '#') {
+    document.body.classList.add('expanded'); // Add the expanding class
+  } else {
+    document.body.classList.remove('expanded'); // Remove if on homepage
+  }
+}
 
 /***/ }),
 
