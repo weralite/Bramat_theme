@@ -42,6 +42,46 @@ function appendSpanToSecondaryMenuItems() {
   }
 }
 window.addEventListener('load', appendSpanToSecondaryMenuItems);
+document.addEventListener('DOMContentLoaded', function () {
+  var links = document.querySelectorAll('.ajax-link');
+  links.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // Prevent default behavior
+
+      var slug = this.getAttribute('data-slug'); // Get the slug
+
+      if (slug === '#') {
+        return;
+      }
+
+      // Perform AJAX request with fetch
+      fetch(my_ajax_object.ajax_url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+          action: 'load_page',
+          page_slug: slug
+        })
+      }).then(function (response) {
+        return response.text();
+      }).then(function (data) {
+        var contentContainer = document.getElementById('content-container');
+        if (contentContainer) {
+          var newUrl = "/".concat(slug);
+          console.log('New URL:', newUrl); // Log new URL
+          contentContainer.innerHTML = data; // Load new content
+          history.pushState(null, '', newUrl); // Update URL without reloading
+        } else {
+          console.error('Element with ID "content-container" not found.');
+        }
+      })["catch"](function (error) {
+        console.error('Failed to load content:', error);
+      });
+    });
+  });
+});
 
 /***/ }),
 

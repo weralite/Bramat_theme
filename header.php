@@ -27,8 +27,9 @@
     		'container_class' => 'min-w-full', // Tailwind styles for container
    			'menu_class'      => 'hidden lg:flex lg:flex-row lg:justify-center', 
    		    'li_class'        => 'secondary-li-class-parent-desktop group', // Parent item styles
- 		    'a_class'         => 'lg:text-md z-10 lg:tracking-wide lg:font-josefin lg:w-full lg:font-bold lg:uppercase lg:relative',
+ 		    'a_class'         => 'ajax-link lg:text-md z-10 lg:tracking-wide lg:font-josefin lg:w-full lg:font-bold lg:uppercase lg:relative',
  		    'submenu_class'   => 'hover-background-animation', // Centered and increased size
+			 'container'      => false,
 ));?>
 </div>
 			<div class="lg:hidden container min-w-full bg-black bg-opacity-80">

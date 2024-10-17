@@ -1,29 +1,23 @@
 <?php
 get_header();
-
-if (is_page('home')) {
-    include 'template-parts/homepage.php';
-} else {
 ?>
 
-<!--  bg-black bg-opacity-70 pt-10 min-h-screen border-shadow -->
-<div class="container mx-auto">
+<div id="content-container" class="container mx-auto"> <!-- Här är din content-container -->
 
-    <?php if ( have_posts() ) : ?>
-        <?php
-        while ( have_posts() ) :
-            the_post();
-            ?>
+    <?php if (is_page('home')): ?>
+        <?php include 'template-parts/homepage.php'; ?>
+    <?php else: ?>
 
-            <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+        <?php if (have_posts()): ?>
+            <?php while (have_posts()): the_post(); ?>
+                <?php get_template_part('template-parts/content', get_post_format()); ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
 
-        <?php endwhile; ?>
     <?php endif; ?>
 
-</div>
+</div> <!-- Avsluta content-container -->
 
 <?php
-}
-
 get_footer();
 ?>

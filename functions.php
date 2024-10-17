@@ -119,6 +119,19 @@ function tailpress_nav_menu_add_a_class($atts, $item, $args, $depth)
 
 add_filter('nav_menu_link_attributes', 'tailpress_nav_menu_add_a_class', 10, 4);
 
+function tailpress_nav_menu_add_data_slug($item_output, $item, $depth, $args) {
+    // Hämta slugen från URL:en
+    $slug = basename($item->url);
+
+    // Lägg till data-slug attributet i a-taggen
+    $item_output = str_replace('<a ', '<a data-slug="' . esc_attr($slug) . '" ', $item_output);
+	
+
+    return $item_output;
+}
+add_filter('walker_nav_menu_start_el', 'tailpress_nav_menu_add_data_slug', 10, 4);
+
+
 
 
 /**
@@ -217,4 +230,45 @@ function mytheme_custom_background_setup() {
 add_action( 'after_setup_theme', 'mytheme_custom_background_setup' );
 
 
+
+function load_page_content() {
+    if (isset($_POST['page_slug'])) {
+        $slug = sanitize_text_field($_POST['page_slug']);
+        $page = get_page_by_path($slug);
+        
+        if ($page) {
+            // Set up the global $post variable
+            global $post;
+            $post = $page;
+            setup_postdata($post);
+
+            // Start output buffering
+            ob_start();
+
+            // Load the content template part
+            get_template_part('template-parts/content', get_post_format());
+
+            // Get the buffered content
+            $content = ob_get_clean();
+
+            // Output the content
+            echo $content;
+
+            // Reset the global $post variable
+            wp_reset_postdata();
+        }
+    }
+    wp_die();
+}
+add_action('wp_ajax_load_page', 'load_page_content');
+add_action('wp_ajax_nopriv_load_page', 'load_page_content');
+
+function my_enqueue_scripts() {
+    wp_enqueue_script('my-custom-script', get_template_directory_uri() . '/js/app.js', array(), null, true);
+    
+    wp_localize_script('my-custom-script', 'my_ajax_object', array(
+        'ajax_url' => admin_url('admin-ajax.php')
+    ));
+}
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
