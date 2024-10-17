@@ -43,10 +43,15 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', function (e) {
             e.preventDefault(); // Prevent default behavior
 
-            const slug = this.getAttribute('data-slug'); // Get the slug
+            let slug = this.getAttribute('data-slug'); // Get the slug
+            console.log(slug);
 
             if (slug === '#') {
                 return;
+            }
+
+            if (!slug || slug === '/') {
+                slug = '/';
             }
 
             // Perform AJAX request with fetch
@@ -64,8 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(data => {
                     const contentContainer = document.getElementById('content-container');
                     if (contentContainer) {
-                        const newUrl = `/${slug}`;
-                        console.log('New URL:', newUrl); // Log new URL
+                        const newUrl = slug === '/' ? '/' : `/${slug}`;
                         contentContainer.innerHTML = data; // Load new content
                         history.pushState(null, '', newUrl); // Update URL without reloading
                     } else {

@@ -13,7 +13,7 @@
 
 	<?php else : ?>
 
-		<div class="homepage-content fixed top-0 w-full h-screen bg-black bg-opacity-30">
+		<div class="homepage-content fixed left-0 top-0 w-full h-screen bg-black bg-opacity-30">
 		<div class="relative pt-20 w-full flex"> <!-- Added flex class here -->
         <div class="mx-auto">
 

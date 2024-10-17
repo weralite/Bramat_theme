@@ -234,34 +234,43 @@ add_action( 'after_setup_theme', 'mytheme_custom_background_setup' );
 function load_page_content() {
     if (isset($_POST['page_slug'])) {
         $slug = sanitize_text_field($_POST['page_slug']);
-        $page = get_page_by_path($slug);
         
-        if ($page) {
-            // Set up the global $post variable
-            global $post;
-            $post = $page;
-            setup_postdata($post);
-
-            // Start output buffering
-            ob_start();
-
-            // Load the content template part
-            get_template_part('template-parts/content', get_post_format());
-
-            // Get the buffered content
-            $content = ob_get_clean();
-
-            // Output the content
-            echo $content;
-
-            // Reset the global $post variable
-            wp_reset_postdata();
+        if ($slug === '/') {
+            // Handle the homepage case
+            $homepage_id = get_option('page_on_front'); // Get the ID of the front page
+            if ($homepage_id) {
+                echo load_template_with_postdata('template-parts/homepage', $homepage_id);
+            } else {
+                echo 'Homepage not set.';
+            }
+        } else {
+            $page = get_page_by_path($slug);
+            
+            if ($page) {
+                echo load_template_with_postdata('template-parts/content', $page->ID, get_post_format($page));
+            } else {
+                echo 'Page not found.';
+            }
         }
     }
     wp_die();
 }
 add_action('wp_ajax_load_page', 'load_page_content');
 add_action('wp_ajax_nopriv_load_page', 'load_page_content');
+
+function load_template_with_postdata($template, $post_id, $post_format = '') {
+    global $post;
+    $post = get_post($post_id);
+    setup_postdata($post);
+
+    ob_start();
+    get_template_part($template, $post_format);
+    $content = ob_get_clean();
+
+    wp_reset_postdata();
+    return $content;
+}
+
 
 function my_enqueue_scripts() {
     wp_enqueue_script('my-custom-script', get_template_directory_uri() . '/js/app.js', array(), null, true);

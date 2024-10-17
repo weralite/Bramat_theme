@@ -49,9 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault(); // Prevent default behavior
 
       var slug = this.getAttribute('data-slug'); // Get the slug
-
+      console.log(slug);
       if (slug === '#') {
         return;
+      }
+      if (!slug || slug === '/') {
+        slug = '/';
       }
 
       // Perform AJAX request with fetch
@@ -69,8 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }).then(function (data) {
         var contentContainer = document.getElementById('content-container');
         if (contentContainer) {
-          var newUrl = "/".concat(slug);
-          console.log('New URL:', newUrl); // Log new URL
+          var newUrl = slug === '/' ? '/' : "/".concat(slug);
           contentContainer.innerHTML = data; // Load new content
           history.pushState(null, '', newUrl); // Update URL without reloading
         } else {
