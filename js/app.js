@@ -42,6 +42,31 @@ function appendSpanToSecondaryMenuItems() {
   }
 }
 window.addEventListener('load', appendSpanToSecondaryMenuItems);
+function hideMenuOnClick() {
+  // Find the ul element with the class "sub-menu"
+  var subMenu = document.querySelector('.sub-menu');
+
+  // Check if the element exists
+  if (subMenu) {
+    // Find all li elements within the ul
+    var menuItems = subMenu.querySelectorAll(':scope > li');
+
+    // Iterate over each li element
+    menuItems.forEach(function (menuItem) {
+      // Add click event listener to each li element
+      menuItem.addEventListener('click', function () {
+        // Hide the sub-menu
+        subMenu.style.display = 'none';
+
+        // Reset the sub-menu display property after a short delay
+        setTimeout(function () {
+          subMenu.style.display = '';
+        }, 10); // Adjust the delay as needed
+      });
+    });
+  }
+}
+window.addEventListener('load', hideMenuOnClick);
 document.addEventListener('DOMContentLoaded', function () {
   var links = document.querySelectorAll('.ajax-link');
   var currentSlug = window.location.pathname;

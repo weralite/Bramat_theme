@@ -564,6 +564,7 @@ video {
 }
 .hover-background-animation {
   position: absolute;
+  display: block;
   top: 100%;
   left: 50%;
   transform: translateX(-50%) scaleY(0);

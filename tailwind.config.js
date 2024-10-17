@@ -147,6 +147,7 @@ module.exports = {
                 // New class for hover background animation
                 '.hover-background-animation': {
                     'position': 'absolute',
+                    'display': 'block',
                     'top': '100%',
                     'left': '50%',
                     'transform': 'translateX(-50%) scaleY(0)',  // Initially hidden

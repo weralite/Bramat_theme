@@ -36,63 +36,91 @@ function appendSpanToSecondaryMenuItems() {
 
 window.addEventListener('load', appendSpanToSecondaryMenuItems);
 
-document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('.ajax-link');
+function hideMenuOnClick() {
+    // Find the ul element with the class "sub-menu"
+    const subMenu = document.querySelector('.sub-menu');
 
-        const currentSlug = window.location.pathname;
-    toggleBodyClass(currentSlug);
+    // Check if the element exists
+    if (subMenu) {
+        // Find all li elements within the ul
+        const menuItems = subMenu.querySelectorAll(':scope > li');
 
-    links.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault(); // Prevent default behavior
+        // Iterate over each li element
+        menuItems.forEach((menuItem) => {
+            // Add click event listener to each li element
+            menuItem.addEventListener('click', function () {
+                // Hide the sub-menu
+                subMenu.style.display = 'none';
 
-            let slug = this.getAttribute('data-slug'); // Get the slug
-            console.log(slug);
-
-            if (slug === '#') {
-                return;
-            }
-
-            if (!slug || slug === '/') {
-                slug = '/';
-            }
-
-            toggleBodyClass(slug);
-            // Perform AJAX request with fetch
-            fetch(my_ajax_object.ajax_url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams({
-                    action: 'load_page',
-                    page_slug: slug
-                })
-            })
-                .then(response => response.text())
-                .then(data => {
-                    const contentContainer = document.getElementById('content-container');
-                    if (contentContainer) {
-                        const newUrl = slug === '/' ? '/' : `/${slug}`;
-                        contentContainer.innerHTML = data; // Load new content
-                        history.pushState(null, '', newUrl); // Update URL without reloading
-                    } else {
-                        console.error('Element with ID "content-container" not found.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Failed to load content:', error);
-                });
+                // Reset the sub-menu display property after a short delay
+                setTimeout(() => {
+                    subMenu.style.display = '';
+                }, 10); // Adjust the delay as needed
+            });
         });
-    });
-});
-
-
-function toggleBodyClass(slug) {
-    if (slug !== '/' && slug !== '#') {
-        document.body.classList.add('expanded'); // Add the expanding class
-    } else {
-        document.body.classList.remove('expanded'); // Remove if on homepage
     }
 }
+
+window.addEventListener('load', hideMenuOnClick);
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('.ajax-link');
+
+            const currentSlug = window.location.pathname;
+            toggleBodyClass(currentSlug);
+
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default behavior
+
+                    let slug = this.getAttribute('data-slug'); // Get the slug
+                    console.log(slug);
+
+                    if (slug === '#') {
+                        return;
+                    }
+
+                    if (!slug || slug === '/') {
+                        slug = '/';
+                    }
+
+                    toggleBodyClass(slug);
+                    // Perform AJAX request with fetch
+                    fetch(my_ajax_object.ajax_url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams({
+                            action: 'load_page',
+                            page_slug: slug
+                        })
+                    })
+                        .then(response => response.text())
+                        .then(data => {
+                            const contentContainer = document.getElementById('content-container');
+                            if (contentContainer) {
+                                const newUrl = slug === '/' ? '/' : `/${slug}`;
+                                contentContainer.innerHTML = data; // Load new content
+                                history.pushState(null, '', newUrl); // Update URL without reloading
+                            } else {
+                                console.error('Element with ID "content-container" not found.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Failed to load content:', error);
+                        });
+                });
+            });
+        });
+
+
+        function toggleBodyClass(slug) {
+            if (slug !== '/' && slug !== '#') {
+                document.body.classList.add('expanded'); // Add the expanding class
+            } else {
+                document.body.classList.remove('expanded'); // Remove if on homepage
+            }
+        }
 
