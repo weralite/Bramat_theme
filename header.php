@@ -18,7 +18,7 @@
 
 		<?php do_action('tailpress_header'); ?>
 
-		<header class="sticky top-0 z-10 min-w-full">
+		<header class="sticky top-0 z-10 min-w-full bg-black bg-opacity-70">
 		<div class="min-w-full flex justify-center">
 			<?php
 		wp_nav_menu( array(
