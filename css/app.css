@@ -540,6 +540,7 @@ video {
 .secondary-li-class-parent-desktop {
   position: relative;
   min-width: 13rem;
+  max-width: 13rem;
   height: 3rem;
   display: flex;
   color: white;
@@ -566,7 +567,8 @@ video {
   top: 100%;
   left: 50%;
   transform: translateX(-50%) scaleY(0);
-  width: 13rem;
+  max-width: 13rem;
+  min-width: 13rem;
   overflow: hidden;
   transition: transform 100ms ease-in-out;
   transform-origin: top;
@@ -674,6 +676,9 @@ video {
 }
 .h-screen {
   height: 100vh;
+}
+.max-h-0 {
+  max-height: 0px;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -1121,7 +1126,6 @@ html {
 }
 body {
     height: 2rem; /* Initial small height */
-    overflow: hidden; /* Ensure content doesn't overflow */
     transition: max-height 0.6s ease; /* Animate the max-height property */
 }
 /* Expanded body state */

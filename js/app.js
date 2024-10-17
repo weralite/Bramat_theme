@@ -32,7 +32,7 @@ function appendSpanToSecondaryMenuItems() {
 
       // Optionally, you can add some content or attributes to the span
       newSpan.textContent = '';
-      newSpan.className = 'absolute left-0 top-0 w-full h-0 transition-all duration-200 bg-gray-300 z-5 group-hover:h-full'; // Add a class if needed
+      newSpan.className = 'absolute left-0 top-0 min-w-13 max-w-13 h-0 transition-all duration-200 bg-gray-300 z-5 group-hover:h-full'; // Add a class if needed
 
       // Append the span to the li element
       menuItem.appendChild(newSpan);

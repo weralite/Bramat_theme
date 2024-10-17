@@ -20,6 +20,9 @@ module.exports = {
             },
         },
         extend: {
+            width: {
+                '13': '13rem',
+            },
             boxShadow: {
                 'mobile': '0 5px 0 0 rgba(0, 0, 0, 0.9)', // Straight bottom line shadow
               },
@@ -116,6 +119,7 @@ module.exports = {
                 '.secondary-li-class-parent-desktop': {
                     'position': 'relative',
                     'min-width': '13rem',
+                    'max-width': '13rem',
                     'height': '3rem',
                     'display': 'flex',
                     'color': 'white',
@@ -146,7 +150,8 @@ module.exports = {
                     'top': '100%',
                     'left': '50%',
                     'transform': 'translateX(-50%) scaleY(0)',  // Initially hidden
-                    'width': '13rem',
+                    'max-width': '13rem',
+                    'min-width': '13rem',
                     'overflow': 'hidden',
                     'transition': 'transform 100ms ease-in-out',  // Transition for background
                     'transform-origin': 'top',

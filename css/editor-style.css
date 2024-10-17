@@ -40,6 +40,7 @@
 .secondary-li-class-parent-desktop {
  position: relative;
  min-width: 13rem;
+ max-width: 13rem;
  height: 3rem;
  display: flex;
  color: white;
@@ -66,7 +67,8 @@
  top: 100%;
  left: 50%;
  transform: translateX(-50%) scaleY(0);
- width: 13rem;
+ max-width: 13rem;
+ min-width: 13rem;
  overflow: hidden;
  transition: transform 100ms ease-in-out;
  transform-origin: top;
@@ -175,17 +177,11 @@
 .h-screen {
  height: 100vh;
 }
-.h-full {
- height: 100%;
-}
-.min-h-\[100vh\] {
- min-height: 100vh;
+.max-h-0 {
+ max-height: 0px;
 }
 .min-h-screen {
  min-height: 100vh;
-}
-.min-h-full {
- min-height: 100%;
 }
 .w-14 {
  width: 3.5rem;
@@ -298,9 +294,6 @@
 .bg-opacity-30 {
  --tw-bg-opacity: 0.3;
 }
-.bg-opacity-70 {
- --tw-bg-opacity: 0.7;
-}
 .bg-opacity-80 {
  --tw-bg-opacity: 0.8;
 }
@@ -345,9 +338,6 @@
 }
 .pb-4 {
  padding-bottom: 1rem;
-}
-.pt-10 {
- padding-top: 2.5rem;
 }
 .pt-16 {
  padding-top: 4rem;
