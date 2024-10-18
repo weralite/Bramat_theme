@@ -1,0 +1,14 @@
+{
+  "apiVersion": 2,
+  "name": "custom/image-grid",
+  "title": "Image Grid",
+  "category": "custom-blocks",
+  "icon": "calendar",
+  "description": "A block to add a day's menu items.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "custom-day-item",
+  "editorScript": "file:./index.js",
+  "attributes": {}
+}

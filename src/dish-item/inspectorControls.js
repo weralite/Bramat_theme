@@ -57,7 +57,7 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
           value={attributes.paddingRange}
           onChange={(value) => setAttributes({ paddingRange: value })}
           min={0}
-          max={6}
+          max={30}
           step={2}
         />
       </PanelBody>

@@ -92,7 +92,7 @@ const CustomInspectorControls = ({
           paddingRange: value
         }),
         min: 0,
-        max: 6,
+        max: 30,
         step: 2
       })]
     })]
@@ -340,7 +340,19 @@ const paddingClasses = {
   0: 'px-0',
   2: 'px-2',
   4: 'px-4',
-  6: 'px-6'
+  6: 'px-6',
+  8: 'px-8',
+  10: 'px-10',
+  12: 'px-12',
+  14: 'px-14',
+  16: 'px-16',
+  18: 'px-18',
+  20: 'px-20',
+  22: 'px-22',
+  24: 'px-24',
+  26: 'px-26',
+  28: 'px-28',
+  30: 'px-30'
 };
 const Edit = ({
   attributes,

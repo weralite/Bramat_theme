@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/uhemsi36/repositories/Bramat 
+    - /bin/cp -R . $DEPLOYPATH

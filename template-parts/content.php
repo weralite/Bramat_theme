@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'pt-16' ); ?> >
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'pt-16 pb-16' ); ?> >
 
 	<header class="entry-header">
 		<!-- <?php the_title( sprintf( '<h2 class="font-josefin entry-title text-center text-2xl md:text-3xl font-bold leading-tight">', esc_url( get_permalink() ) ), '</h2>' ); ?> -->

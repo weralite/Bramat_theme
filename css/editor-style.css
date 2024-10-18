@@ -154,9 +154,6 @@
 .max-w-sm {
  max-width: 24rem
 }
-.max-w-xl {
- max-width: 36rem
-}
 .transform {
  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
@@ -241,12 +238,6 @@
 .bg-opacity-80 {
  --tw-bg-opacity: 0.8
 }
-.bg-opacity-50 {
- --tw-bg-opacity: 0.5
-}
-.bg-opacity-70 {
- --tw-bg-opacity: 0.7
-}
 .p-4 {
  padding: 1rem
 }
@@ -254,13 +245,57 @@
  padding-left: 0px;
  padding-right: 0px
 }
+.px-10 {
+ padding-left: 2.5rem;
+ padding-right: 2.5rem
+}
+.px-12 {
+ padding-left: 3rem;
+ padding-right: 3rem
+}
+.px-14 {
+ padding-left: 3.5rem;
+ padding-right: 3.5rem
+}
+.px-16 {
+ padding-left: 4rem;
+ padding-right: 4rem
+}
+.px-18 {
+ padding-left: 4.5rem;
+ padding-right: 4.5rem
+}
 .px-2 {
  padding-left: 0.5rem;
  padding-right: 0.5rem
 }
+.px-20 {
+ padding-left: 5rem;
+ padding-right: 5rem
+}
+.px-22 {
+ padding-left: 5.5rem;
+ padding-right: 5.5rem
+}
+.px-24 {
+ padding-left: 6rem;
+ padding-right: 6rem
+}
+.px-26 {
+ padding-left: 6.5rem;
+ padding-right: 6.5rem
+}
+.px-28 {
+ padding-left: 7rem;
+ padding-right: 7rem
+}
 .px-3 {
  padding-left: 0.75rem;
  padding-right: 0.75rem
+}
+.px-30 {
+ padding-left: 7.5rem;
+ padding-right: 7.5rem
 }
 .px-4 {
  padding-left: 1rem;
@@ -269,6 +304,10 @@
 .px-6 {
  padding-left: 1.5rem;
  padding-right: 1.5rem
+}
+.px-8 {
+ padding-left: 2rem;
+ padding-right: 2rem
 }
 .py-10 {
  padding-top: 2.5rem;
@@ -285,6 +324,9 @@
 .py-4 {
  padding-top: 1rem;
  padding-bottom: 1rem
+}
+.pb-16 {
+ padding-bottom: 4rem
 }
 .pb-4 {
  padding-bottom: 1rem
