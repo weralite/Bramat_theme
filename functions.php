@@ -46,13 +46,13 @@ function tailpress_enqueue_assets() {
     $theme = wp_get_theme();
 
     // Enqueue theme styles
-    wp_enqueue_style('tailpress', tailpress_asset('css/app.css'), array(), $theme->get('Version'));
+    wp_enqueue_style('tailpress', get_template_directory_uri() . '/css/app.css', array(), $theme->get('Version'));
 
     // Enqueue custom fonts
     wp_enqueue_style('tailpress-fonts', get_template_directory_uri() . '/resources/css/fonts.css', array(), $theme->get('Version'));
 
     // Enqueue theme scripts (load in footer)
-    wp_enqueue_script('tailpress', tailpress_asset('js/app.js'), array(), $theme->get('Version'), true);
+    wp_enqueue_script('tailpress', get_template_directory_uri() . '/js/app.js', array(), $theme->get('Version'), true);
 }
 
 // Enqueue assets for frontend
@@ -61,6 +61,25 @@ add_action('wp_enqueue_scripts', 'tailpress_enqueue_assets');
 // Enqueue assets for block editor (same function)
 add_action('enqueue_block_editor_assets', 'tailpress_enqueue_assets');
 
+/**
+ * Get asset path.
+ *
+ * @param string  $path Path to asset.
+ *
+ * @return string
+ */
+function tailpress_asset($path)
+{
+	if (wp_get_environment_type() === 'production') {
+		return get_stylesheet_directory_uri() . '/' . $path;
+	}
+
+	return add_query_arg('time', time(),  get_stylesheet_directory_uri() . '/' . $path);
+}
+
+if (defined('WP_DEBUG') && WP_DEBUG) {
+    error_log('Debug log test: Functions.php loaded successfully.');
+}
 
 
 /**
@@ -278,23 +297,4 @@ add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
 
 
-/**
- * Get asset path.
- *
- * @param string  $path Path to asset.
- *
- * @return string
- */
-function tailpress_asset($path)
-{
-	if (wp_get_environment_type() === 'production') {
-		return get_stylesheet_directory_uri() . '/' . $path;
-	}
-
-	return add_query_arg('time', time(),  get_stylesheet_directory_uri() . '/' . $path);
-}
-
-if (defined('WP_DEBUG') && WP_DEBUG) {
-    error_log('Debug log test: Functions.php loaded successfully.');
-}
 
