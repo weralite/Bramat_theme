@@ -37,7 +37,6 @@ function tailpress_setup()
 	add_editor_style('css/editor-style.css');
 }
 
-
 add_action('after_setup_theme', 'tailpress_setup');
 
 /**
@@ -64,7 +63,6 @@ add_action('enqueue_block_editor_assets', 'tailpress_enqueue_assets');
 
 
 
-
 /**
  * Adds option 'li_class' to 'wp_nav_menu'.
  *
@@ -76,19 +74,28 @@ add_action('enqueue_block_editor_assets', 'tailpress_enqueue_assets');
  */
 function tailpress_nav_menu_add_li_class($classes, $item, $args, $depth)
 {
-	if (isset($args->li_class)) {
-		$classes[] = $args->li_class;
-	}
+    // Logga att funktionen har anropats
+    error_log('tailpress_nav_menu_add_li_class() was called.');
 
-	if (isset($args->{"li_class_$depth"})) {
-		$classes[] = $args->{"li_class_$depth"};
-	}
+    // Logga innehållet i $args för felsökning
+    error_log('Args: ' . print_r($args, true));
 
-	return $classes;
+    // Om li_class finns i args, lägg till den i klasserna
+    if (isset($args->li_class)) {
+        $classes[] = $args->li_class;
+    }
+
+    // Om li_class_$depth finns i args, lägg till den i klasserna
+    if (isset($args->{"li_class_$depth"})) {
+        $classes[] = $args->{"li_class_$depth"};
+    }
+
+    // Returnera de modifierade klasserna
+    return $classes;
 }
 
+// Registrera funktionen med nav_menu_css_class-filter
 add_filter('nav_menu_css_class', 'tailpress_nav_menu_add_li_class', 10, 4);
-
 
 function tailpress_nav_menu_add_a_class($atts, $item, $args, $depth)
 {
@@ -108,10 +115,10 @@ function tailpress_nav_menu_add_a_class($atts, $item, $args, $depth)
 add_filter('nav_menu_link_attributes', 'tailpress_nav_menu_add_a_class', 10, 4);
 
 function tailpress_nav_menu_add_data_slug($item_output, $item, $depth, $args) {
-    // Hämta slugen från URL:en
+    // H채mta slugen fr책n URL:en
     $slug = basename($item->url);
 
-    // Lägg till data-slug attributet i a-taggen
+    // L채gg till data-slug attributet i a-taggen
     $item_output = str_replace('<a ', '<a data-slug="' . esc_attr($slug) . '" ', $item_output);
 	
 
@@ -269,6 +276,8 @@ function my_enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
+
+
 /**
  * Get asset path.
  *
@@ -284,3 +293,8 @@ function tailpress_asset($path)
 
 	return add_query_arg('time', time(),  get_stylesheet_directory_uri() . '/' . $path);
 }
+
+if (defined('WP_DEBUG') && WP_DEBUG) {
+    error_log('Debug log test: Functions.php loaded successfully.');
+}
+
