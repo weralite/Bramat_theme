@@ -607,6 +607,9 @@ body {
  .lg\:font-josefin {
   font-family: Josefin Slab, serif
  }
+ .lg\:font-teko {
+  font-family: Teko, sans-serif
+ }
  .lg\:text-4xl {
   font-size: 2.25rem
  }

@@ -37,6 +37,7 @@ function tailpress_setup()
 	add_editor_style('css/editor-style.css');
 }
 
+
 add_action('after_setup_theme', 'tailpress_setup');
 
 /**
@@ -61,21 +62,7 @@ add_action('wp_enqueue_scripts', 'tailpress_enqueue_assets');
 // Enqueue assets for block editor (same function)
 add_action('enqueue_block_editor_assets', 'tailpress_enqueue_assets');
 
-/**
- * Get asset path.
- *
- * @param string  $path Path to asset.
- *
- * @return string
- */
-function tailpress_asset($path)
-{
-	if (wp_get_environment_type() === 'production') {
-		return get_stylesheet_directory_uri() . '/' . $path;
-	}
 
-	return add_query_arg('time', time(),  get_stylesheet_directory_uri() . '/' . $path);
-}
 
 
 /**
@@ -101,6 +88,7 @@ function tailpress_nav_menu_add_li_class($classes, $item, $args, $depth)
 }
 
 add_filter('nav_menu_css_class', 'tailpress_nav_menu_add_li_class', 10, 4);
+
 
 function tailpress_nav_menu_add_a_class($atts, $item, $args, $depth)
 {
@@ -281,3 +269,18 @@ function my_enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
+/**
+ * Get asset path.
+ *
+ * @param string  $path Path to asset.
+ *
+ * @return string
+ */
+function tailpress_asset($path)
+{
+	if (wp_get_environment_type() === 'production') {
+		return get_stylesheet_directory_uri() . '/' . $path;
+	}
+
+	return add_query_arg('time', time(),  get_stylesheet_directory_uri() . '/' . $path);
+}
