@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/example/public_html/wp-content/themes/
-    - /bin/cp -R Bramat_theme $DEPLOYPATH
+    - export DEPLOYPATH=/home/uhemsi36/public_html/wp-content/themes/Bramat_theme
+    - /bin/cp -R . $DEPLOYPATH
