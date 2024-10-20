@@ -2,9 +2,17 @@
 window.addEventListener('load', function () {
     let main_navigation = document.querySelector('#primary-menu');
     document.querySelector('#primary-menu-toggle').addEventListener('click', function (e) {
-        console.log(main_navigation);
         e.preventDefault();
         main_navigation.classList.toggle('hidden');
+        console.log(main_navigation.classList); // Log the classes after toggling
+    });
+});
+
+window.addEventListener('load', function () {
+    let toggleMenu = document.querySelector('#toggleMenu');
+    toggleMenu.addEventListener('click', function (e) {
+        e.preventDefault();
+        toggleMenu.classList.toggle('hamburger-toggle');
     });
 });
 

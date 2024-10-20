@@ -53,6 +53,11 @@ function tailpress_enqueue_assets() {
 
     // Enqueue theme scripts (load in footer)
     wp_enqueue_script('tailpress', tailpress_asset('js/app.js'), array(), $theme->get('Version'), true);
+
+   // Localize the script with new data
+    wp_localize_script('tailpress', 'my_ajax_object', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+    ));
 }
 
 // Enqueue assets for frontend
@@ -286,14 +291,14 @@ function load_template_with_postdata($template, $post_id, $post_format = '') {
 }
 
 
-function my_enqueue_scripts() {
-    wp_enqueue_script('my-custom-script', get_template_directory_uri() . '/js/app.js', array(), null, true);
+// function my_enqueue_scripts() {
+//     wp_enqueue_script('my-custom-script', get_template_directory_uri() . '/js/app.js', array(), null, true);
     
-    wp_localize_script('my-custom-script', 'my_ajax_object', array(
-        'ajax_url' => admin_url('admin-ajax.php')
-    ));
-}
-add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
+//     wp_localize_script('my-custom-script', 'my_ajax_object', array(
+//         'ajax_url' => admin_url('admin-ajax.php')
+//     ));
+// }
+// add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
 
 

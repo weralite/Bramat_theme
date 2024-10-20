@@ -54,17 +54,41 @@
 
 
 						<div class="p-4 lg:hidden">
-							<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
-								<svg viewBox="0 0 20 20" class="inline-block w-6 h-6" version="1.1"
-									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
-										<g id="icon-shape">
-											<path d="M0,3 L20,3 L20,5 L0,5 L0,3 Z M0,9 L20,9 L20,11 L0,11 L0,9 Z M0,15 L20,15 L20,17 L0,17 L0,15 Z"
-												id="Combined-Shape"></path>
-										</g>
-									</g>
-								</svg>
+
+						<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
+								<div id="toggleMenu" class="grid place-content-center w-10 h-10">
+								<div 
+								class="
+								w-10
+								h-1
+							  bg-gray-100 
+							    rounded-full
+								transition-all
+								duration-50
+								before:content-['']
+								before:absolute
+								before:w-10
+								before:h-1
+							    before:bg-gray-100 
+								before:rounded-full
+								before:-translate-y-4
+								before:transition-all
+								before:duration-150
+								after:content-['']
+								after:absolute
+								after:w-10
+								after:h-1
+								after:bg-gray-100 
+								after:rounded-full
+								after:translate-y-4
+								after:transition-all
+								after:duration-150
+								
+								">
+							</div>
+							</div>
 							</a>
+
 						</div>
 
 
@@ -75,8 +99,8 @@
 					wp_nav_menu(
 						array(
 							'container_id'    => 'primary-menu',
-							'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:pl-10 xl:pl-14 lg:block xl:bg-transparent xl:block xl:absolute xl:left-1/2 xl:transform xl:-translate-x-1/2',
-							'menu_class'      => 'lg:flex lg:gap-4 z--1',
+							'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:pl-10 xl:pl-14 lg:block xl:bg-transparent xl:block xl:left-1/2 xl:transform xl:-translate-x-1/2',
+							'menu_class'      => 'lg:flex lg:gap-4',
 							'theme_location'  => 'primary',
 							'li_class'        => 'lg:mx-4 groupa', // Add group class here
 							'a_class'         => 'relative z-1 inline-block font-teko lg:font-light lg:text-4xl xl:text-7xl uppercase transition-all duration-150', // Class for <a>
