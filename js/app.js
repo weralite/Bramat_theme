@@ -9,11 +9,10 @@
 
 // Navigation toggle
 window.addEventListener('load', function () {
-  var main_navigation = document.querySelector('#primary-menu');
-  document.querySelector('#primary-menu-toggle').addEventListener('click', function (e) {
+  var main_navigation = document.querySelector('#secondary-menu');
+  document.querySelector('#mobile-menu-toggle').addEventListener('click', function (e) {
     e.preventDefault();
     main_navigation.classList.toggle('hidden');
-    console.log(main_navigation.classList); // Log the classes after toggling
   });
 });
 window.addEventListener('load', function () {

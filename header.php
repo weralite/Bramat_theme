@@ -25,20 +25,20 @@
     		'theme_location'  => 'secondary',
 			'container_id'    => 'secondary-menu',
     		'container_class' => 'min-w-full', // Tailwind styles for container
-   			'menu_class'      => 'hidden lg:flex lg:flex-row lg:justify-center', 
+   			'menu_class'      => 'hidden xl:flex xl:flex-row xl:justify-center', 
    		    'li_class'        => 'secondary-li-class-parent-desktop group', // Parent item styles
- 		    'a_class'         => 'ajax-link lg:text-lg z-10 lg:tracking-wide lg:font-teko lg:w-full lg:font-light lg:uppercase lg:relative',
+ 		    'a_class'         => 'ajax-link xl:text-2xl z-10 xl:tracking-wide xl:font-teko xl:w-full xl:font-light xl:uppercase xl:relative',
  		    'submenu_class'   => 'hover-background-animation', // Centered and increased size
 			 'container'      => false,
 ));?>
 </div>
-			<div class="lg:hidden container min-w-full bg-black bg-opacity-80">
-				<div class="lg:relative min-w-full lg:flex lg:justify-between lg:items-center">
+			<div class="xl:hidden container min-w-full">
+				<div class="xl:relative min-w-full xl:flex xl:justify-between xl:items-center">
 					
-					<div class="flex justify-between items-center min-w-full lg:child-left pb-4">
+					<div class="flex justify-between items-center min-w-full xl:child-left pb-4">
 					<div>
 							<?php if (has_custom_logo()) { ?>
-								<?php the_custom_logo(); ?> 
+								<!-- <?php the_custom_logo(); ?>  -->
 							<?php } else { ?>
 								<a href="<?php echo get_bloginfo('url'); ?>" class="font-extrabold text-lg uppercase">
 									<?php echo get_bloginfo('name'); ?>
@@ -53,9 +53,8 @@
 
 
 
-						<div class="p-4 lg:hidden">
-
-						<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
+						<div class="p-4 z-10 lg:hidden">
+						<a href="#" aria-label="Toggle navigation" id="mobile-menu-toggle">
 								<div id="toggleMenu" class="grid place-content-center w-10 h-10">
 								<div 
 								class="
@@ -83,18 +82,28 @@
 								after:translate-y-4
 								after:transition-all
 								after:duration-150
-								
 								">
 							</div>
 							</div>
 							</a>
-
 						</div>
 
 
-
 					</div>
-
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location'  => 'secondary',
+							'container_id'    => 'secondary-menu',
+							'container_class' => 'hidden top-0 left-0 absolute bg-black min-w-full p-4',
+							'menu_class'      => '',
+							'li_class'        => 'lg:mx-4', // Add group class here
+							'a_class'         => 'relative z-1 inline-block font-teko', // Class for <a>
+							'submenu_class'   => '', // Centered and increased size
+							'fallback_cb'     => false,
+						)
+					);
+					?>
 					<?php
 					wp_nav_menu(
 						array(
@@ -121,7 +130,7 @@
 
 			<?php if (is_front_page()) { ?>
 				<!-- Start introduction -->
-											<!-- HOMEPAGE HEADER -->
+	<!-- HOMEPAGE HEADER -->
 				<!-- End introduction -->
 			<?php } ?>
 
