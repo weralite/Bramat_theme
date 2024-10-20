@@ -1,5 +1,5 @@
 ---
 deployment:
-      tasks:
-        - export DEPLOYPATH=/home/glades/public_html
-        - /bin/cp -r /home/glades/repositories/Bramat_theme/* $DEPLOYPATH
+  tasks:
+    - export DEPLOYPATH=/home/uhemsi36/public_html/wp-content/themes/Bramat_theme
+    - /bin/cp -R . $DEPLOYPATH
