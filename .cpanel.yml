@@ -1,4 +1,5 @@
+version: 2
 deployment:
   tasks:
     - export DEPLOYPATH=/home/uhemsi36/public_html/wp-content/themes/Bramat_theme
-    - /bin/cp -R . $DEPLOYPATH
+    - /bin/cp -R . $DEPLOYPATH  # Copy all files from the current directory to the deployment path
