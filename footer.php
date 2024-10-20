@@ -10,7 +10,7 @@
 	<?php do_action( 'tailpress_footer' ); ?>
 
 	<div class="container mx-auto text-center">
-		<?php echo date_i18n( 'Y' );?> 
+		<?php echo date_i18n( 'Y','Y' );?> 
 	</div>
 </footer> -->
 
