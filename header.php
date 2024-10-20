@@ -19,23 +19,42 @@
 		<?php do_action('tailpress_header'); ?>
 
 		<header class="sticky top-0 z-10 min-w-full">
+
+
+								<!-- Main navigational menu for desktop view -->
 		<div class="min-w-full flex justify-center">
 			<?php
 		wp_nav_menu( array(
     		'theme_location'  => 'secondary',
 			'container_id'    => 'secondary-menu',
-    		'container_class' => 'min-w-full', // Tailwind styles for container
+    		'container_class' => 'min-w-full', 
    			'menu_class'      => 'hidden xl:flex xl:flex-row xl:justify-center', 
-   		    'li_class'        => 'secondary-li-class-parent-desktop group', // Parent item styles
+   		    'li_class'        => 'secondary-li-class-parent-desktop group', 
  		    'a_class'         => 'ajax-link xl:text-2xl z-10 xl:tracking-wide xl:font-teko xl:w-full xl:font-light xl:uppercase xl:relative',
- 		    'submenu_class'   => 'hover-background-animation', // Centered and increased size
+ 		    'submenu_class'   => 'hover-background-animation', 
 			 'container'      => false,
 ));?>
 </div>
-			<div class="xl:hidden container min-w-full">
+							<!-- TODO: Switch naming places on primary and secondary menues. -->
+							<!-- Primary" Menu used on mid-sizes screens -->
+			<div class="xl:hidden min-w-full">
 				<div class="xl:relative min-w-full xl:flex xl:justify-between xl:items-center">
-					
-					<div class="flex justify-between items-center min-w-full xl:child-left pb-4">
+					<div class="flex justify-between items-center min-w-full">
+					<?php
+					wp_nav_menu(
+						array(
+							'container_id'    => 'primary-menu',
+							'container_class' => 'hidden w-full md:mt-0 md:p-0 md:pl-16 md:block',
+							'menu_class'      => 'md:flex md:justify-center md:gap-4',
+							'theme_location'  => 'primary',
+							'li_class'        => 'md:mx-4 groupa',
+							'a_class'         => 'relative z-0 inline-block font-teko md:font-light md:text-4xl uppercase transition-all duration-150', 
+							'fallback_cb'     => false,
+						)
+					);
+					?>
+
+								<!-- Wordpress classic? logo and headlines -->
 					<div>
 							<?php if (has_custom_logo()) { ?>
 								<!-- <?php the_custom_logo(); ?>  -->
@@ -53,7 +72,8 @@
 
 
 
-						<div class="p-4 z-10 lg:hidden">
+								<!-- Hamburger Animation -->
+						<div class="p-4 z-10 xl:hidden">
 						<a href="#" aria-label="Toggle navigation" id="mobile-menu-toggle">
 								<div id="toggleMenu" class="grid place-content-center w-10 h-10">
 								<div 
@@ -87,9 +107,9 @@
 							</div>
 							</a>
 						</div>
-
-
 					</div>
+
+								<!-- "Secondary" menu for toggle on small screen/phone -->
 					<?php
 					wp_nav_menu(
 						array(
@@ -97,26 +117,14 @@
 							'container_id'    => 'secondary-menu',
 							'container_class' => 'hidden top-0 left-0 absolute bg-black min-w-full p-4',
 							'menu_class'      => '',
-							'li_class'        => 'lg:mx-4', // Add group class here
-							'a_class'         => 'relative z-1 inline-block font-teko', // Class for <a>
-							'submenu_class'   => '', // Centered and increased size
+							'li_class'        => 'lg:mx-4', 
+							'a_class'         => 'relative z-1 inline-block font-teko', 
+							'submenu_class'   => '', 
 							'fallback_cb'     => false,
 						)
 					);
 					?>
-					<?php
-					wp_nav_menu(
-						array(
-							'container_id'    => 'primary-menu',
-							'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:pl-10 xl:pl-14 lg:block xl:bg-transparent xl:block xl:left-1/2 xl:transform xl:-translate-x-1/2',
-							'menu_class'      => 'lg:flex lg:gap-4',
-							'theme_location'  => 'primary',
-							'li_class'        => 'lg:mx-4 groupa', // Add group class here
-							'a_class'         => 'relative z-1 inline-block font-teko lg:font-light lg:text-4xl xl:text-7xl uppercase transition-all duration-150', // Class for <a>
-							'fallback_cb'     => false,
-						)
-					);
-					?>
+
 			
 				</div>
 			</div>
