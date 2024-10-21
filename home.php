@@ -4,11 +4,11 @@
 
 
     <!-- Blog Post Loop -->
-    <section class="mx-auto flex flex-col md:max-w-screen-lg gap-10">
+    <section class="mx-auto flex flex-col gap-10 max-w-sm md:max-w-4xl ">
         <?php if ( have_posts() ) : ?>
             <?php while ( have_posts() ) : the_post(); ?>
 
-            <article class="flex flex-col gap-5 max-w-sm md:flex-row md:max-w-screen-lg md:min-w-screen-lg mx-auto md:mx-0 overflow-hidden" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <article class="flex flex-col gap-5 md:flex-row overflow-hidden" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
             <?php if ( has_post_thumbnail() ) : ?>
         <div class="w-full max-w-sm aspect-[16/9] overflow-hidden">
@@ -18,13 +18,12 @@
                      </div>
                      <?php else : ?>
                     
-                   <div class="w-full max-w-sm aspect-[16/9] bg-transparent flex items-center justify-center">
-                    <div class="w-full h-full object-fill flex items-center justify-center" >
+                   <div class="w-full border max-w-sm aspect-[16/9] bg-transparent flex items-center justify-center">
                    <span class="text-gray-500">No Image Available</span>
                    </div>
-                   </div>
+                   
                     <?php endif; ?>
-                    <div class="w-full max flex flex-col justify-between">
+                    <div class="w-full flex flex-col justify-between">
                     <div clasS="flex flex-col gap-2 w-full">
                     <!-- Post Title -->
                     <header class="entry-header">
