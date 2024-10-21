@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<div id="content-container" class="container mx-auto"> <!-- Här är din content-container -->
+<div id="content-container" class="container mx-auto pt-16"> <!-- Här är din content-container -->
 
     <?php if (is_page('home')): ?>
         <?php include 'template-parts/homepage.php'; ?>

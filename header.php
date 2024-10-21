@@ -48,7 +48,7 @@
 							'menu_class'      => 'md:flex md:justify-center md:gap-4',
 							'theme_location'  => 'primary',
 							'li_class'        => 'md:mx-4 groupa',
-							'a_class'         => 'relative z-0 inline-block font-teko md:font-light md:text-4xl uppercase transition-all duration-150', 
+							'a_class'         => 'ajax-link relative z-0 inline-block font-teko md:font-light md:text-4xl uppercase transition-all duration-150', 
 							'fallback_cb'     => false,
 						)
 					);
@@ -108,7 +108,7 @@
 							</a>
 						</div>
 					</div>
-
+								<!-- TODO: Add ajax link to a tags -->
 								<!-- "Secondary" menu for toggle on small screen/phone -->
 					<?php
 					wp_nav_menu(

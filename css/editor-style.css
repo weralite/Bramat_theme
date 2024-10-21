@@ -61,17 +61,14 @@
 .top-0 {
  top: 0px
 }
-.top-10 {
- top: 2.5rem
+.z-0 {
+ z-index: 0
 }
 .z-1 {
  z-index: 1
 }
 .z-10 {
  z-index: 10
-}
-.z-0 {
- z-index: 0
 }
 .m-8 {
  margin: 2rem
@@ -96,9 +93,6 @@
 }
 .mb-8 {
  margin-bottom: 2rem
-}
-.mt-4 {
- margin-top: 1rem
 }
 .block {
  display: block
@@ -130,9 +124,6 @@
 .h-screen {
  height: 100vh
 }
-.max-h-0 {
- max-height: 0px
-}
 .min-h-screen {
  min-height: 100vh
 }
@@ -162,14 +153,6 @@
 }
 .max-w-sm {
  max-width: 24rem
-}
-.origin-top {
- transform-origin: top
-}
-.scale-0 {
- --tw-scale-x: 0;
- --tw-scale-y: 0;
- transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 .transform {
  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
@@ -352,14 +335,17 @@
 .pb-16 {
  padding-bottom: 4rem
 }
-.pb-4 {
- padding-bottom: 1rem
-}
 .pt-16 {
  padding-top: 4rem
 }
 .pt-20 {
  padding-top: 5rem
+}
+.pt-26 {
+ padding-top: 6.5rem
+}
+.pt-10 {
+ padding-top: 2.5rem
 }
 .text-center {
  text-align: center
@@ -636,22 +622,16 @@ body {
  height: 100%
 }
 @media (min-width: 782px) {
- .md\:my-6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem
- }
  .md\:mx-4 {
   margin-left: 1rem;
   margin-right: 1rem
  }
+ .md\:my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem
+ }
  .md\:mt-0 {
   margin-top: 0px
- }
- .md\:mt-4 {
-  margin-top: 1rem
- }
- .md\:mt-2 {
-  margin-top: 0.5rem
  }
  .md\:block {
   display: block
@@ -686,16 +666,6 @@ body {
  .md\:p-0 {
   padding: 0px
  }
- .md\:p-4 {
-  padding: 1rem
- }
- .md\:py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem
- }
- .md\:pl-10 {
-  padding-left: 2.5rem
- }
  .md\:pl-16 {
   padding-left: 4rem
  }
@@ -705,94 +675,22 @@ body {
  .md\:text-4xl {
   font-size: 2.25rem
  }
- .md\:text-7xl {
-  font-size: 5rem
- }
- .md\:text-2xl {
-  font-size: 1.5rem
- }
- .md\:text-5xl {
-  font-size: 3rem
- }
  .md\:font-light {
   font-weight: 300
  }
 }
 @media (min-width: 960px) {
- .lg\:relative {
-  position: relative
- }
  .lg\:mx-4 {
   margin-left: 1rem;
   margin-right: 1rem
  }
- .lg\:mt-0 {
-  margin-top: 0px
- }
- .lg\:block {
-  display: block
- }
- .lg\:flex {
-  display: flex
- }
- .lg\:hidden {
-  display: none
- }
- .lg\:w-full {
-  width: 100%
- }
- .lg\:flex-row {
-  flex-direction: row
- }
- .lg\:items-center {
-  align-items: center
- }
- .lg\:justify-center {
-  justify-content: center
- }
- .lg\:justify-between {
-  justify-content: space-between
- }
- .lg\:gap-4 {
-  gap: 1rem
- }
- .lg\:p-0 {
-  padding: 0px
- }
- .lg\:pl-10 {
-  padding-left: 2.5rem
- }
- .lg\:font-teko {
-  font-family: Teko, sans-serif
- }
- .lg\:text-2xl {
-  font-size: 1.5rem
- }
- .lg\:text-4xl {
-  font-size: 2.25rem
- }
  .lg\:text-5xl {
   font-size: 3rem
- }
- .lg\:font-light {
-  font-weight: 300
- }
- .lg\:uppercase {
-  text-transform: uppercase
- }
- .lg\:tracking-wide {
-  letter-spacing: 0.025em
  }
 }
 @media (min-width: 1280px) {
  .xl\:relative {
   position: relative
- }
- .xl\:left-1\/2 {
-  left: 50%
- }
- .xl\:block {
-  display: block
  }
  .xl\:flex {
   display: flex
@@ -802,13 +700,6 @@ body {
  }
  .xl\:w-full {
   width: 100%
- }
- .xl\:-translate-x-1\/2 {
-  --tw-translate-x: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
- }
- .xl\:transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
  }
  .xl\:flex-row {
   flex-direction: row
@@ -822,17 +713,8 @@ body {
  .xl\:justify-between {
   justify-content: space-between
  }
- .xl\:bg-transparent {
-  background-color: transparent
- }
- .xl\:pl-14 {
-  padding-left: 3.5rem
- }
  .xl\:font-teko {
   font-family: Teko, sans-serif
- }
- .xl\:text-7xl {
-  font-size: 5rem
  }
  .xl\:text-2xl {
   font-size: 1.5rem
