@@ -21,7 +21,26 @@ module.exports = {
         },
         extend: {
             width: {
-                '13': '13rem',
+                '7': '1.75rem', // Custom width value
+                '8': '2rem', // Custom width value
+                '9': '2.25rem', // Custom width value
+                '10': '2.5rem', // Custom width value
+                '15': '15rem',
+                '20': '20rem',
+                '24': '24rem',
+                '25': '25rem',
+                '30': '30rem',
+                '35': '35rem',
+                '40': '40rem',
+                '45': '45rem',
+                '50': '50rem',
+                '55': '55rem',
+                '60': '60rem',
+                '65': '65rem',
+                '70': '70rem',
+                '75': '75rem',
+                '80': '80rem',
+                '85': '85rem',
             },
             boxShadow: {
                 'mobile': '0 5px 0 0 rgba(0, 0, 0, 0.9)', // Straight bottom line shadow
