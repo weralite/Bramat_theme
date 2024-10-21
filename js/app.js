@@ -8,81 +8,66 @@
 /***/ (() => {
 
 // Navigation toggle
-window.addEventListener('load', function () {
+function toggleMobileMenu() {
   var main_navigation = document.querySelector('#secondary-menu');
   document.querySelector('#mobile-menu-toggle').addEventListener('click', function (e) {
     e.preventDefault();
     main_navigation.classList.toggle('hidden');
   });
-});
-window.addEventListener('load', function () {
+}
+;
+
+// Hamburger animation toggle
+function toggleHamburgerMenuIcon() {
   var toggleMenu = document.querySelector('#toggleMenu');
   toggleMenu.addEventListener('click', function (e) {
     e.preventDefault();
     toggleMenu.classList.toggle('hamburger-toggle');
   });
-});
+}
+;
+
+// Add span to secondary menu items for animation
 function appendSpanToSecondaryMenuItems() {
-  // Find the ul element with the ID "menu-secondary-menu"
   var secondaryMenu = document.getElementById('menu-secondary-menu');
-
-  // Check if the element exists
   if (secondaryMenu) {
-    // Find all li elements within the ul
     var menuItems = secondaryMenu.querySelectorAll(':scope > li');
-
-    // Iterate over each li element
     menuItems.forEach(function (menuItem) {
-      // Create a new span element
       var newSpan = document.createElement('span');
-
-      // Optionally, you can add some content or attributes to the span
       newSpan.textContent = '';
-      newSpan.className = 'absolute left-0 top-0 min-w-13 max-w-13 h-0 transition-all duration-200 bg-gray-300 z-5 group-hover:h-full'; // Add a class if needed
-
-      // Append the span to the li element
+      newSpan.className = 'absolute left-0 top-0 min-w-13 max-w-13 h-0 transition-all duration-200 bg-gray-300 z-5 group-hover:h-full';
       menuItem.appendChild(newSpan);
     });
   } else {
     console.error('Element with ID "menu-secondary-menu" not found.');
   }
 }
-window.addEventListener('load', appendSpanToSecondaryMenuItems);
+
+// Function to display none if submenu is clicked
 function hideMenuOnClick() {
-  // Find the ul element with the class "sub-menu"
-  var subMenu = document.querySelector('.sub-menu');
-
-  // Check if the element exists
-  if (subMenu) {
-    // Find all li elements within the ul
-    var menuItems = subMenu.querySelectorAll(':scope > li');
-
-    // Iterate over each li element
-    menuItems.forEach(function (menuItem) {
-      // Add click event listener to each li element
-      menuItem.addEventListener('click', function () {
-        // Hide the sub-menu
+  var menuItemsWithSubMenus = document.querySelectorAll('li:has(.sub-menu)');
+  menuItemsWithSubMenus.forEach(function (menuItem) {
+    menuItem.addEventListener('click', function () {
+      var subMenu = menuItem.querySelector('.sub-menu');
+      if (subMenu) {
         subMenu.style.display = 'none';
-
-        // Reset the sub-menu display property after a short delay
         setTimeout(function () {
           subMenu.style.display = '';
-        }, 10); // Adjust the delay as needed
-      });
+        }, 50);
+      }
     });
-  }
+  });
 }
-window.addEventListener('load', hideMenuOnClick);
-document.addEventListener('DOMContentLoaded', function () {
+
+// AJAX navigation
+function ajaxNavigation() {
   var links = document.querySelectorAll('.ajax-link');
   var currentSlug = window.location.pathname;
   toggleBodyClass(currentSlug);
   links.forEach(function (link) {
     link.addEventListener('click', function (e) {
-      e.preventDefault(); // Prevent default behavior
-
-      var slug = this.getAttribute('data-slug'); // Get the slug
-      console.log(slug);
+      e.preventDefault();
+      var slug = this.getAttribute('data-slug');
       if (slug === '#') {
         return;
       }
@@ -116,7 +101,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
-});
+}
+;
+
+// Function to toggle body class for opacity
 function toggleBodyClass(slug) {
   if (slug !== '/' && slug !== '#') {
     document.body.classList.add('expanded'); // Add the expanding class
@@ -124,6 +112,14 @@ function toggleBodyClass(slug) {
     document.body.classList.remove('expanded'); // Remove if on homepage
   }
 }
+window.addEventListener('DOMContentLoaded', function () {
+  toggleMobileMenu();
+  toggleHamburgerMenuIcon();
+  appendSpanToSecondaryMenuItems();
+  hideMenuOnClick();
+  ajaxNavigation();
+  toggleBodyClass();
+});
 
 /***/ }),
 
