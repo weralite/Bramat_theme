@@ -14,14 +14,11 @@
 
 	<?php do_action('tailpress_site_before'); ?>
 
-	<div id="page">
-
 		<?php do_action('tailpress_header'); ?>
 
 		<header class="sticky top-0 z-10 min-w-full">
 
-
-								<!-- Main navigational menu for desktop view -->
+				<!-- Main navigational menu for desktop view -->
 		<div class="min-w-full flex justify-center">
 			<?php
 		wp_nav_menu( array(

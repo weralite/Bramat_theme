@@ -1168,6 +1168,7 @@ video {
     }
 
 }
+/* Mobile menu animation */
 .mobile-menu {
     height: 0;
     overflow: hidden;
@@ -1175,7 +1176,7 @@ video {
   }
 .mobile-menu-open {
     z-index: 1;
-    height: 100vh; /* Adjust height according to content */
+    height: 100vh; 
   }
 .menu-content {
     opacity: 0;
@@ -1185,13 +1186,15 @@ video {
 .mobile-menu-open .menu-content {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 0.1s; /* Delays content animation until menu is expanded */
+    transition-delay: 0.1s; 
   }
+/* Fade in animation for content template */
 .entry-content {
     animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
+/* Custom background overlay */
 body.custom-background {
     position: relative;
     height: 100%;
@@ -1213,19 +1216,13 @@ body.custom-background::before {
     left: 50%;
     bottom: 10px;
     height: 2px;
-    /* Height of the underline */
     background-color: currentColor;
-    /* Color of the underline */
     width: 0;
-    /* Initial width */
     transition: width 0.15s ease, left 0.15s ease;
-    /* Transition effect */
 }
 .groupa:hover a::after {
     width: 100%;
-    /* Full width on hover */
     left: 0;
-    /* Move to the left */
 }
 .secondary-li-class-parent-desktop {
     position: relative;
