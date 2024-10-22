@@ -1209,22 +1209,8 @@ body.custom-background::before {
     background-color: rgba(0, 0, 0, 0.9); /* Adjust the opacity as needed */
     z-index: -2; /* Ensure the overlay is behind the content */
 }
-/* Hover underline effect for navigation links */
-.groupa a::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 10px;
-    height: 2px;
-    background-color: currentColor;
-    width: 0;
-    transition: width 0.15s ease, left 0.15s ease;
-}
-.groupa:hover a::after {
-    width: 100%;
-    left: 0;
-}
-.secondary-li-class-parent-desktop {
+/* Custom animations for primary navigation */
+.primary-parent-li {
     position: relative;
     min-width: 13rem;
     max-width: 13rem;
@@ -1238,12 +1224,12 @@ body.custom-background::before {
     border-bottom: 1px solid transparent;
     transition: all 100ms;
 }
-.secondary-li-class-parent-desktop:hover {
+.primary-parent-li:hover {
     background-color: #d1d5db; /* hover:bg-gray-300 */
     color: black;
     text-decoration: underline;
 }
-.group:hover .secondary-li-class-parent-desktop {
+.group:hover .primary-parent-li {
     background-color: #f3f4f6;
     color: black;
     border-bottom: 1px solid #d1d5db;
@@ -1280,6 +1266,21 @@ body.custom-background::before {
     opacity: 1; /* Make text visible */
     visibility: visible; /* Ensure text is visible only when background is scaled */
     transition: opacity 100ms ease-in-out 100ms; /* Delay text opacity to start after background */
+}
+/* Hover underline effect for secondary navigation links */
+.secondary-parent-li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    height: 2px;
+    background-color: currentColor;
+    width: 0;
+    transition: width 0.15s ease, left 0.15s ease;
+}
+.secondary-parent-li:hover a::after {
+    width: 100%;
+    left: 0;
 }
 html {
     overflow-y: scroll;

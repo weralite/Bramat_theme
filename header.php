@@ -19,39 +19,39 @@
 		<header class="sticky top-0 z-10 min-w-full">
 
 				<!-- Main navigational menu for desktop view -->
-		<div class="min-w-full flex justify-center">
 			<?php
 		wp_nav_menu( array(
-    		'theme_location'  => 'secondary',
-			'container_id'    => 'secondary-menu',
-    		'container_class' => 'min-w-full', 
+    		'theme_location'  => 'primary',
+			'container'       => 'nav',
+			'container_id'    => 'primary-menu',
+    		'container_class' => 'min-w-full flex justify-center', 
    			'menu_class'      => 'hidden xl:flex xl:flex-row xl:justify-center', 
-   		    'li_class'        => 'secondary-li-class-parent-desktop group', 
+   		    'li_class'        => 'primary-parent-li group', 
  		    'a_class'         => 'ajax-link xl:text-2xl z-10 xl:tracking-wide xl:font-teko xl:w-full xl:font-light xl:uppercase xl:relative',
  		    'submenu_class'   => 'hover-background-animation', 
-			 'container'      => false,
-));?>
-</div>
-							<!-- TODO: Switch naming places on primary and secondary menues. -->
-							<!-- Primary" Menu used on mid-sizes screens -->
+			'fallback_cb'     => false,
+			));?>
+
+
 			<div class="xl:hidden min-w-full">
 				<div class="xl:relative min-w-full xl:flex xl:justify-between xl:items-center">
 					<div class="flex justify-between items-center min-w-full">
 					<?php
 					wp_nav_menu(
 						array(
-							'container_id'    => 'primary-menu',
+							'theme_location'  => 'secondary',
+							'container'       => 'nav',
+							'container_id'    => 'secondary-menu',
 							'container_class' => 'hidden w-full md:mt-0 md:p-0 md:pl-16 md:block',
 							'menu_class'      => 'md:flex md:justify-center md:gap-4',
-							'theme_location'  => 'primary',
-							'li_class'        => 'md:mx-4 groupa',
+							'li_class'        => 'md:mx-4 secondary-parent-li',
 							'a_class'         => 'ajax-link relative z-0 inline-block font-teko md:font-light md:text-4xl uppercase transition-all duration-150', 
 							'fallback_cb'     => false,
 						)
 					);
 					?>
 
-								<!-- Wordpress classic? logo and headlines -->
+								<!-- Wordpress classic logo and headlines -->
 					<div>
 							<?php if (has_custom_logo()) { ?>
 								<!-- <?php the_custom_logo(); ?>  -->
@@ -105,12 +105,12 @@
 							</a>
 						</div>
 					</div>
-								<!-- TODO: Add ajax link to a tags -->
-								<!-- "Secondary" menu for toggle on small screen/phone -->
+
 					<?php
 					wp_nav_menu(
 						array(
 							'theme_location'  => 'mobile',
+							'container'       => 'nav',
 							'container_id'    => 'mobile-menu',
 							'container_class' => 'mobile-menu top-0 absolute bg-black min-w-full',
 							'menu_class'      => 'menu-content mx-auto h-full flex flex-col justify-center w-1/3 gap-5',
