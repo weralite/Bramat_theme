@@ -134,9 +134,7 @@
 			<?php do_action('tailpress_content_start'); ?>
 
 			<?php if (is_front_page()) { ?>
-				<!-- Start introduction -->
-	<!-- HOMEPAGE HEADER -->
-				<!-- End introduction -->
+				
 			<?php } ?>
 
 			<main>
