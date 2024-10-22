@@ -18,8 +18,6 @@
 
 		<header class="sticky top-0 z-10 min-w-full">
 
-				<!-- Main navigational menu for desktop view -->
-
 <?php
 					wp_nav_menu( array(
     						'theme_location'  => 'primary',
@@ -34,7 +32,6 @@
 						)
 					);
 					?>
-
 
 <?php
 					wp_nav_menu(
@@ -57,11 +54,11 @@
 							'theme_location'  => 'mobile',
 							'container'       => 'nav',
 							'container_id'    => 'mobile-menu',
-							'container_class' => 'mobile-menu z-1 top-0 absolute bg-black min-w-full',
-							'menu_class'      => 'menu-content mx-auto h-full flex flex-col justify-center w-1/3 gap-5',
+							'container_class' => 'mobile-menu z-1 top-0 absolute bg-black min-w-full xl:hidden',
+							'menu_class'      => 'mx-auto menu-content h-full flex flex-col justify-center items-center w-1/3 gap-5',
 							'li_class'        => '', 
 							'a_class'         => 'font-teko text-xl', 
-							'submenu_class'   => 'ml-4', 
+							'submenu_class'   => '', 
 							'fallback_cb'     => false,
 						)
 					);
@@ -84,8 +81,6 @@
 
 
 
-
-								<!-- Hamburger Animation -->
 						<div class="p-4 z-10 absolute top-0 right-0 xl:hidden">
 						<a href="#" aria-label="Toggle navigation" id="mobile-menu-toggle">
 								<div id="toggleMenu" class="grid place-content-center w-10 h-10">

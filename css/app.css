@@ -558,11 +558,11 @@ video {
 .left-0 {
   left: 0px;
 }
-.top-0 {
-  top: 0px;
-}
 .right-0 {
   right: 0px;
+}
+.top-0 {
+  top: 0px;
 }
 .z-0 {
   z-index: 0;
@@ -596,9 +596,6 @@ video {
 }
 .mb-8 {
   margin-bottom: 2rem;
-}
-.ml-4 {
-  margin-left: 1rem;
 }
 .block {
   display: block;
@@ -726,9 +723,6 @@ video {
 .rounded {
   border-radius: 0.25rem;
 }
-.rounded-full {
-  border-radius: 9999px;
-}
 .border {
   border-width: 1px;
 }
@@ -749,10 +743,6 @@ video {
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 .bg-gray-200 {
   --tw-bg-opacity: 1;
@@ -1189,8 +1179,8 @@ body.custom-background::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* Adjust the opacity as needed */
-    z-index: -2; /* Ensure the overlay is behind the content */
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: -2;
 }
 /* Hamburger icon animation */
 .hamburger-icon {
@@ -1226,21 +1216,21 @@ body.custom-background::before {
     height: 0;
     overflow: hidden;
     transition: height 0.2s ease;
-  }
+}
 .mobile-menu-open {
     z-index: 1;
-    height: 100vh; 
-  }
+    height: 100vh;
+}
 .menu-content {
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-  }
+}
 .mobile-menu-open .menu-content {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 0.1s; 
-  }
+    transition-delay: 0.1s;
+}
 /* Primary menu animations */
 .primary-parent-li {
     position: relative;
@@ -1257,7 +1247,7 @@ body.custom-background::before {
     transition: all 100ms;
 }
 .primary-parent-li:hover {
-    background-color: #d1d5db; 
+    background-color: #d1d5db;
     color: black;
     text-decoration: underline;
 }
@@ -1272,11 +1262,13 @@ body.custom-background::before {
     display: block;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%) scaleY(0); /* Initially hidden */
+    transform: translateX(-50%) scaleY(0);
+    /* Initially hidden */
     max-width: 13rem;
     min-width: 13rem;
     overflow: hidden;
-    transition: transform 100ms ease-in-out; /* Transition for background */
+    transition: transform 100ms ease-in-out;
+    /* Transition for background */
     transform-origin: top;
     will-change: transform;
 }
@@ -1285,19 +1277,23 @@ body.custom-background::before {
 }
 .hover-background-animation a {
     display: block;
-    transform: scaleY(0); /* Hide the text initially */
+    transform: scaleY(0);
+    /* Hide the text initially */
     opacity: 0;
     transition: opacity 100ms ease-in-out;
-    transform-origin: top; 
+    transform-origin: top;
     margin-left: 1rem;
     text-align: left;
     z-index: 10;
 }
 .group:hover .hover-background-animation a {
-    transform: scaleY(1); /* Show text on hover */
+    transform: scaleY(1);
+    /* Show text on hover */
     opacity: 1;
-    visibility: visible; /* Ensure text is visible only when background is scaled */
-    transition: opacity 100ms ease-in-out 100ms; /* Delay text opacity to start after background */ 
+    visibility: visible;
+    /* Ensure text is visible only when background is scaled */
+    transition: opacity 100ms ease-in-out 100ms;
+    /* Delay text opacity to start after background */
 }
 /* Secondary menu animations */
 .secondary-parent-li a::after {
@@ -1408,86 +1404,6 @@ article>*:not(.entry-content),
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
-.before\:absolute::before {
-  content: var(--tw-content);
-  position: absolute;
-}
-.before\:h-1::before {
-  content: var(--tw-content);
-  height: 0.25rem;
-}
-.before\:w-10::before {
-  content: var(--tw-content);
-  width: 2.5rem;
-}
-.before\:-translate-y-4::before {
-  content: var(--tw-content);
-  --tw-translate-y: -1rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.before\:rounded-full::before {
-  content: var(--tw-content);
-  border-radius: 9999px;
-}
-.before\:bg-gray-100::before {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-.before\:transition-all::before {
-  content: var(--tw-content);
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.before\:duration-150::before {
-  content: var(--tw-content);
-  transition-duration: 150ms;
-}
-.before\:content-\[\'\'\]::before {
-  --tw-content: '';
-  content: var(--tw-content);
-}
-.after\:absolute::after {
-  content: var(--tw-content);
-  position: absolute;
-}
-.after\:h-1::after {
-  content: var(--tw-content);
-  height: 0.25rem;
-}
-.after\:w-10::after {
-  content: var(--tw-content);
-  width: 2.5rem;
-}
-.after\:translate-y-4::after {
-  content: var(--tw-content);
-  --tw-translate-y: 1rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.after\:rounded-full::after {
-  content: var(--tw-content);
-  border-radius: 9999px;
-}
-.after\:bg-gray-100::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-.after\:transition-all::after {
-  content: var(--tw-content);
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.after\:duration-150::after {
-  content: var(--tw-content);
-  transition-duration: 150ms;
-}
-.after\:content-\[\'\'\]::after {
-  --tw-content: '';
-  content: var(--tw-content);
-}
 .group:hover .group-hover\:h-full {
   height: 100%;
 }
@@ -1501,10 +1417,6 @@ article>*:not(.entry-content),
   .md\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-  }
-
-  .md\:mt-0 {
-    margin-top: 0px;
   }
 
   .md\:block {
@@ -1549,14 +1461,6 @@ article>*:not(.entry-content),
 
   .md\:gap-4 {
     gap: 1rem;
-  }
-
-  .md\:p-0 {
-    padding: 0px;
-  }
-
-  .md\:p-4 {
-    padding: 1rem;
   }
 
   .md\:p-3 {

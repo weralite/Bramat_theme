@@ -4,7 +4,7 @@ html {
 
 .hamburger-toggle {
     @apply [&>div]:h-0 [&>div]:bg-black [&>div]:before:translate-y-0 [&>div]:before:rotate-45 [&>div]:after:translate-y-0 [&>div]:after:-rotate-45;
-  }
+}
 
 
 main {
@@ -85,4 +85,3 @@ article>*:not(.entry-content),
 #trp-floater-ls.trp-color-dark {
     @apply bg-black;
 }
-

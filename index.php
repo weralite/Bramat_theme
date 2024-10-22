@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<div id="content-container" class="container mx-auto pt-16"> <!-- Här är din content-container -->
+<div id="content-container" class="container mx-auto pt-16"> 
 
     <?php if (is_page('home')): ?>
         <?php include 'template-parts/homepage.php'; ?>
@@ -16,7 +16,7 @@ get_header();
 
     <?php endif; ?>
 
-</div> <!-- Avsluta content-container -->
+</div> 
 
 <?php
 get_footer();
