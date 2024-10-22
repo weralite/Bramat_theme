@@ -61,6 +61,9 @@
 .top-0 {
  top: 0px
 }
+.right-0 {
+ right: 0px
+}
 .z-0 {
  z-index: 0
 }
@@ -697,6 +700,12 @@ body {
  }
  .md\:p-0 {
   padding: 0px
+ }
+ .md\:p-4 {
+  padding: 1rem
+ }
+ .md\:p-3 {
+  padding: 0.75rem
  }
  .md\:pl-16 {
   padding-left: 4rem

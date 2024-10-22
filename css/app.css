@@ -561,6 +561,9 @@ video {
 .top-0 {
   top: 0px;
 }
+.right-0 {
+  right: 0px;
+}
 .z-0 {
   z-index: 0;
 }
@@ -1168,26 +1171,6 @@ video {
     }
 
 }
-/* Mobile menu animation */
-.mobile-menu {
-    height: 0;
-    overflow: hidden;
-    transition: height 0.2s ease;
-  }
-.mobile-menu-open {
-    z-index: 1;
-    height: 100vh; 
-  }
-.menu-content {
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-.mobile-menu-open .menu-content {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.1s; 
-  }
 /* Fade in animation for content template */
 .entry-content {
     animation: fadeInAnimation ease 1s;
@@ -1209,7 +1192,56 @@ body.custom-background::before {
     background-color: rgba(0, 0, 0, 0.9); /* Adjust the opacity as needed */
     z-index: -2; /* Ensure the overlay is behind the content */
 }
-/* Custom animations for primary navigation */
+/* Hamburger icon animation */
+.hamburger-icon {
+    width: 2.5rem;
+    height: 0.25rem;
+    background-color: #f3f4f6;
+    border-radius: 9999px;
+    transition: all 0.05s;
+    position: relative;
+}
+.hamburger-icon::before {
+    content: '';
+    position: absolute;
+    width: 2.5rem;
+    height: 0.25rem;
+    background-color: #f3f4f6;
+    border-radius: 9999px;
+    transform: translateY(-1rem);
+    transition: all 0.15s;
+}
+.hamburger-icon::after {
+    content: '';
+    position: absolute;
+    width: 2.5rem;
+    height: 0.25rem;
+    background-color: #f3f4f6;
+    border-radius: 9999px;
+    transform: translateY(1rem);
+    transition: all 0.15s;
+}
+/* Mobile menu animation */
+.mobile-menu {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ease;
+  }
+.mobile-menu-open {
+    z-index: 1;
+    height: 100vh; 
+  }
+.menu-content {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+.mobile-menu-open .menu-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s; 
+  }
+/* Primary menu animations */
 .primary-parent-li {
     position: relative;
     min-width: 13rem;
@@ -1225,7 +1257,7 @@ body.custom-background::before {
     transition: all 100ms;
 }
 .primary-parent-li:hover {
-    background-color: #d1d5db; /* hover:bg-gray-300 */
+    background-color: #d1d5db; 
     color: black;
     text-decoration: underline;
 }
@@ -1256,18 +1288,18 @@ body.custom-background::before {
     transform: scaleY(0); /* Hide the text initially */
     opacity: 0;
     transition: opacity 100ms ease-in-out;
-    transform-origin: top; /* Animate from the top */
+    transform-origin: top; 
     margin-left: 1rem;
     text-align: left;
     z-index: 10;
 }
 .group:hover .hover-background-animation a {
     transform: scaleY(1); /* Show text on hover */
-    opacity: 1; /* Make text visible */
+    opacity: 1;
     visibility: visible; /* Ensure text is visible only when background is scaled */
-    transition: opacity 100ms ease-in-out 100ms; /* Delay text opacity to start after background */
+    transition: opacity 100ms ease-in-out 100ms; /* Delay text opacity to start after background */ 
 }
-/* Hover underline effect for secondary navigation links */
+/* Secondary menu animations */
 .secondary-parent-li a::after {
     content: '';
     position: absolute;
@@ -1456,10 +1488,6 @@ article>*:not(.entry-content),
   --tw-content: '';
   content: var(--tw-content);
 }
-.hover\:bg-gray-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
 .group:hover .group-hover\:h-full {
   height: 100%;
 }
@@ -1527,6 +1555,14 @@ article>*:not(.entry-content),
     padding: 0px;
   }
 
+  .md\:p-4 {
+    padding: 1rem;
+  }
+
+  .md\:p-3 {
+    padding: 0.75rem;
+  }
+
   .md\:pl-16 {
     padding-left: 4rem;
   }
@@ -1571,16 +1607,8 @@ article>*:not(.entry-content),
     flex-direction: row;
   }
 
-  .xl\:items-center {
-    align-items: center;
-  }
-
   .xl\:justify-center {
     justify-content: center;
-  }
-
-  .xl\:justify-between {
-    justify-content: space-between;
   }
 
   .xl\:font-teko {
