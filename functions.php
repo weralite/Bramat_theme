@@ -11,6 +11,7 @@ function tailpress_setup()
 		array(
 			'primary' => __('Primary Menu', 'tailpress'),
 			'secondary' => __('Secondary Menu', 'tailpress'),
+            'mobile' => __('Mobile Menu', 'tailpress'),
 		)
 	);
 

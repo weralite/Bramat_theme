@@ -9,10 +9,10 @@
 
 // Navigation toggle
 function toggleMobileMenu() {
-  var main_navigation = document.querySelector('#secondary-menu');
+  var main_navigation = document.querySelector('#mobile-menu');
   document.querySelector('#mobile-menu-toggle').addEventListener('click', function (e) {
     e.preventDefault();
-    main_navigation.classList.toggle('hidden');
+    main_navigation.classList.toggle('mobile-menu-open');
   });
 }
 ;

@@ -113,13 +113,13 @@
 					<?php
 					wp_nav_menu(
 						array(
-							'theme_location'  => 'secondary',
-							'container_id'    => 'secondary-menu',
-							'container_class' => 'hidden top-0 left-0 absolute bg-black min-w-full p-4',
-							'menu_class'      => '',
-							'li_class'        => 'lg:mx-4', 
-							'a_class'         => 'relative z-1 inline-block font-teko', 
-							'submenu_class'   => '', 
+							'theme_location'  => 'mobile',
+							'container_id'    => 'mobile-menu',
+							'container_class' => 'mobile-menu top-0 absolute bg-black min-w-full',
+							'menu_class'      => 'menu-content mx-auto h-full flex flex-col justify-center w-1/3 gap-5',
+							'li_class'        => '', 
+							'a_class'         => 'z-1 font-teko text-xl', 
+							'submenu_class'   => 'ml-4', 
 							'fallback_cb'     => false,
 						)
 					);
