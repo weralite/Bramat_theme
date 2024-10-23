@@ -2,6 +2,8 @@
 get_header();
 ?>
 
+
+<!-- Content -->
 <div id="content-container" class="container mx-auto pt-16"> 
 
     <?php if (is_page('home')): ?>
