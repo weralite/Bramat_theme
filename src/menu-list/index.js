@@ -22,7 +22,7 @@ const Edit = ({ attributes, setAttributes, clientId }) => {
   if (headingContent !== attributes.title) {
     setAttributes({ title: headingContent });
   }
-  // TODO: save heading value to title attribute and use it with experimental label in save function to display the menu name in listview.
+
 
   return (
     <>

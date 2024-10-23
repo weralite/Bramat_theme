@@ -276,8 +276,6 @@ const Edit = ({
       title: headingContent
     });
   }
-  // TODO: save heading value to title attribute and use it with experimental label in save function to display the menu name in listview.
-
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inspectorControls__WEBPACK_IMPORTED_MODULE_5__["default"], {
       attributes: attributes,
