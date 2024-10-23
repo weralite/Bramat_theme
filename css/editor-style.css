@@ -58,11 +58,11 @@
 .left-0 {
  left: 0px
 }
-.top-0 {
- top: 0px
-}
 .right-0 {
  right: 0px
+}
+.top-0 {
+ top: 0px
 }
 .z-0 {
  z-index: 0
@@ -96,9 +96,6 @@
 }
 .mb-8 {
  margin-bottom: 2rem
-}
-.ml-4 {
- margin-left: 1rem
 }
 .mt-10 {
  margin-top: 2.5rem
@@ -229,9 +226,6 @@
 .rounded {
  border-radius: 0.25rem
 }
-.rounded-full {
- border-radius: 9999px
-}
 .border {
  border-width: 1px
 }
@@ -252,10 +246,6 @@
 .bg-blue-500 {
  --tw-bg-opacity: 1;
  background-color: rgb(59 130 246 / var(--tw-bg-opacity))
-}
-.bg-gray-100 {
- --tw-bg-opacity: 1;
- background-color: rgb(243 244 246 / var(--tw-bg-opacity))
 }
 .bg-gray-200 {
  --tw-bg-opacity: 1;
@@ -569,90 +559,6 @@ body {
  padding-top: 0.5rem;
  padding-bottom: 0.5rem
 }
-.before\:absolute::before {
- content: var(--tw-content);
- position: absolute
-}
-.before\:h-1::before {
- content: var(--tw-content);
- height: 0.25rem
-}
-.before\:w-10::before {
- content: var(--tw-content);
- width: 2.5rem
-}
-.before\:-translate-y-4::before {
- content: var(--tw-content);
- --tw-translate-y: -1rem;
- transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-}
-.before\:rounded-full::before {
- content: var(--tw-content);
- border-radius: 9999px
-}
-.before\:bg-gray-100::before {
- content: var(--tw-content);
- --tw-bg-opacity: 1;
- background-color: rgb(243 244 246 / var(--tw-bg-opacity))
-}
-.before\:transition-all::before {
- content: var(--tw-content);
- transition-property: all;
- transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
- transition-duration: 150ms
-}
-.before\:duration-150::before {
- content: var(--tw-content);
- transition-duration: 150ms
-}
-.before\:content-\[\'\'\]::before {
- --tw-content: '';
- content: var(--tw-content)
-}
-.after\:absolute::after {
- content: var(--tw-content);
- position: absolute
-}
-.after\:h-1::after {
- content: var(--tw-content);
- height: 0.25rem
-}
-.after\:w-10::after {
- content: var(--tw-content);
- width: 2.5rem
-}
-.after\:translate-y-4::after {
- content: var(--tw-content);
- --tw-translate-y: 1rem;
- transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-}
-.after\:rounded-full::after {
- content: var(--tw-content);
- border-radius: 9999px
-}
-.after\:bg-gray-100::after {
- content: var(--tw-content);
- --tw-bg-opacity: 1;
- background-color: rgb(243 244 246 / var(--tw-bg-opacity))
-}
-.after\:transition-all::after {
- content: var(--tw-content);
- transition-property: all;
- transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
- transition-duration: 150ms
-}
-.after\:duration-150::after {
- content: var(--tw-content);
- transition-duration: 150ms
-}
-.after\:content-\[\'\'\]::after {
- --tw-content: '';
- content: var(--tw-content)
-}
-.hover\:bg-gray-300:hover {
- --tw-bg-opacity: 1;
- background-color: rgb(209 213 219 / var(--tw-bg-opacity))
-}
 .group:hover .group-hover\:h-full {
  height: 100%
 }
@@ -664,9 +570,6 @@ body {
  .md\:my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem
- }
- .md\:mt-0 {
-  margin-top: 0px
  }
  .md\:block {
   display: block
@@ -700,12 +603,6 @@ body {
  }
  .md\:gap-4 {
   gap: 1rem
- }
- .md\:p-0 {
-  padding: 0px
- }
- .md\:p-4 {
-  padding: 1rem
  }
  .md\:p-3 {
   padding: 0.75rem
@@ -744,14 +641,8 @@ body {
  .xl\:flex-row {
   flex-direction: row
  }
- .xl\:items-center {
-  align-items: center
- }
  .xl\:justify-center {
   justify-content: center
- }
- .xl\:justify-between {
-  justify-content: space-between
  }
  .xl\:font-teko {
   font-family: Teko, sans-serif

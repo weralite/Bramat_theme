@@ -80,55 +80,55 @@ function hideMenuOnClick() {
 
 
 // // AJAX navigation
-// function ajaxNavigation() {
-//     const links = document.querySelectorAll('.ajax-link');
+function ajaxNavigation() {
+    const links = document.querySelectorAll('.ajax-link');
 
-//     const currentSlug = window.location.pathname;
-//     toggleBodyClass(currentSlug);
+    const currentSlug = window.location.pathname;
+    toggleBodyClass(currentSlug);
 
-//     links.forEach(link => {
-//         link.addEventListener('click', function (e) {
-//             e.preventDefault();
+    links.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
 
-//             let slug = this.getAttribute('data-slug');
+            let slug = this.getAttribute('data-slug');
 
-//             if (slug === '#') {
-//                 return;
-//             }
+            if (slug === '#') {
+                return;
+            }
 
-//             if (!slug || slug === '/') {
-//                 slug = '/';
-//             }
+            if (!slug || slug === '/') {
+                slug = '/';
+            }
 
-//             toggleBodyClass(slug);
-//             // Perform AJAX request with fetch
-//             fetch(my_ajax_object.ajax_url, {
-//                 method: 'POST',
-//                 headers: {
-//                     'Content-Type': 'application/x-www-form-urlencoded',
-//                 },
-//                 body: new URLSearchParams({
-//                     action: 'load_page',
-//                     page_slug: slug
-//                 })
-//             })
-//                 .then(response => response.text())
-//                 .then(data => {
-//                     const contentContainer = document.getElementById('content-container');
-//                     if (contentContainer) {
-//                         const newUrl = slug === '/' ? '/' : `/${slug}`;
-//                         contentContainer.innerHTML = data; // Load new content
-//                         history.pushState(null, '', newUrl); // Update URL without reloading
-//                     } else {
-//                         console.error('Element with ID "content-container" not found.');
-//                     }
-//                 })
-//                 .catch(error => {
-//                     console.error('Failed to load content:', error);
-//                 });
-//         });
-//     });
-// };
+            toggleBodyClass(slug);
+            // Perform AJAX request with fetch
+            fetch(my_ajax_object.ajax_url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    action: 'load_page',
+                    page_slug: slug
+                })
+            })
+                .then(response => response.text())
+                .then(data => {
+                    const contentContainer = document.getElementById('content-container');
+                    if (contentContainer) {
+                        const newUrl = slug === '/' ? '/' : `/${slug}`;
+                        contentContainer.innerHTML = data; // Load new content
+                        history.pushState(null, '', newUrl); // Update URL without reloading
+                    } else {
+                        console.error('Element with ID "content-container" not found.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Failed to load content:', error);
+                });
+        });
+    });
+};
 
 
 // Function to toggle body class for opacity
@@ -148,6 +148,6 @@ window.addEventListener('DOMContentLoaded', function () {
     toggleHamburgerMenuIcon();
     appendSpanToSecondaryMenuItems();
     hideMenuOnClick();
-    // ajaxNavigation();
+    ajaxNavigation();
     toggleBodyClass();
 });
