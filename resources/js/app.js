@@ -101,7 +101,7 @@ function ajaxNavigation() {
             }
 
             toggleBodyClass(slug);
-            // Perform AJAX request with fetch
+            // Perform AJAX request withfetch
             fetch(my_ajax_object.ajax_url, {
                 method: 'POST',
                 headers: {
