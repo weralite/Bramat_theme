@@ -21,19 +21,19 @@ function toggleMobileMenu() {
 function toggleMobileSubMenu() {
   var mobileMenu = document.getElementById('menu-mobile-menu');
   if (mobileMenu) {
-    console.log(mobileMenu);
     var menuItemsWithChildren = mobileMenu.querySelectorAll(':scope > li.menu-item-has-children');
     menuItemsWithChildren.forEach(function (menuItem) {
       var indicator = document.createElement('span');
-      indicator.innerHTML = ' &#9660;';
+      indicator.innerHTML = ' &#x25BE;';
       indicator.classList.add('menu-indicator');
       menuItem.querySelector('a').appendChild(indicator);
       menuItem.addEventListener('click', function (e) {
         e.preventDefault();
         var submenu = menuItem.querySelector('ul.mobile-submenu');
         if (submenu) {
-          console.log(submenu);
+          console.log(indicator);
           submenu.classList.toggle('mobile-submenu-open');
+          indicator.classList.toggle('rotate');
         }
       });
     });
@@ -68,7 +68,8 @@ function appendSpanToSecondaryMenuItems() {
 
 // Function to display none if submenu is clicked
 function hideMenuOnClick() {
-  var menuItemsWithSubMenus = document.querySelectorAll('li:has(.sub-menu)');
+  var primaryMenu = document.getElementById('menu-primary-menu');
+  var menuItemsWithSubMenus = primaryMenu.querySelectorAll('li:has(.sub-menu)');
   menuItemsWithSubMenus.forEach(function (menuItem) {
     menuItem.addEventListener('click', function () {
       var subMenu = menuItem.querySelector('.sub-menu');
@@ -98,7 +99,7 @@ function ajaxNavigation() {
         slug = '/';
       }
       toggleBodyClass(slug);
-      // Perform AJAX request with fetch
+      // Perform AJAX request withfetch
       fetch(my_ajax_object.ajax_url, {
         method: 'POST',
         headers: {

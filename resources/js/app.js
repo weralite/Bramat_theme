@@ -11,11 +11,10 @@ function toggleMobileMenu() {
 function toggleMobileSubMenu() {
     const mobileMenu = document.getElementById('menu-mobile-menu');
     if (mobileMenu) {
-        console.log(mobileMenu);
         const menuItemsWithChildren = mobileMenu.querySelectorAll(':scope > li.menu-item-has-children');
         menuItemsWithChildren.forEach((menuItem) => {
             const indicator = document.createElement('span');
-            indicator.innerHTML = ' &#9660;'; 
+            indicator.innerHTML = ' &#x25BE;'; 
             indicator.classList.add('menu-indicator'); 
         
             menuItem.querySelector('a').appendChild(indicator);
@@ -23,8 +22,9 @@ function toggleMobileSubMenu() {
                 e.preventDefault();
                 const submenu = menuItem.querySelector('ul.mobile-submenu');
                 if (submenu) {
-                    console.log(submenu);
+                    console.log(indicator);
                     submenu.classList.toggle('mobile-submenu-open');
+                    indicator.classList.toggle('rotate');
                 }
             });
         });
@@ -62,7 +62,8 @@ function appendSpanToSecondaryMenuItems() {
 
 // Function to display none if submenu is clicked
 function hideMenuOnClick() {
-    const menuItemsWithSubMenus = document.querySelectorAll('li:has(.sub-menu)');
+    const primaryMenu = document.getElementById('menu-primary-menu');
+    const menuItemsWithSubMenus = primaryMenu.querySelectorAll('li:has(.sub-menu)');
 
     menuItemsWithSubMenus.forEach((menuItem) => {
         menuItem.addEventListener('click', function () {

@@ -1238,7 +1238,7 @@ body.custom-background::before {
 .mobile-submenu {
     height: 0;
     overflow: hidden;
-    transition: height 0.2s ease;
+    transition: height 0.2s ease; 
 }
 .mobile-submenu-open {
     z-index: 1;
@@ -1251,7 +1251,7 @@ body.custom-background::before {
     transition: transform 0.3s ease; /* Smooth transition for rotation */
 }
 .rotate {
-    transform: rotate(180deg); /* Rotate the arrow when submenu is open */
+    transform: rotate(180deg); 
 }
 /* Primary menu animations */
 .primary-parent-li {
