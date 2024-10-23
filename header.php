@@ -55,10 +55,10 @@
 							'container'       => 'nav',
 							'container_id'    => 'mobile-menu',
 							'container_class' => 'mobile-menu z-1 top-0 absolute bg-black min-w-full xl:hidden',
-							'menu_class'      => 'mx-auto menu-content h-full flex flex-col justify-center items-center w-1/3 gap-5',
-							'li_class'        => '', 
+							'menu_class'      => 'mx-auto menu-content h-full mt-10 flex flex-col items-center w-1/3 gap-5',
+							'li_class'        => 'mobile', 
 							'a_class'         => 'font-teko text-xl', 
-							'submenu_class'   => '', 
+							'submenu_class'   => 'mobile-submenu', 
 							'fallback_cb'     => false,
 						)
 					);

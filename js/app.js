@@ -17,6 +17,29 @@ function toggleMobileMenu() {
 }
 ;
 
+// Navigation toggle
+function toggleMobileSubMenu() {
+  var mobileMenu = document.getElementById('menu-mobile-menu');
+  if (mobileMenu) {
+    console.log(mobileMenu);
+    var menuItemsWithChildren = mobileMenu.querySelectorAll(':scope > li.menu-item-has-children');
+    menuItemsWithChildren.forEach(function (menuItem) {
+      var indicator = document.createElement('span');
+      indicator.innerHTML = ' &#9660;';
+      indicator.classList.add('menu-indicator');
+      menuItem.querySelector('a').appendChild(indicator);
+      menuItem.addEventListener('click', function (e) {
+        e.preventDefault();
+        var submenu = menuItem.querySelector('ul.mobile-submenu');
+        if (submenu) {
+          console.log(submenu);
+          submenu.classList.toggle('mobile-submenu-open');
+        }
+      });
+    });
+  }
+}
+
 // Hamburger animation toggle
 function toggleHamburgerMenuIcon() {
   var toggleMenu = document.querySelector('#toggleMenu');
@@ -120,12 +143,11 @@ function toggleBodyClass(slug) {
 }
 window.addEventListener('DOMContentLoaded', function () {
   toggleMobileMenu();
+  toggleMobileSubMenu();
   toggleHamburgerMenuIcon();
   appendSpanToSecondaryMenuItems();
   hideMenuOnClick();
-
   // ajaxNavigation();
-
   toggleBodyClass();
 });
 

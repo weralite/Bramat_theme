@@ -99,6 +99,30 @@ body.custom-background::before {
 
 
 
+/* Mobile submenu animation */
+.mobile-submenu {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ease;
+}
+
+.mobile-submenu-open {
+    z-index: 1;
+    height: 5rem;
+}
+
+.menu-indicator {
+    font-weight: bold;
+    color: inherit; /* Inherit color from the parent element */
+    margin-left: 5px; /* Add some space between the text and the indicator */
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+.rotate {
+    transform: rotate(180deg); /* Rotate the arrow when submenu is open */
+}
+
+
 /* Primary menu animations */
 .primary-parent-li {
     position: relative;
