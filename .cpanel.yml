@@ -2,4 +2,3 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/uhemsi36/public_html/wp-content/themes/Bramat_theme
     - rsync -av . "$DEPLOYPATH"
-    - cd "$DEPLOYPATH"
