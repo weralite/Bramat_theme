@@ -1038,13 +1038,6 @@ video {
     /* Variable weight range */
     font-style: normal;
 }
-@font-face {
-    font-family: 'Assistant';
-    src: url('/assets/fonts/Assistant-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900;
-    /* Variable weight range */
-    font-style: normal;
-}
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
