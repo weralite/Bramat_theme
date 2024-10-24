@@ -10,10 +10,10 @@ import VegetarianIcon from "../../assets/icons/icon_vegetarian.png";
 import LactoseIcon from "../../assets/icons/icon_lactose.png";
 
 const paddingClasses = {
-  0: 'px-0',  
-  2: 'px-2',  
-  4: 'px-4',  
-  6: 'px-6',  
+  0: 'px-0',
+  2: 'px-2',
+  4: 'px-4',
+  6: 'px-6',
   8: 'px-8',
   10: 'px-10',
   12: 'px-12',
@@ -25,12 +25,12 @@ const paddingClasses = {
   24: 'px-24',
   26: 'px-26',
   28: 'px-28',
-  30: 'px-30',  
+  30: 'px-30',
 };
 
 const Edit = ({ attributes, setAttributes }) => {
 
-const paddingClass = paddingClasses[attributes.paddingRange];
+  const paddingClass = paddingClasses[attributes.paddingRange];
 
   const blockProps = useBlockProps({
     className: paddingClass,
@@ -53,13 +53,16 @@ const paddingClass = paddingClasses[attributes.paddingRange];
             {attributes.isVegan && <span>VE</span>}
             {attributes.isVegetarian && <span>V</span>}
             {attributes.showPrice && (
-              <RichText
-                tagName="span"
-                value={attributes.price}
-                onChange={(price) => setAttributes({ price })}
-                placeholder={__('Add price...')}
-                className="price"
-              />
+              <div>
+                <RichText
+                  tagName="b"
+                  value={attributes.price}
+                  onChange={(price) => setAttributes({ price })}
+                  placeholder={__('Add price...')}
+                  className="price"
+                />
+                 <b> SEK</b>
+              </div>
             )}
 
           </div>
@@ -78,35 +81,38 @@ const paddingClass = paddingClasses[attributes.paddingRange];
 
 
 
-const save = ({ attributes }) => { 
+const save = ({ attributes }) => {
 
-const paddingClass = paddingClasses[attributes.paddingRange];
-  
-const blockProps = useBlockProps.save({
-  className: `py-2 ${paddingClass}`,
+  const paddingClass = paddingClasses[attributes.paddingRange];
 
-});
-  
+  const blockProps = useBlockProps.save({
+    className: `py-2 ${paddingClass}`,
+
+  });
+
   return (
-<div {...blockProps}>
-    <div className="gap-4 flex flex-row justify-between">
-      <div className="md:flex-shrink">
-        <RichText.Content tagName="b" value={attributes.dish} />
-        <RichText.Content tagName="p" value={attributes.description} />
-      </div>
-      <div className="md:flex md:flex-row md:justify-end md:gap-4 md:flex-grow md:flex-shrink-0">
-        <div className="hidden md:flex md:flex-row ">
-          {attributes.isLactoseFree && <img src={LactoseIcon} alt="Lactose Free" className="bg-transparent w-14 h-14" />}
-          {attributes.isGlutenFree && <img src={GlutenIcon} alt="Gluten Free" className="bg-transparent w-14 h-14" />}
-          {attributes.isVegan && <img src={VeganIcon} alt="Vegan" className="bg-transparent w-14 h-14" />}
-          {attributes.isVegetarian && <img src={VegetarianIcon} alt="Vegetarian" className="bg-transparent w-14 h-14" />}
+    <div {...blockProps}>
+      <div className="gap-4 flex flex-row justify-between">
+        <div className="md:flex-shrink">
+          <RichText.Content tagName="b" value={attributes.dish} />
+          <RichText.Content tagName="p" value={attributes.description} />
         </div>
-        <RichText.Content className="whitespace-nowrap text-right" tagName="b" value={attributes.price} />
+        <div className="md:flex md:flex-row md:justify-end md:gap-4 md:flex-grow md:flex-shrink-0">
+          <div className="hidden md:flex md:flex-row ">
+            {attributes.isLactoseFree && <img src={LactoseIcon} alt="Lactose Free" className="bg-transparent w-14 h-14" />}
+            {attributes.isGlutenFree && <img src={GlutenIcon} alt="Gluten Free" className="bg-transparent w-14 h-14" />}
+            {attributes.isVegan && <img src={VeganIcon} alt="Vegan" className="bg-transparent w-14 h-14" />}
+            {attributes.isVegetarian && <img src={VegetarianIcon} alt="Vegetarian" className="bg-transparent w-14 h-14" />}
+          </div>
+          <div className="whitespace-nowrap text-right">
+            <RichText.Content tagName="b" value={attributes.price} />
+            <b> SEK</b>
+          </div>
+        </div>
       </div>
-    </div>
 
-  </div>
-)
+    </div>
+  )
 };
 
 /**
