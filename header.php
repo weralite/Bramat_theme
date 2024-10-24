@@ -4,7 +4,7 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width">
-	<meta name="description" content="Sea and shellfish restaurang in Stockholm, Sweden">
+	<meta name="description" content="Sea and shellfish restaurant in Stockholm, Sweden">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	<?php wp_head(); ?>
