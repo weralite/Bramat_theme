@@ -11,26 +11,31 @@ function toggleMobileMenu() {
 function toggleMobileSubMenu() {
     const mobileMenu = document.getElementById('menu-mobile-menu');
     if (mobileMenu) {
-        const menuItemsWithChildren = mobileMenu.querySelectorAll(':scope > li.menu-item-has-children');
-        menuItemsWithChildren.forEach((menuItem) => {
-            const indicator = document.createElement('span');
-            indicator.innerHTML = ' &#x25BE;'; 
-            indicator.classList.add('menu-indicator'); 
-        
-            menuItem.querySelector('a').appendChild(indicator);
-            menuItem.addEventListener('click', function (e) {
-                e.preventDefault();
-                const submenu = menuItem.querySelector('ul.mobile-submenu');
-                if (submenu) {
-                    console.log(indicator);
-                    submenu.classList.toggle('mobile-submenu-open');
-                    indicator.classList.toggle('rotate');
-                }
-            });
-        });
-    }
-}
+      const menuItemsWithChildren = mobileMenu.querySelectorAll(':scope > li.menu-item-has-children');
+      
+      menuItemsWithChildren.forEach((menuItem) => {
+        const link = menuItem.querySelector('a');
+  
+        const indicator = document.createElement('span');
+        indicator.innerHTML = `
+          <svg height="20" viewBox="0 0 15 8" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="m7.5 5.6 5.8-5.4c.4-.4 1-.3 1.4.1s.3 1-.1 1.4l-6.5 6c-.4.4-1 .4-1.4 0l-6.5-6c-.4-.4-.4-1 0-1.4s1-.4 1.4 0z" fill="#ffffff"></path>
+          </svg>
+        `;
+        indicator.classList.add('menu-indicator');
+        link.appendChild(indicator);
 
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const submenu = menuItem.querySelector('ul.mobile-submenu');
+          if (submenu) {
+            submenu.classList.toggle('mobile-submenu-open');
+            indicator.classList.toggle('rotate');
+          }
+        });
+      });
+    }
+  }
 
 // Hamburger animation toggle
 function toggleHamburgerMenuIcon() {

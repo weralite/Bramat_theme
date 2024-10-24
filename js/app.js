@@ -23,15 +23,15 @@ function toggleMobileSubMenu() {
   if (mobileMenu) {
     var menuItemsWithChildren = mobileMenu.querySelectorAll(':scope > li.menu-item-has-children');
     menuItemsWithChildren.forEach(function (menuItem) {
+      var link = menuItem.querySelector('a');
       var indicator = document.createElement('span');
-      indicator.innerHTML = ' &#x25BE;';
+      indicator.innerHTML = "\n          <svg height=\"20\" viewBox=\"0 0 15 8\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\">\n            <path d=\"m7.5 5.6 5.8-5.4c.4-.4 1-.3 1.4.1s.3 1-.1 1.4l-6.5 6c-.4.4-1 .4-1.4 0l-6.5-6c-.4-.4-.4-1 0-1.4s1-.4 1.4 0z\" fill=\"#ffffff\"></path>\n          </svg>\n        ";
       indicator.classList.add('menu-indicator');
-      menuItem.querySelector('a').appendChild(indicator);
-      menuItem.addEventListener('click', function (e) {
+      link.appendChild(indicator);
+      link.addEventListener('click', function (e) {
         e.preventDefault();
         var submenu = menuItem.querySelector('ul.mobile-submenu');
         if (submenu) {
-          console.log(indicator);
           submenu.classList.toggle('mobile-submenu-open');
           indicator.classList.toggle('rotate');
         }

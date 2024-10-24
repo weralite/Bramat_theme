@@ -26,7 +26,7 @@
     						'container_class' => 'min-w-full flex justify-center', 
    							'menu_class'      => 'hidden xl:flex xl:flex-row xl:justify-center', 
    						    'li_class'        => 'primary-parent-li group', 
- 						    'a_class'         => 'ajax-link xl:text-2xl z-10 xl:tracking-wide xl:font-teko xl:w-full xl:font-light xl:uppercase xl:relative',
+ 						    'a_class'         => 'xl:text-2xl z-10 xl:tracking-wide xl:font-teko xl:w-full xl:font-light xl:uppercase xl:relative',
  						    'submenu_class'   => 'hover-background-animation', 
 							'fallback_cb'     => false,
 						)
@@ -55,10 +55,10 @@
 							'container'       => 'nav',
 							'container_id'    => 'mobile-menu',
 							'container_class' => 'mobile-menu z-1 top-0 absolute bg-black min-w-full xl:hidden',
-							'menu_class'      => 'mx-auto menu-content h-full mt-10 flex flex-col items-center w-1/3 gap-5',
+							'menu_class'      => 'mx-auto menu-content h-full flex flex-col justify-center text-center gap-5',
 							'li_class'        => 'mobile', 
-							'a_class'         => 'font-teko text-xl', 
-							'submenu_class'   => 'mobile-submenu', 
+							'a_class'         => 'font-josefin text-3xl', 
+							'submenu_class'   => 'mobile-submenu text-center', 
 							'fallback_cb'     => false,
 						)
 					);

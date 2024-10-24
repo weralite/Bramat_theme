@@ -371,6 +371,9 @@
 .text-right {
  text-align: right
 }
+.align-middle {
+ vertical-align: middle
+}
 .font-josefin {
  font-family: Josefin Slab, serif
 }
@@ -394,6 +397,9 @@
 }
 .text-xl {
  font-size: 1.25rem
+}
+.text-3xl {
+ font-size: 1.875rem
 }
 .font-bold {
  font-weight: 700
@@ -439,6 +445,9 @@
 }
 .underline {
  text-decoration-line: underline
+}
+.overline {
+ text-decoration-line: overline
 }
 .antialiased {
  -webkit-font-smoothing: antialiased;

@@ -104,6 +104,7 @@ body.custom-background::before {
     height: 0;
     overflow: hidden;
     transition: height 0.2s ease; 
+    position: relative;
 }
 
 .mobile-submenu-open {
@@ -111,15 +112,18 @@ body.custom-background::before {
     height: 5rem;
 }
 
+
 .menu-indicator {
     font-weight: bold;
-    color: inherit; /* Inherit color from the parent element */
-    margin-left: 5px; /* Add some space between the text and the indicator */
-    transition: transform 0.3s ease; /* Smooth transition for rotation */
+    color: inherit; 
+    margin-left: 10px; 
+    transition: transform 0.3s ease; 
+    position: absolute;
+    margin-top: 0.6rem;
 }
 
 .rotate {
-    transform: rotate(180deg); 
+    transform: rotateX(180deg); 
 }
 
 
