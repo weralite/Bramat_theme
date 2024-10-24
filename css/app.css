@@ -1019,136 +1019,23 @@ video {
 @font-face {
     font-family: 'Josefin Slab';
     src: url(../fonts/JosefinSlab-VariableFont_wght.ttf?6a4e168263c2ebe1d56c25aa9aa9fc27) format('truetype');
-    font-weight: 100 900; /* Variable weight range */
+    font-weight: 100 900;
+    /* Variable weight range */
     font-style: normal;
 }
 @font-face {
     font-family: 'Josefin Slab';
     src: url(../fonts/JosefinSlab-Italic-VariableFont_wght.ttf?1d8585582e78dadddffa0c123cc04b5e) format('truetype');
-    font-weight: 100 900; /* Variable weight range */
-    font-style: italic;
-}
-/* Josefin Slab Static Fonts */
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-Thin.ttf?be4ebe4b3271d35a525c812f9b7a2b50) format('truetype');
-    font-weight: 100;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-ExtraLight.ttf?b359b844ac9eb0a42f94cfe4f6af46b9) format('truetype');
-    font-weight: 200;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-Light.ttf?f53a1bd2e52607696e234b04de5f5820) format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-Regular.ttf?15a390e550e878ca99d0c1f558014b63) format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-Medium.ttf?1936b1650e0524decf80daeaa7863186) format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-SemiBold.ttf?989b184cb08ea089a365614ae7e9a178) format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-Bold.ttf?96c0e0c6c4b938393cdac5daefaae305) format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-ThinItalic.ttf?3ab191416f8e8de50b71ca270095ff8a) format('truetype');
-    font-weight: 100;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-ExtraLightItalic.ttf?9fd505235a6bfc79a41e6c6c7dbdcadb) format('truetype');
-    font-weight: 200;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-LightItalic.ttf?94ef79b93ecf94a60a48541d730c4f3b) format('truetype');
-    font-weight: 300;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-Italic.ttf?b1b767d02458dfcf1a01d519afcc8f99) format('truetype');
-    font-weight: 400;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-MediumItalic.ttf?391c4885835647567bae06becf0f0059) format('truetype');
-    font-weight: 500;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-SemiBoldItalic.ttf?5890c686f825badb86fe2424ac42db40) format('truetype');
-    font-weight: 600;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-BoldItalic.ttf?61c9f883ad9b145347726ae8d5e1c728) format('truetype');
-    font-weight: 700;
+    font-weight: 100 900;
+    /* Variable weight range */
     font-style: italic;
 }
 /* Teko Variable Font */
 @font-face {
     font-family: 'Teko';
     src: url(../fonts/Teko-VariableFont_wght.ttf?2c304a82d8b73b2829fafa269f83336c) format('truetype');
-    font-weight: 100 900; /* Variable weight range */
-    font-style: normal;
-}
-/* Teko Static Fonts */
-@font-face {
-    font-family: 'Teko';
-    src: url(../fonts/Teko-Light.ttf?067ada3620afcdd8be4c2e51dbb1b696) format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Teko';
-    src: url(../fonts/Teko-Regular.ttf?f7f091c5d5372c407f699a7c82a78818) format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Teko';
-    src: url(../fonts/Teko-Medium.ttf?b23a442b2f645ed7aa78dd5cf0d7a2bf) format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Teko';
-    src: url(../fonts/Teko-SemiBold.ttf?fef42651f07d6990f17c4a9afa45af68) format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Teko';
-    src: url(../fonts/Teko-Bold.ttf?ab5742532000bad6973e9448173411d5) format('truetype');
-    font-weight: 700;
+    font-weight: 100 900;
+    /* Variable weight range */
     font-style: normal;
 }
 @keyframes fadeInAnimation {

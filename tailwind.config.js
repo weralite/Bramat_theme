@@ -88,6 +88,7 @@ module.exports = {
             fontFamily: {
                 'josefin': ['Josefin Slab', 'serif'],
                 'teko': ['Teko', 'sans-serif'],
+                'assistant': ['Assistant', 'sans-serif'],
             },
             height: {
                 '7': '1.75rem', // Custom height value
