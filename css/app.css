@@ -1117,21 +1117,28 @@ body.custom-background::before {
 .mobile-menu {
     height: 0;
     overflow: hidden;
-    transition: height 0.2s ease;
+    transition: height 0.2s ease 0.1s; 
 }
 .mobile-menu-open {
     z-index: 1;
     height: 100vh;
+    transition-delay: 0s;
 }
 .menu-content {
     opacity: 0;
     transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .mobile-menu-open .menu-content {
     opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.1s;
+    transform: translateY(-20px);
+    transition-delay: 0.1s; 
+}
+.mobile-menu:not(.mobile-menu-open) .menu-content {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition-delay: 0s;
 }
 /* Animation class for mobile nav wrapping */
 .grid-rows-transition {
@@ -1139,7 +1146,6 @@ body.custom-background::before {
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.2s ease;
 }
-/* Mobile submenu animation */
 .mobile-submenu {
     overflow: hidden;
 }
@@ -1147,6 +1153,7 @@ body.custom-background::before {
     z-index: 1;
     grid-template-rows: 1fr;
 }
+/* Expanding arrow on list items containing submenus */
 .menu-indicator {
     font-weight: bold;
     color: inherit;
