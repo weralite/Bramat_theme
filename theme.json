@@ -67,6 +67,11 @@
           "name": "Teko",
           "slug": "teko",
           "fontFamily": "Teko, sans-serif"
+        },
+        {
+          "name": "Assistant",
+          "slug": "assistant",
+          "fontFamily": "Assistant, sans-serif"
         }
       ],
       "fontSizes": [

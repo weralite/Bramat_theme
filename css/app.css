@@ -1038,6 +1038,12 @@ video {
     /* Variable weight range */
     font-style: normal;
 }
+@font-face {
+    font-family: 'Assistant';
+    src: url(../fonts/Assistant-VariableFont_wght.ttf?c69ef68f4c67b7fa01919cb8755670a7) format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -1287,6 +1293,10 @@ article>*:not(.entry-content),
 
         letter-spacing: 0.05em;
     }
+.entry-content p, .block-editor-block-list__layout p {
+  font-size: 1.125rem;
+  font-family: Assistant, sans-serif;
+}
 .entry-content ul:not(.block-editor-block-variation-picker__variations) li, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li {
   list-style-position: inside;
   list-style-type: disc;

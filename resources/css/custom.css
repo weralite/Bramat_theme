@@ -54,6 +54,11 @@ article>*:not(.entry-content),
         @apply tracking-wider;
     }
 
+    p {
+        @apply text-lg;
+        @apply font-assistant;
+    }
+
     ul:not(.block-editor-block-variation-picker__variations) {
         li {
             @apply list-disc list-inside;
