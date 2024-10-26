@@ -624,9 +624,6 @@ video {
 .h-10 {
   height: 2.5rem;
 }
-.h-14 {
-  height: 3.5rem;
-}
 .h-full {
   height: 100%;
 }
@@ -638,9 +635,6 @@ video {
 }
 .w-10 {
   width: 2.5rem;
-}
-.w-14 {
-  width: 3.5rem;
 }
 .w-16 {
   width: 4rem;
@@ -681,11 +675,20 @@ video {
 .flex-col {
   flex-direction: column;
 }
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
 .place-content-center {
   place-content: center;
 }
 .items-center {
   align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
 }
 .justify-center {
   justify-content: center;
@@ -877,11 +880,11 @@ video {
 .text-2xl {
   font-size: 1.5rem;
 }
-.text-3xl {
-  font-size: 1.875rem;
-}
 .text-5xl {
   font-size: 3rem;
+}
+.text-base {
+  font-size: 1rem;
 }
 .text-lg {
   font-size: 1.125rem;
@@ -1014,6 +1017,9 @@ video {
   font-size: 0;
   color: #4b5563;
 }
+.separator-class span + span::before {
+  content: ", ";
+}
 /* assets/css/fonts.css */
 /* Josefin Slab Variable Fonts */
 @font-face {
@@ -1041,6 +1047,12 @@ video {
 @font-face {
     font-family: 'Assistant';
     src: url(../fonts/Assistant-VariableFont_wght.ttf?c69ef68f4c67b7fa01919cb8755670a7) format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url(../fonts/SpaceGrotesk-VariableFont_wght.ttf?5771010795a77ba7459b79877e40505d) format('truetype');
     font-weight: 100 900;
     font-style: normal;
 }
@@ -1133,7 +1145,7 @@ body.custom-background::before {
 }
 .mobile-submenu-open {
     z-index: 1;
-    height: 5rem;
+    height: 12rem;
 }
 .menu-indicator {
     font-weight: bold;
@@ -1287,15 +1299,46 @@ article>*:not(.entry-content),
 
         /* @apply mb-8; */
 
-        font-family: Josefin Slab, serif;
+        font-family: Space Grotesk, sans-serif;
 
-        font-size: 1.5rem;
+        font-weight: 500;
 
-        letter-spacing: 0.05em;
+        font-size: 1rem;
     }
+@media (min-width: 960px) {
+
+  .entry-content b,
+    .entry-content p,
+    .entry-content ul,
+    .entry-content ol,
+    .block-editor-block-list__layout b,
+    .block-editor-block-list__layout p,
+    .block-editor-block-list__layout ul,
+    .block-editor-block-list__layout ol {
+    font-size: 1.125rem;
+  }
+}
+.entry-content b,
+    .entry-content p,
+    .entry-content ul,
+    .entry-content ol,
+    .block-editor-block-list__layout b,
+    .block-editor-block-list__layout p,
+    .block-editor-block-list__layout ul,
+    .block-editor-block-list__layout ol {
+  letter-spacing: 0.05em;
+}
 .entry-content p, .block-editor-block-list__layout p {
-  font-size: 1.125rem;
-  font-family: Assistant, sans-serif;
+  font-size: 0.875rem;
+}
+@media (min-width: 960px) {
+
+  .entry-content p, .block-editor-block-list__layout p {
+    font-size: 1rem;
+  }
+}
+.entry-content p, .block-editor-block-list__layout p {
+  font-weight: 300;
 }
 .entry-content ul:not(.block-editor-block-variation-picker__variations) li, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li {
   list-style-position: inside;

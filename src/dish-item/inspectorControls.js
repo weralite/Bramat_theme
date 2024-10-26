@@ -52,6 +52,11 @@ const CustomInspectorControls = ({ attributes, setAttributes }) => {
           checked={attributes.showPrice}
           onChange={(value) => setAttributes({ showPrice: value })}
         />
+        <ToggleControl
+          label="Show Allergens"
+          checked={attributes.showAllergens}
+          onChange={(value) => setAttributes({ showAllergens: value })}
+        />
         <RangeControl
           label="Padding"
           value={attributes.paddingRange}

@@ -109,7 +109,7 @@ body.custom-background::before {
 
 .mobile-submenu-open {
     z-index: 1;
-    height: 5rem;
+    height: 12rem;
 }
 
 

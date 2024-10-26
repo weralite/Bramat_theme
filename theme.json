@@ -72,6 +72,11 @@
           "name": "Assistant",
           "slug": "assistant",
           "fontFamily": "Assistant, sans-serif"
+        },
+        {
+          "name": "Space Grotesk",
+          "slug": "space-grotesk",
+          "fontFamily": "SpaceGrotesk, sans-serif"
         }
       ],
       "fontSizes": [

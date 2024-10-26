@@ -57,7 +57,7 @@
 							'container_class' => 'mobile-menu z-1 top-0 absolute bg-black min-w-full xl:hidden',
 							'menu_class'      => 'mx-auto menu-content h-full flex flex-col justify-center text-center gap-5',
 							'li_class'        => 'mobile', 
-							'a_class'         => 'font-josefin text-3xl', 
+							'a_class'         => 'font-teko text-2xl', 
 							'submenu_class'   => 'mobile-submenu text-center', 
 							'fallback_cb'     => false,
 						)

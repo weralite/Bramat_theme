@@ -48,10 +48,13 @@ const Edit = ({ attributes, setAttributes }) => {
             placeholder={__('Add dish name...')}
           />
           <div className="flex flex-row gap-4">
+          {attributes.showAllergens && (
+            <p className="separator-class">(
             {attributes.isLactoseFree && <span>L</span>}
             {attributes.isGlutenFree && <span>G</span>}
             {attributes.isVegan && <span>VE</span>}
             {attributes.isVegetarian && <span>V</span>}
+            )</p> )}
             {attributes.showPrice && (
               <div>
                 <RichText
@@ -61,7 +64,7 @@ const Edit = ({ attributes, setAttributes }) => {
                   placeholder={__('Add price...')}
                   className="price"
                 />
-                 <b> SEK</b>
+                <b> SEK</b>
               </div>
             )}
 
@@ -97,16 +100,24 @@ const save = ({ attributes }) => {
           <RichText.Content tagName="b" value={attributes.dish} />
           <RichText.Content tagName="p" value={attributes.description} />
         </div>
-        <div className="md:flex md:flex-row md:justify-end md:gap-4 md:flex-grow md:flex-shrink-0">
-          <div className="hidden md:flex md:flex-row ">
-            {attributes.isLactoseFree && <img src={LactoseIcon} alt="Lactose Free" className="bg-transparent w-14 h-14" />}
-            {attributes.isGlutenFree && <img src={GlutenIcon} alt="Gluten Free" className="bg-transparent w-14 h-14" />}
-            {attributes.isVegan && <img src={VeganIcon} alt="Vegan" className="bg-transparent w-14 h-14" />}
-            {attributes.isVegetarian && <img src={VegetarianIcon} alt="Vegetarian" className="bg-transparent w-14 h-14" />}
+        <div className="flex flex-col-reverse justify-end md:flex-row md:justify-end md:gap-4 md:flex-grow md:flex-shrink-0">
+          <div className="whitespace-nowrap text-right">
+          {attributes.showAllergens && (
+            <p className="separator-class">(
+              {attributes.isLactoseFree && <span>L,</span>}
+              {attributes.isGlutenFree && <span>G</span>}
+              {attributes.isVegan && <span>VE</span>}
+              {attributes.isVegetarian && <span>V</span>}
+            )</p>
+          )}
           </div>
           <div className="whitespace-nowrap text-right">
-            <RichText.Content tagName="b" value={attributes.price} />
-            <b> SEK</b>
+            {attributes.showPrice && (
+              <p>
+                <RichText.Content tagName="span" value={attributes.price} />
+                <span> SEK</span>
+              </p>
+            )}
           </div>
         </div>
       </div>

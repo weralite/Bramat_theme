@@ -124,9 +124,6 @@
 .h-10 {
  height: 2.5rem
 }
-.h-14 {
- height: 3.5rem
-}
 .h-full {
  height: 100%
 }
@@ -138,9 +135,6 @@
 }
 .w-10 {
  width: 2.5rem
-}
-.w-14 {
- width: 3.5rem
 }
 .w-16 {
  width: 4rem
@@ -181,11 +175,20 @@
 .flex-col {
  flex-direction: column
 }
+.flex-col-reverse {
+ flex-direction: column-reverse
+}
 .place-content-center {
  place-content: center
 }
 .items-center {
  align-items: center
+}
+.justify-start {
+ justify-content: flex-start
+}
+.justify-end {
+ justify-content: flex-end
 }
 .justify-center {
  justify-content: center
@@ -377,11 +380,11 @@
 .text-2xl {
  font-size: 1.5rem
 }
-.text-3xl {
- font-size: 1.875rem
-}
 .text-5xl {
  font-size: 3rem
+}
+.text-base {
+ font-size: 1rem
 }
 .text-lg {
  font-size: 1.125rem
@@ -509,6 +512,9 @@
 .wp-caption-text {
  font-size: 0;
  color: #4b5563
+}
+.separator-class span + span::before {
+ content: ", "
 }
 body {
  min-width: 100%;

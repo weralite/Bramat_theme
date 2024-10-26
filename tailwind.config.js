@@ -89,6 +89,7 @@ module.exports = {
                 'josefin': ['Josefin Slab', 'serif'],
                 'teko': ['Teko', 'sans-serif'],
                 'assistant': ['Assistant', 'sans-serif'],
+                'space': ['Space Grotesk', 'sans-serif'],
             },
             height: {
                 '7': '1.75rem', // Custom height value
@@ -151,5 +152,13 @@ module.exports = {
 
     plugins: [
         tailpress.tailwind,
+        function ({ addUtilities }) {
+            const newUtilities = {
+                '.separator-class span + span::before': {
+                    content: '", "',
+                },
+            };
+            addUtilities(newUtilities, ['responsive']);
+        },
     ]
 };
