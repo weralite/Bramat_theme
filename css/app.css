@@ -1133,27 +1133,30 @@ body.custom-background::before {
     transform: translateY(0);
     transition-delay: 0.1s;
 }
+/* Animation class for mobile nav wrapping */
+.grid-rows-transition {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.2s ease;
+}
 /* Mobile submenu animation */
 .mobile-submenu {
-    height: 0;
     overflow: hidden;
-    transition: height 0.2s ease; 
-    position: relative;
 }
 .mobile-submenu-open {
     z-index: 1;
-    height: 12rem;
+    grid-template-rows: 1fr;
 }
 .menu-indicator {
     font-weight: bold;
-    color: inherit; 
-    margin-left: 10px; 
-    transition: transform 0.3s ease; 
+    color: inherit;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
     position: absolute;
     margin-top: 0.6rem;
 }
 .rotate {
-    transform: rotateX(180deg); 
+    transform: rotateX(180deg);
 }
 /* Primary menu animations */
 .primary-parent-li {

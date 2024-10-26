@@ -7,6 +7,23 @@ function toggleMobileMenu() {
     });
 };
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all menu items with submenus
+    const submenuItems = document.querySelectorAll('#mobile-menu .menu-item-has-children');
+
+    submenuItems.forEach(item => {
+        const submenu = item.querySelector('ul'); // Locate the submenu <ul>
+        if (submenu) {
+            // Create a new <nav> element and wrap the submenu <ul> inside it
+            const navWrapper = document.createElement('nav');
+            navWrapper.classList.add('mobile-wrapper', 'grid-rows-transition');
+            item.insertBefore(navWrapper, submenu);
+            navWrapper.appendChild(submenu);
+        }
+    });
+});
+
+
 // Navigation toggle
 function toggleMobileSubMenu() {
     const mobileMenu = document.getElementById('menu-mobile-menu');
@@ -27,7 +44,7 @@ function toggleMobileSubMenu() {
 
         link.addEventListener('click', function (e) {
           e.preventDefault();
-          const submenu = menuItem.querySelector('ul.mobile-submenu');
+          const submenu = menuItem.querySelector('nav.mobile-wrapper');
           if (submenu) {
             submenu.classList.toggle('mobile-submenu-open');
             indicator.classList.toggle('rotate');
